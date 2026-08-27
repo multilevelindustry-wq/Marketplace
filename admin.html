@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="NEOSTORE marketplace administration center."
+    >
+
+    <title>
+        Admin Center | NEOSTORE
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="admin.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================================
+     ADMIN PAGE LOADER
+========================================================== -->
+
+<div
+    id="adminPageLoader"
+    class="admin-page-loader"
+>
+
+    <div
+        class="admin-loader-spinner"
+    ></div>
+
+    <p>
+        Loading Admin Center...
+    </p>
+
+</div>
+
+
+
+<!-- ==========================================================
+     ADMIN HEADER
+========================================================== -->
+
+<header class="admin-header">
+
+    <div class="admin-header-left">
+
+        <button
+            type="button"
+            id="adminMenuButton"
+            class="admin-menu-button"
+            aria-label="Open admin menu"
+        >
+            ☰
+        </button>
+
+
+        <a
+            href="admin.html"
+            class="admin-logo"
+        >
+
+            <span class="admin-logo-main">
+                NEOSTORE
+            </span>
+
+            <span class="admin-logo-sub">
+                ADMIN CENTER
+            </span>
+
+        </a>
+
+    </div>
+
+
+
+    <!-- ======================================================
+         ADMIN SEARCH
+    ======================================================= -->
+
+    <form
+        id="adminSearchForm"
+        class="admin-search"
+    >
+
+        <input
+            type="search"
+            id="adminSearch"
+            placeholder="Search orders, buyers, sellers..."
+            autocomplete="off"
+        >
+
+        <button
+            type="submit"
+            aria-label="Search"
+        >
+            🔍
+        </button>
+
+    </form>
+
+
+
+    <!-- ======================================================
+         ADMIN ACTIONS
+    ======================================================= -->
+
+    <div class="admin-header-actions">
+
+        <button
+            type="button"
+            id="adminNotificationButton"
+            class="admin-header-icon"
+            aria-label="Notifications"
+        >
+
+            🔔
+
+            <span
+                id="adminNotificationCount"
+                class="admin-notification-count"
+            >
+                0
+            </span>
+
+        </button>
+
+
+        <button
+            type="button"
+            id="adminProfileButton"
+            class="admin-profile-button"
+        >
+
+            <img
+                id="adminPhoto"
+                src="default-avatar.png"
+                alt="Admin"
+            >
+
+            <span id="adminName">
+                Administrator
+            </span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- ==========================================================
+     ADMIN MENU OVERLAY
+========================================================== -->
+
+<div
+    id="adminMenuOverlay"
+    class="admin-menu-overlay"
+></div>
+
+
+
+<!-- ==========================================================
+     ADMIN SIDE MENU
+========================================================== -->
+
+<aside
+    id="adminSideMenu"
+    class="admin-side-menu"
+>
+
+    <div class="admin-side-menu-header">
+
+        <strong>
+            ADMIN CENTER
+        </strong>
+
+
+        <button
+            type="button"
+            id="adminMenuClose"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <nav class="admin-navigation">
+
+        <a
+            href="admin.html"
+            class="active"
+        >
+            📊
+            <span>
+                Dashboard
+            </span>
+        </a>
+
+
+        <a href="#orders">
+            📦
+            <span>
+                Orders
+            </span>
+        </a>
+
+
+        <a href="#tracking">
+            🚚
+            <span>
+                Delivery & Tracking
+            </span>
+        </a>
+
+
+        <a href="#sellers">
+            🏪
+            <span>
+                Sellers
+            </span>
+        </a>
+
+
+        <a href="#buyers">
+            👤
+            <span>
+                Buyers
+            </span>
+        </a>
+
+
+        <a href="#funds">
+            💰
+            <span>
+                Seller Funds
+            </span>
+        </a>
+
+
+        <a href="#notifications">
+            🔔
+            <span>
+                Notifications
+            </span>
+        </a>
+
+
+        <a href="#reports">
+            📈
+            <span>
+                Reports
+            </span>
+        </a>
+
+    </nav>
+
+</aside>
+
+
+
+<!-- ==========================================================
+     MAIN ADMIN APPLICATION
+========================================================== -->
+
+<main
+    id="adminApp"
+    class="admin-app"
+>
+
+
+    <!-- ======================================================
+         PAGE INTRODUCTION
+    ======================================================= -->
+
+    <section class="admin-page-intro">
+
+        <div>
+
+            <span class="admin-page-label">
+                MARKETPLACE CONTROL CENTER
+            </span>
+
+            <h1>
+                Admin Dashboard
+            </h1>
+
+            <p>
+                Manage orders, sellers, buyers, delivery,
+                tracking and seller payouts from one place.
+            </p>
+
+        </div>
+
+
+        <div class="admin-intro-actions">
+
+            <button
+                type="button"
+                id="refreshAdminButton"
+                class="admin-refresh-button"
+            >
+                ↻ Refresh
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         ORDER STATISTICS
+    ======================================================= -->
+
+    <section class="admin-statistics">
+
+        <div class="admin-stat-card">
+
+            <span class="admin-stat-icon">
+                📦
+            </span>
+
+            <div>
+
+                <span>
+                    Total Orders
+                </span>
+
+                <strong id="adminTotalOrders">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-stat-card">
+
+            <span class="admin-stat-icon">
+                💳
+            </span>
+
+            <div>
+
+                <span>
+                    Paid Orders
+                </span>
+
+                <strong id="adminPaidOrders">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-stat-card">
+
+            <span class="admin-stat-icon">
+                📋
+            </span>
+
+            <div>
+
+                <span>
+                    Awaiting Pickup
+                </span>
+
+                <strong id="adminAwaitingPickup">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-stat-card">
+
+            <span class="admin-stat-icon">
+                🚚
+            </span>
+
+            <div>
+
+                <span>
+                    In Transit
+                </span>
+
+                <strong id="adminInTransit">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-stat-card">
+
+            <span class="admin-stat-icon">
+                🛵
+            </span>
+
+            <div>
+
+                <span>
+                    Out for Delivery
+                </span>
+
+                <strong id="adminOutForDelivery">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-stat-card">
+
+            <span class="admin-stat-icon">
+                ✅
+            </span>
+
+            <div>
+
+                <span>
+                    Delivered
+                </span>
+
+                <strong id="adminDeliveredOrders">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-stat-card">
+            
+            <span class="admin-stat-icon">
+                💰
+            </span>
+
+            <div>
+
+                <span>
+                    Funds Awaiting Release
+                </span>
+
+                <strong id="adminFundsAwaiting">
+                    ₦0.00
+                </strong>
+
+            </div>
+            
+        </div>
+
+
+        <div class="admin-stat-card">
+
+            <span class="admin-stat-icon">
+                ✔️
+            </span>
+
+            <div>
+
+                <span>
+                    Completed Orders
+                </span>
+
+                <strong id="adminCompletedOrders">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+<!-- ==========================================================
+     SELLER ADVERTISEMENT MANAGEMENT
+========================================================== -->
+
+<section class="admin-ads-section">
+
+    <div class="admin-section-header">
+
+        <div>
+
+            <span class="admin-section-label">
+                ADVERTISEMENT MANAGEMENT
+            </span>
+
+            <h2>
+                Seller Ads
+            </h2>
+
+            <p>
+                Create and manage paid seller advertisements.
+            </p>
+
+        </div>
+
+        <button
+            type="button"
+            id="refreshAds"
+        >
+            ↻ Refresh
+        </button>
+
+    </div>
+
+
+    <!-- ======================================================
+         CREATE AD
+    ======================================================= -->
+
+    <div class="admin-ad-create-card">
+
+        <h3>
+            Create Advertisement
+        </h3>
+
+
+        <div class="admin-ad-form">
+
+
+            <!-- SELLER ID -->
+
+            <div class="admin-ad-field">
+
+                <label for="adSellerId">
+                    Seller ID
+                </label>
+
+                <input
+                    type="text"
+                    id="adSellerId"
+                    placeholder="Paste seller ID from payment"
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <!-- AD CODE -->
+
+            <div class="admin-ad-field">
+
+                <label for="adCode">
+                    Ad Code
+                </label>
+
+                <input
+                    type="text"
+                    id="adCode"
+                    placeholder="Example: SELLER-AD-001"
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <!-- MAX IMPRESSIONS -->
+
+            <div class="admin-ad-field">
+
+                <label for="adMaxImpressions">
+                    Maximum Impressions
+                </label>
+
+                <input
+                    type="number"
+                    id="adMaxImpressions"
+                    min="0"
+                    placeholder="Example: 10000"
+                >
+
+                <small>
+                    Use 0 for unlimited impressions.
+                </small>
+
+            </div>
+
+
+            <!-- MAX CLICKS -->
+
+            <div class="admin-ad-field">
+
+                <label for="adMaxClicks">
+                    Maximum Clicks
+                </label>
+
+                <input
+                    type="number"
+                    id="adMaxClicks"
+                    min="0"
+                    placeholder="Example: 500"
+                >
+
+                <small>
+                    Use 0 for unlimited clicks.
+                </small>
+
+            </div>
+
+
+            <!-- BUTTON -->
+
+            <button
+                type="button"
+                id="createSellerAd"
+                class="admin-create-ad-button"
+            >
+                Create Advertisement
+            </button>
+
+
+        </div>
+
+
+        <div
+            id="adminAdStatus"
+            class="admin-ad-status"
+        ></div>
+
+    </div>
+
+
+    <!-- ======================================================
+         AD STATISTICS
+    ======================================================= -->
+
+    <div class="admin-ad-statistics">
+
+        <div class="admin-ad-stat-card">
+
+            <span>
+                Total Ads
+            </span>
+
+            <strong id="adminTotalAds">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="admin-ad-stat-card">
+
+            <span>
+                Active Ads
+            </span>
+
+            <strong id="adminActiveAds">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="admin-ad-stat-card">
+
+            <span>
+                Impressions
+            </span>
+
+            <strong id="adminTotalImpressions">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="admin-ad-stat-card">
+
+            <span>
+                Clicks
+            </span>
+
+            <strong id="adminTotalClicks">
+                0
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- ======================================================
+         ADS LIST
+    ======================================================= -->
+
+    <div
+        id="adminAdsList"
+        class="admin-ads-list"
+    ></div>
+
+
+    <div
+        id="adminAdsEmpty"
+        class="admin-ads-empty"
+        style="display:none;"
+    >
+        No advertisements found.
+    </div>
+
+</section>
+
+    <!-- ======================================================
+         RECENT ORDERS
+    ======================================================= -->
+
+    <section
+        id="orders"
+        class="admin-orders-section"
+    >
+
+        <div class="admin-section-header">
+
+            <div>
+
+                <span>
+                    ORDER MANAGEMENT
+                </span>
+
+                <h2>
+                    Recent Orders
+                </h2>
+
+            </div>
+
+
+            <a
+                href="#orders"
+                class="admin-view-all"
+            >
+                View All
+            </a>
+
+        </div>
+
+
+        <div
+            id="adminOrdersList"
+            class="admin-orders-list"
+        >
+
+            <div class="admin-content-loading">
+
+                <div class="admin-small-spinner"></div>
+
+                <p>
+                    Loading orders...
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ======================================================
+         DELIVERY TRACKING SUMMARY
+    ======================================================= -->
+
+    <section
+        id="tracking"
+        class="admin-tracking-section"
+    >
+
+        <div class="admin-section-header">
+
+            <div>
+
+                <span>
+                    DELIVERY MANAGEMENT
+                </span>
+
+                <h2>
+                    Active Deliveries
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="adminTrackingList"
+            class="admin-tracking-list"
+        >
+
+            <div class="admin-content-loading">
+
+                <div class="admin-small-spinner"></div>
+
+                <p>
+                    Loading deliveries...
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+<!-- ==========================================================
+     ALL USERS
+========================================================== -->
+
+<section class="admin-users-section">
+
+    <div class="admin-section-header">
+
+        <div>
+
+            <span class="admin-section-label">
+                USER MANAGEMENT
+            </span>
+
+            <h2>
+                All Users
+            </h2>
+
+            <p>
+                View buyer and seller account information.
+            </p>
+
+        </div>
+
+        <button
+            type="button"
+            id="refreshUsers"
+        >
+            ↻ Refresh
+        </button>
+
+    </div>
+
+
+    <!-- ======================================================
+         USER STATISTICS
+    ======================================================= -->
+
+    <div class="user-statistics">
+
+        <div class="user-stat-card">
+
+            <span>
+                Total Users
+            </span>
+
+            <strong id="totalUsers">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="user-stat-card">
+
+            <span>
+                Buyers
+            </span>
+
+            <strong id="totalBuyers">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="user-stat-card">
+
+            <span>
+                Sellers
+            </span>
+
+            <strong id="totalSellers">
+                0
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- ======================================================
+         SEARCH + FILTER
+    ======================================================= -->
+
+    <div class="users-controls">
+
+        <input
+            type="search"
+            id="userSearch"
+            placeholder="Search name, email, phone or location..."
+        >
+
+
+        <select id="userRoleFilter">
+
+            <option value="all">
+                All Users
+            </option>
+
+            <option value="buyer">
+                Buyers
+            </option>
+
+            <option value="seller">
+                Sellers
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- ======================================================
+         LOADING
+    ======================================================= -->
+
+    <div
+        id="usersLoading"
+        class="users-loading"
+    >
+
+        Loading users...
+
+    </div>
+
+
+    <!-- ======================================================
+         USERS CONTAINER
+    ======================================================= -->
+
+    <div
+        id="adminUsersList"
+        class="admin-users-list"
+    ></div>
+
+
+    <!-- ======================================================
+         EMPTY STATE
+    ======================================================= -->
+
+    <div
+        id="usersEmpty"
+        class="users-empty"
+        style="display:none;"
+    >
+
+        No users found.
+
+    </div>
+
+</section>
+
+    <!-- ======================================================
+         ADMIN MESSAGE
+    ======================================================= -->
+
+    <div
+        id="adminMessage"
+        class="admin-message"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+</main>
+
+
+
+<!-- ==========================================================
+     JAVASCRIPT
+========================================================== -->
+
+<script
+    type="module"
+    src="admin.js"
+></script>
+
+<script
+    type="module"
+    src="ads.js"
+></script>
+
+</body>
+</html>
+

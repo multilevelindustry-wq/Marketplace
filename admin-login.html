@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="robots"
+        content="noindex,nofollow"
+    >
+
+    <title>
+        Admin Login | NEOSTORE
+    </title>
+
+    <style>
+
+        *{
+            box-sizing:border-box;
+            margin:0;
+            padding:0;
+        }
+
+        body{
+            min-height:100vh;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            padding:20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f5f7fa,
+                    #eef1f5
+                );
+
+            color:#172033;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+        }
+
+        .admin-login-container{
+            width:100%;
+            max-width:430px;
+        }
+
+        .admin-login-card{
+            padding:34px 30px;
+
+            background:#ffffff;
+
+            border:1px solid #e4e7ec;
+            border-radius:16px;
+
+            box-shadow:
+                0 15px 45px
+                rgba(16,24,40,.10);
+        }
+
+        .admin-brand{
+            text-align:center;
+
+            margin-bottom:28px;
+        }
+
+        .admin-brand-main{
+            display:block;
+
+            color:#172033;
+
+            font-size:25px;
+            font-weight:900;
+
+            letter-spacing:-.8px;
+        }
+
+        .admin-brand-sub{
+            display:block;
+
+            margin-top:6px;
+
+            color:#f45b24;
+
+            font-size:10px;
+            font-weight:900;
+
+            letter-spacing:2px;
+        }
+
+        .admin-lock{
+            width:64px;
+            height:64px;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            margin:0 auto 18px;
+
+            border-radius:50%;
+
+            background:#fff1eb;
+
+            font-size:28px;
+        }
+
+        h1{
+            text-align:center;
+
+            color:#101828;
+
+            font-size:24px;
+            font-weight:900;
+        }
+
+        .admin-description{
+            margin:9px auto 25px;
+
+            max-width:330px;
+
+            text-align:center;
+
+            color:#667085;
+
+            font-size:13px;
+
+            line-height:1.6;
+        }
+
+        .form-group{
+            margin-bottom:17px;
+        }
+
+        .form-group label{
+            display:block;
+
+            margin-bottom:7px;
+
+            color:#344054;
+
+            font-size:12px;
+            font-weight:800;
+        }
+
+        .form-group input{
+            width:100%;
+            height:48px;
+
+            padding:0 14px;
+
+            border:1px solid #d9dee7;
+            border-radius:9px;
+
+            outline:none;
+
+            background:#ffffff;
+
+            color:#101828;
+
+            font-size:14px;
+
+            transition:
+                border-color .2s ease,
+                box-shadow .2s ease;
+        }
+
+        .form-group input:focus{
+            border-color:#f45b24;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(244,91,36,.10);
+        }
+
+        .password-wrapper{
+            position:relative;
+        }
+
+        .password-wrapper input{
+            padding-right:52px;
+        }
+
+        #togglePassword{
+            position:absolute;
+
+            top:50%;
+            right:10px;
+
+            width:34px;
+            height:34px;
+
+            transform:translateY(-50%);
+
+            border:0;
+            border-radius:7px;
+
+            background:#f7f8fa;
+
+            color:#475467;
+
+            cursor:pointer;
+        }
+
+        #togglePassword:hover{
+            background:#eceff3;
+        }
+
+        .admin-login-button{
+            width:100%;
+            height:49px;
+
+            margin-top:5px;
+
+            border:0;
+            border-radius:9px;
+
+            background:#f45b24;
+
+            color:#ffffff;
+
+            font-size:14px;
+            font-weight:900;
+
+            cursor:pointer;
+
+            transition:
+                background .2s ease,
+                transform .15s ease;
+        }
+
+        .admin-login-button:hover{
+            background:#df4d19;
+        }
+
+        .admin-login-button:active{
+            transform:scale(.99);
+        }
+
+        .admin-login-button:disabled{
+            opacity:.65;
+            cursor:not-allowed;
+        }
+
+        .login-message{
+            display:none;
+
+            margin-top:16px;
+
+            padding:12px 13px;
+
+            border-radius:8px;
+
+            font-size:12px;
+            font-weight:600;
+
+            line-height:1.5;
+        }
+
+        .login-message.show{
+            display:block;
+        }
+
+        .login-message.error{
+            background:#fff1f0;
+            border:1px solid #ffd1cd;
+            color:#b42318;
+        }
+
+        .login-message.success{
+            background:#ecfdf3;
+            border:1px solid #abefc6;
+            color:#067647;
+        }
+
+        .admin-security-note{
+            margin-top:22px;
+
+            padding-top:18px;
+
+            border-top:1px solid #edf0f3;
+
+            text-align:center;
+
+            color:#98a2b3;
+
+            font-size:10px;
+
+            line-height:1.6;
+        }
+
+        .admin-footer{
+            margin-top:18px;
+
+            text-align:center;
+
+            color:#98a2b3;
+
+            font-size:10px;
+        }
+
+        @media(max-width:480px){
+
+            body{
+                padding:14px;
+            }
+
+            .admin-login-card{
+                padding:28px 20px;
+            }
+
+            .admin-brand-main{
+                font-size:22px;
+            }
+
+            h1{
+                font-size:21px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="admin-login-container">
+
+
+    <div class="admin-login-card">
+
+
+        <!-- ==================================================
+             BRAND
+        =================================================== -->
+
+        <div class="admin-brand">
+
+            <span class="admin-brand-main">
+                NEOSTORE
+            </span>
+
+            <span class="admin-brand-sub">
+                ADMIN CENTER
+            </span>
+
+        </div>
+
+
+        <!-- ==================================================
+             LOCK
+        =================================================== -->
+
+        <div class="admin-lock">
+            🔐
+        </div>
+
+
+        <h1>
+            Administrative Login
+        </h1>
+
+
+        <p class="admin-description">
+            This area is restricted to authorized
+            NEOSTORE administrative staff.
+        </p>
+
+
+        <!-- ==================================================
+             LOGIN FORM
+        =================================================== -->
+
+        <form
+            id="adminLoginForm"
+        >
+
+
+            <div class="form-group">
+
+                <label for="adminEmail">
+                    Administrative Email
+                </label>
+
+                <input
+                    type="email"
+                    id="adminEmail"
+                    autocomplete="username"
+                    placeholder="Enter administrative email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="adminPassword">
+                    Password
+                </label>
+
+                <div class="password-wrapper">
+
+                    <input
+                        type="password"
+                        id="adminPassword"
+                        autocomplete="current-password"
+                        placeholder="Enter password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        id="togglePassword"
+                        aria-label="Show password"
+                    >
+                        👁
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                id="adminLoginButton"
+                class="admin-login-button"
+            >
+                Sign In to Admin Center
+            </button>
+
+
+            <div
+                id="adminLoginMessage"
+                class="login-message"
+            ></div>
+
+
+        </form>
+
+
+        <div class="admin-security-note">
+
+            🔒 Authorized personnel only.
+            All administrative activity may be
+            recorded for marketplace security
+            and operational purposes.
+
+        </div>
+
+
+    </div>
+
+
+    <div class="admin-footer">
+
+        NEOSTORE Marketplace Administration
+
+    </div>
+
+
+</div>
+
+
+
+<!-- ==========================================================
+     FIREBASE ADMIN LOGIN
+========================================================== -->
+
+<script type="module">
+
+import {
+    auth
+} from "./firebase.js";
+
+
+import {
+    signInWithEmailAndPassword
+} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+
+
+import {
+    doc,
+    getDoc
+} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
+
+
+import {
+    db
+} from "./firebase.js";
+
+
+
+/* ==========================================================
+   ELEMENTS
+========================================================== */
+
+const form =
+    document.getElementById(
+        "adminLoginForm"
+    );
+
+
+const emailInput =
+    document.getElementById(
+        "adminEmail"
+    );
+
+
+const passwordInput =
+    document.getElementById(
+        "adminPassword"
+    );
+
+
+const loginButton =
+    document.getElementById(
+        "adminLoginButton"
+    );
+
+
+const message =
+    document.getElementById(
+        "adminLoginMessage"
+    );
+
+
+const togglePassword =
+    document.getElementById(
+        "togglePassword"
+    );
+
+
+
+/* ==========================================================
+   MESSAGE
+========================================================== */
+
+function showMessage(
+    text,
+    type
+){
+
+    message.textContent =
+        text;
+
+    message.className =
+        "login-message show " +
+        type;
+
+}
+
+
+
+/* ==========================================================
+   PASSWORD VISIBILITY
+========================================================== */
+
+togglePassword.addEventListener(
+    "click",
+    function(){
+
+        if(
+            passwordInput.type ===
+            "password"
+        ){
+
+            passwordInput.type =
+                "text";
+
+            togglePassword.textContent =
+                "🙈";
+
+        }else{
+
+            passwordInput.type =
+                "password";
+
+            togglePassword.textContent =
+                "👁";
+
+        }
+
+    }
+);
+
+
+
+/* ==========================================================
+   ADMIN LOGIN
+========================================================== */
+
+form.addEventListener(
+    "submit",
+    async function(event){
+
+        event.preventDefault();
+
+
+        const email =
+            emailInput.value
+                .trim()
+                .toLowerCase();
+
+
+        const password =
+            passwordInput.value;
+
+
+        if(!email || !password){
+
+            showMessage(
+                "Enter your administrative email and password.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        loginButton.disabled =
+            true;
+
+        loginButton.textContent =
+            "Signing in...";
+
+
+        try{
+
+            const credential =
+                await signInWithEmailAndPassword(
+                    auth,
+                    email,
+                    password
+                );
+
+
+            const user =
+                credential.user;
+
+
+            /* ==============================================
+               VERIFY ADMIN ROLE
+            ============================================== */
+
+            const adminReference =
+                doc(
+                    db,
+                    "users",
+                    user.uid
+                );
+
+
+            const adminSnapshot =
+                await getDoc(
+                    adminReference
+                );
+
+
+            if(
+                !adminSnapshot.exists()
+            ){
+
+                await auth.signOut();
+
+                throw new Error(
+                    "This account is not authorized for administration."
+                );
+
+            }
+
+
+            const adminData =
+                adminSnapshot.data();
+
+
+            const role =
+                String(
+                    adminData.role ||
+                    adminData.accountType ||
+                    adminData.userType ||
+                    ""
+                )
+                .trim()
+                .toLowerCase();
+
+
+            if(
+                role !== "admin" &&
+                role !== "administrator"
+            ){
+
+                await auth.signOut();
+
+                throw new Error(
+                    "This account does not have administrator privileges."
+                );
+
+            }
+
+
+            showMessage(
+                "Login successful. Opening Admin Center...",
+                "success"
+            );
+
+
+            setTimeout(
+                function(){
+
+                    window.location.href =
+                        "admin.html";
+
+                },
+                700
+            );
+
+
+        }catch(error){
+
+            console.error(
+                "ADMIN LOGIN ERROR:",
+                error
+            );
+
+
+            let errorMessage =
+                "Unable to sign in. Check your credentials.";
+
+
+            if(
+                error.code ===
+                "auth/invalid-credential"
+            ){
+
+                errorMessage =
+                    "Incorrect administrative email or password.";
+
+            }
+
+
+            if(
+                error.code ===
+                "auth/user-not-found"
+            ){
+
+                errorMessage =
+                    "Administrative account was not found.";
+
+            }
+
+
+            if(
+                error.code ===
+                "auth/wrong-password"
+            ){
+
+                errorMessage =
+                    "Incorrect administrative password.";
+
+            }
+
+
+            if(
+                error.code ===
+                "auth/too-many-requests"
+            ){
+
+                errorMessage =
+                    "Too many login attempts. Please try again later.";
+
+            }
+
+
+            if(
+                error.message &&
+                error.message.includes(
+                    "not authorized"
+                )
+            ){
+
+                errorMessage =
+                    error.message;
+
+            }
+
+
+            if(
+                error.message &&
+                error.message.includes(
+                    "administrator privileges"
+                )
+            ){
+
+                errorMessage =
+                    error.message;
+
+            }
+
+
+            showMessage(
+                errorMessage,
+                "error"
+            );
+
+
+        }finally{
+
+            loginButton.disabled =
+                false;
+
+            loginButton.textContent =
+                "Sign In to Admin Center";
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
+

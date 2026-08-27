@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#f68b1e"
+    >
+
+    <title>Buyer Registration | NEOSTORE</title>
+
+    <link
+        rel="stylesheet"
+        href="buyer-register.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         PAGE LOADER
+    ================================================== -->
+
+    <div
+        id="buyerRegisterLoader"
+        class="buyer-register-loader"
+    >
+
+        <div class="buyer-register-spinner"></div>
+
+        <p>
+            Creating your account...
+        </p>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         HEADER
+    ================================================== -->
+
+    <header class="buyer-register-header">
+
+        <a
+            href="index.html"
+            class="buyer-register-logo"
+        >
+
+            <span class="buyer-register-logo-icon">
+                🛍️
+            </span>
+
+            <span>
+                NEOSTORE
+            </span>
+
+        </a>
+
+
+        <a
+            href="login.html"
+            class="buyer-register-login-link"
+        >
+            Login
+        </a>
+
+    </header>
+
+
+
+    <!-- ==================================================
+         MAIN
+    ================================================== -->
+
+    <main class="buyer-register-main">
+
+
+        <!-- ==================================================
+             REGISTER CARD
+        ================================================== -->
+
+        <section class="buyer-register-card">
+
+
+            <!-- INTRO -->
+
+            <div class="buyer-register-intro">
+
+                <div class="buyer-register-icon">
+                    🛒
+                </div>
+
+                <h1>
+                    Create Your Buyer Account
+                </h1>
+
+                <p>
+                    Create an account to shop, save products,
+                    manage your orders and enjoy a better
+                    shopping experience.
+                </p>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 ERROR MESSAGE
+            ================================================== -->
+
+            <div
+                id="buyerRegisterError"
+                class="buyer-register-message error"
+                role="alert"
+            ></div>
+
+
+
+            <!-- ==================================================
+                 SUCCESS MESSAGE
+            ================================================== -->
+
+            <div
+                id="buyerRegisterSuccess"
+                class="buyer-register-message success"
+                role="status"
+            ></div>
+
+
+
+            <!-- ==================================================
+                 FORM
+            ================================================== -->
+
+            <form
+                id="buyerRegisterForm"
+                class="buyer-register-form"
+                novalidate
+            >
+
+
+                <!-- FIRST NAME -->
+
+                <div class="buyer-register-field">
+
+                    <label
+                        for="buyerFirstName"
+                    >
+                        First Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="buyerFirstName"
+                        name="firstName"
+                        placeholder="Enter your first name"
+                        autocomplete="given-name"
+                        required
+                    >
+
+                    <small
+                        id="buyerFirstNameError"
+                        class="field-error"
+                    ></small>
+
+                </div>
+
+
+
+                <!-- LAST NAME -->
+
+                <div class="buyer-register-field">
+
+                    <label
+                        for="buyerLastName"
+                    >
+                        Last Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="buyerLastName"
+                        name="lastName"
+                        placeholder="Enter your last name"
+                        autocomplete="family-name"
+                        required
+                    >
+
+                    <small
+                        id="buyerLastNameError"
+                        class="field-error"
+                    ></small>
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <div class="buyer-register-field">
+
+                    <label
+                        for="buyerEmail"
+                    >
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="buyerEmail"
+                        name="email"
+                        placeholder="Enter your email address"
+                        autocomplete="email"
+                        required
+                    >
+
+                    <small
+                        id="buyerEmailError"
+                        class="field-error"
+                    ></small>
+
+                </div>
+
+
+
+                <!-- PHONE -->
+
+                <div class="buyer-register-field">
+
+                    <label
+                        for="buyerPhone"
+                    >
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="buyerPhone"
+                        name="phone"
+                        placeholder="08012345678"
+                        autocomplete="tel"
+                        inputmode="tel"
+                        required
+                    >
+
+                    <small
+                        id="buyerPhoneError"
+                        class="field-error"
+                    ></small>
+
+                </div>
+
+
+
+                <!-- PASSWORD -->
+
+                <div class="buyer-register-field">
+
+                    <label
+                        for="buyerPassword"
+                    >
+                        Password
+                    </label>
+
+                    <div class="buyer-password-wrapper">
+
+                        <input
+                            type="password"
+                            id="buyerPassword"
+                            name="password"
+                            placeholder="Create a password"
+                            autocomplete="new-password"
+                            minlength="6"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="toggleBuyerPassword"
+                            class="password-toggle"
+                            aria-label="Show password"
+                        >
+                            👁️
+                        </button>
+
+                    </div>
+
+                    <small
+                        id="buyerPasswordError"
+                        class="field-error"
+                    ></small>
+
+                </div>
+
+
+
+                <!-- CONFIRM PASSWORD -->
+
+                <div class="buyer-register-field">
+
+                    <label
+                        for="buyerConfirmPassword"
+                    >
+                        Confirm Password
+                    </label>
+
+                    <div class="buyer-password-wrapper">
+
+                        <input
+                            type="password"
+                            id="buyerConfirmPassword"
+                            name="confirmPassword"
+                            placeholder="Confirm your password"
+                            autocomplete="new-password"
+                            minlength="6"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="toggleBuyerConfirmPassword"
+                            class="password-toggle"
+                            aria-label="Show password"
+                        >
+                            👁️
+                        </button>
+
+                    </div>
+
+                    <small
+                        id="buyerConfirmPasswordError"
+                        class="field-error"
+                    ></small>
+
+                </div>
+
+
+
+                <!-- TERMS -->
+
+                <div class="buyer-register-terms">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="buyerTerms"
+                            required
+                        >
+
+                        <span>
+
+                            I agree to the
+                            
+                            <a
+                                href="terms.html"
+                                target="_blank"
+                            >
+                                Terms & Conditions
+                            </a>
+
+                            and
+
+                            <a
+                                href="privacy.html"
+                                target="_blank"
+                            >
+                                Privacy Policy
+                            </a>
+
+                        </span>
+
+                    </label>
+
+                    <small
+                        id="buyerTermsError"
+                        class="field-error"
+                    ></small>
+
+                </div>
+
+
+
+                <!-- REGISTER BUTTON -->
+
+                <button
+                    type="submit"
+                    id="buyerRegisterButton"
+                    class="buyer-register-button"
+                >
+
+                    <span
+                        id="buyerRegisterButtonText"
+                    >
+                        Create Buyer Account
+                    </span>
+
+                    <span
+                        id="buyerRegisterButtonSpinner"
+                        class="button-spinner"
+                    ></span>
+
+                </button>
+
+
+            </form>
+
+
+
+            <!-- ==================================================
+                 LOGIN
+            ================================================== -->
+
+            <div class="buyer-register-footer">
+
+                <p>
+
+                    Already have an account?
+
+                    <a
+                        href="login.html"
+                    >
+                        Login
+                    </a>
+
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==================================================
+         FOOTER
+    ================================================== -->
+
+    <footer class="buyer-register-page-footer">
+
+        <p>
+            © <span id="buyerRegisterYear"></span>
+            NEOSTORE. All rights reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <script
+        type="module"
+        src="buyer-register.js"
+    ></script>
+
+
+</body>
+
+</html>

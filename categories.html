@@ -1,0 +1,2661 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Browse all product categories and discover products from sellers across the marketplace."
+    >
+
+    <title>All Categories | NEOSTORE</title>
+
+<link
+    rel="stylesheet"
+    href="ads.css"
+>
+
+
+    <style>
+
+        *{
+            box-sizing:border-box;
+            margin:0;
+            padding:0;
+        }
+
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+
+        body{
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Arial,
+                sans-serif;
+
+            background:#f5f7fb;
+
+            color:#111827;
+
+            min-height:100vh;
+        }
+
+
+        button,
+        input{
+            font:inherit;
+        }
+
+
+        a{
+            text-decoration:none;
+            color:inherit;
+        }
+
+
+/* ==========================================================
+   CATEGORIES HEADER
+========================================================== */
+
+.categories-header {
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    position: relative;
+    z-index: 1000;
+}
+
+
+/* ==========================================================
+   HEADER INNER
+========================================================== */
+
+.categories-header-inner {
+    width: 100%;
+    max-width: 1400px;
+    min-height: 76px;
+
+    margin: 0 auto;
+
+    padding: 10px 24px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+/* ==========================================================
+   MENU BUTTON
+========================================================== */
+
+.categories-menu-button {
+
+    width: 52px;
+    height: 52px;
+
+    flex: 0 0 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #e1e5eb;
+
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    font-size: 28px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    padding: 0;
+
+}
+
+
+/* ==========================================================
+   LOGO
+========================================================== */
+
+.categories-logo {
+
+    display: block;
+
+    flex: 0 0 auto;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    font-size: 27px;
+
+    font-weight: 900;
+
+    letter-spacing: -1.5px;
+
+    color: #111827;
+}
+
+
+.categories-logo span {
+
+    color: #f26a2e;
+
+}
+
+
+/* ==========================================================
+   SEARCH
+========================================================== */
+
+.categories-search {
+
+    position: relative;
+
+    flex: 1 1 auto;
+
+    min-width: 150px;
+
+    max-width: 650px;
+
+    margin-left: 20px;
+}
+
+
+.categories-search input {
+
+    width: 100%;
+
+    height: 52px;
+
+    box-sizing: border-box;
+
+    padding: 0 58px 0 20px;
+
+    border: 1px solid #dfe3e8;
+
+    border-radius: 16px;
+
+    background: #f8f9fb;
+
+    color: #111827;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+
+.categories-search input:focus {
+
+    border-color: #f26a2e;
+
+    background: #ffffff;
+
+}
+
+
+.categories-search input::placeholder {
+
+    color: #8b95a5;
+
+}
+
+
+/* ==========================================================
+   SEARCH ICON
+========================================================== */
+
+.categories-search-icon {
+
+    position: absolute;
+
+    right: 17px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 25px;
+
+    pointer-events: none;
+
+}
+
+
+/* ==========================================================
+   RIGHT HEADER ACTIONS
+========================================================== */
+
+.categories-header-actions {
+
+    margin-left: auto;
+
+    flex: 0 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+}
+
+
+/* ==========================================================
+   CART / ACCOUNT BUTTON
+========================================================== */
+
+.category-header-action {
+
+    width: 52px;
+    height: 52px;
+
+    flex: 0 0 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    text-decoration: none;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e5eb;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    color: #111827;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+}
+
+
+.category-header-action:hover {
+
+    background: #f7f8fa;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 16px rgba(0,0,0,.08);
+}
+
+
+/* ==========================================================
+   CART IMAGE
+========================================================== */
+
+.category-header-action img {
+
+    width: 34px;
+
+    height: 34px;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* ==========================================================
+   ACCOUNT ICON
+========================================================== */
+
+.category-header-action[aria-label="Account"] {
+
+    font-size: 28px;
+
+    line-height: 1;
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 900px) {
+
+    .categories-header-inner {
+
+        padding: 9px 18px;
+
+        gap: 10px;
+
+    }
+
+
+    .categories-search {
+
+        margin-left: 8px;
+
+    }
+
+
+    .categories-logo {
+
+        font-size: 24px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+
+    .categories-header-inner {
+
+        min-height: 68px;
+
+        padding: 8px 12px;
+
+        gap: 8px;
+
+    }
+
+
+    .categories-menu-button {
+
+        width: 48px;
+
+        height: 48px;
+
+        flex-basis: 48px;
+
+        border-radius: 14px;
+
+        font-size: 25px;
+
+    }
+
+
+    .categories-logo {
+
+        font-size: 21px;
+
+        letter-spacing: -1px;
+
+    }
+
+
+    .categories-search {
+
+        flex: 1 1 auto;
+
+        min-width: 0;
+
+        margin-left: 4px;
+
+    }
+
+
+    .categories-search input {
+
+        height: 48px;
+
+        padding-left: 14px;
+
+        padding-right: 45px;
+
+        border-radius: 14px;
+
+        font-size: 15px;
+
+    }
+
+
+    .categories-search-icon {
+
+        right: 12px;
+
+        font-size: 22px;
+
+    }
+
+
+    .categories-header-actions {
+
+        gap: 6px;
+
+    }
+
+
+    .category-header-action {
+
+        width: 46px;
+
+        height: 46px;
+
+        flex-basis: 46px;
+
+        border-radius: 14px;
+
+    }
+
+
+    .category-header-action img {
+
+        width: 29px;
+
+        height: 29px;
+
+    }
+
+
+    .category-header-action[aria-label="Account"] {
+
+        font-size: 24px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   SMALL PHONES
+========================================================== */
+
+@media (max-width: 520px) {
+
+    .categories-header-inner {
+
+        display: grid;
+
+        grid-template-columns: auto 1fr auto;
+
+        grid-template-rows: 52px 48px;
+
+        gap: 8px;
+
+        padding: 8px 12px;
+
+    }
+
+
+    .categories-menu-button {
+
+        grid-column: 1;
+
+        grid-row: 1;
+
+    }
+
+
+    .categories-logo {
+
+        grid-column: 2;
+
+        grid-row: 1;
+
+        align-self: center;
+
+    }
+
+
+    .categories-header-actions {
+
+        grid-column: 3;
+
+        grid-row: 1;
+
+        margin-left: 0;
+
+    }
+
+
+    .categories-search {
+
+        grid-column: 1 / 4;
+
+        grid-row: 2;
+
+        width: 100%;
+
+        max-width: none;
+
+        margin: 0;
+
+    }
+
+
+    .categories-search input {
+
+        width: 100%;
+
+    }
+
+}
+
+
+/* ==========================================================
+   VERY SMALL PHONES
+========================================================== */
+
+@media (max-width: 380px) {
+
+    .categories-header-inner {
+
+        padding-left: 8px;
+
+        padding-right: 8px;
+
+    }
+
+
+    .categories-logo {
+
+        font-size: 19px;
+
+    }
+
+
+    .category-header-action {
+
+        width: 43px;
+
+        height: 43px;
+
+        flex-basis: 43px;
+
+    }
+
+
+    .categories-menu-button {
+
+        width: 44px;
+
+        height: 44px;
+
+        flex-basis: 44px;
+
+    }
+
+}
+
+
+
+        /* =====================================================
+           MAIN
+        ===================================================== */
+
+        .categories-main{
+
+            width:100%;
+
+            max-width:1400px;
+
+            margin:auto;
+
+            padding:42px 24px 70px;
+
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .categories-hero{
+
+            position:relative;
+
+            overflow:hidden;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #111827 0%,
+                    #182235 55%,
+                    #26354e 100%
+                );
+
+            border-radius:28px;
+
+            padding:48px;
+
+            margin-bottom:34px;
+
+            color:#ffffff;
+
+        }
+
+
+        .categories-hero::after{
+
+            content:"";
+
+            position:absolute;
+
+            width:320px;
+
+            height:320px;
+
+            border-radius:50%;
+
+            right:-110px;
+
+            top:-140px;
+
+            background:
+                rgba(237,106,39,.18);
+
+        }
+
+
+        .categories-hero-content{
+
+            position:relative;
+
+            z-index:2;
+
+            max-width:760px;
+
+        }
+
+
+        .categories-eyebrow{
+
+            display:inline-block;
+
+            margin-bottom:12px;
+
+            color:#ff9a61;
+
+            font-size:13px;
+
+            font-weight:900;
+
+            letter-spacing:2px;
+
+            text-transform:uppercase;
+
+        }
+
+
+        .categories-hero h1{
+
+            font-size:clamp(32px,5vw,56px);
+
+            line-height:1.05;
+
+            letter-spacing:-2px;
+
+            margin-bottom:16px;
+
+        }
+
+
+        .categories-hero p{
+
+            max-width:680px;
+
+            color:#cbd5e1;
+
+            font-size:17px;
+
+            line-height:1.7;
+
+        }
+
+
+        .categories-count{
+
+            display:inline-flex;
+
+            align-items:center;
+
+            gap:8px;
+
+            margin-top:24px;
+
+            padding:10px 15px;
+
+            border-radius:999px;
+
+            background:rgba(255,255,255,.09);
+
+            border:1px solid rgba(255,255,255,.12);
+
+            color:#ffffff;
+
+            font-size:14px;
+
+            font-weight:700;
+
+        }
+
+
+        /* =====================================================
+           CATEGORY SEARCH
+        ===================================================== */
+
+        .category-toolbar{
+
+            display:flex;
+
+            align-items:center;
+
+            justify-content:space-between;
+
+            gap:18px;
+
+            margin-bottom:22px;
+
+        }
+
+
+        .category-toolbar-title{
+
+            font-size:24px;
+
+            font-weight:850;
+
+        }
+
+
+        .category-toolbar-subtitle{
+
+            margin-top:5px;
+
+            color:#7b8494;
+
+            font-size:14px;
+
+        }
+
+
+        .category-result-count{
+
+            flex-shrink:0;
+
+            padding:9px 13px;
+
+            border-radius:999px;
+
+            background:#ffffff;
+
+            border:1px solid #e4e7ec;
+
+            color:#667085;
+
+            font-size:13px;
+
+            font-weight:700;
+
+        }
+
+
+        /* =====================================================
+           CATEGORY GRID
+        ===================================================== */
+
+        .categories-grid{
+
+            display:grid;
+
+            grid-template-columns:
+                repeat(4,minmax(0,1fr));
+
+            gap:18px;
+
+        }
+
+
+        .category-card{
+
+            position:relative;
+
+            display:flex;
+
+            flex-direction:column;
+
+            min-width:0;
+
+            min-height:245px;
+
+            padding:22px;
+
+            border-radius:21px;
+
+            background:#ffffff;
+
+            border:1px solid #e2e6ec;
+
+            box-shadow:
+                0 5px 18px rgba(15,23,42,.04);
+
+            overflow:hidden;
+
+            transition:
+                transform .2s ease,
+                box-shadow .2s ease,
+                border-color .2s ease;
+
+        }
+
+
+        .category-card:hover{
+
+            transform:translateY(-4px);
+
+            border-color:#ed6a27;
+
+            box-shadow:
+                0 14px 30px rgba(15,23,42,.09);
+
+        }
+
+
+        .category-card-top{
+
+            display:flex;
+
+            align-items:flex-start;
+
+            justify-content:space-between;
+
+            gap:12px;
+
+        }
+
+
+        .category-icon{
+
+            width:58px;
+
+            height:58px;
+
+            flex:0 0 58px;
+
+            display:flex;
+
+            align-items:center;
+
+            justify-content:center;
+
+            border-radius:17px;
+
+            background:#fff7f1;
+
+            font-size:29px;
+
+        }
+
+
+        .category-arrow{
+
+            width:34px;
+
+            height:34px;
+
+            display:flex;
+
+            align-items:center;
+
+            justify-content:center;
+
+            border-radius:50%;
+
+            background:#f6f7f9;
+
+            color:#667085;
+
+            font-size:18px;
+
+            transition:
+                background .2s ease,
+                color .2s ease;
+
+        }
+
+
+        .category-card:hover .category-arrow{
+
+            background:#ed6a27;
+
+            color:#ffffff;
+
+        }
+
+
+        .category-card h3{
+
+            margin-top:19px;
+
+            color:#172033;
+
+            font-size:18px;
+
+            font-weight:850;
+
+            line-height:1.25;
+
+        }
+
+
+        .category-description{
+
+            margin-top:8px;
+
+            color:#7b8494;
+
+            font-size:13px;
+
+            line-height:1.55;
+
+        }
+
+
+        .category-subcategories{
+
+            display:flex;
+
+            flex-wrap:wrap;
+
+            gap:6px;
+
+            margin-top:15px;
+
+        }
+
+
+        .category-subcategory{
+
+            padding:5px 8px;
+
+            border-radius:7px;
+
+            background:#f7f8fa;
+
+            color:#667085;
+
+            font-size:11px;
+
+            font-weight:650;
+
+        }
+
+
+        .category-card-footer{
+
+            margin-top:auto;
+
+            padding-top:18px;
+
+            display:flex;
+
+            align-items:center;
+
+            justify-content:space-between;
+
+            gap:10px;
+
+        }
+
+
+        .category-view-text{
+
+            color:#ed6a27;
+
+            font-size:13px;
+
+            font-weight:800;
+
+        }
+
+
+        .category-products-count{
+
+            color:#98a2b3;
+
+            font-size:11px;
+
+            font-weight:650;
+
+        }
+
+
+        /* =====================================================
+           NO RESULTS
+        ===================================================== */
+
+        .category-no-results{
+
+            display:none;
+
+            padding:60px 20px;
+
+            text-align:center;
+
+            background:#ffffff;
+
+            border:1px solid #e4e7ec;
+
+            border-radius:22px;
+
+        }
+
+
+        .category-no-results-icon{
+
+            font-size:45px;
+
+            margin-bottom:12px;
+
+        }
+
+
+        .category-no-results h3{
+
+            font-size:21px;
+
+            margin-bottom:7px;
+
+        }
+
+
+        .category-no-results p{
+
+            color:#7b8494;
+
+            font-size:14px;
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media(max-width:1100px){
+
+            .categories-grid{
+
+                grid-template-columns:
+                    repeat(3,minmax(0,1fr));
+
+            }
+
+        }
+
+
+        @media(max-width:800px){
+
+            .categories-header-inner{
+
+                padding:10px 14px;
+
+                gap:9px;
+
+            }
+
+
+            .categories-logo{
+
+                font-size:20px;
+
+            }
+
+
+            .categories-search{
+
+                order:5;
+
+                flex-basis:100%;
+
+                max-width:none;
+
+            }
+
+
+            .categories-header-inner{
+
+                flex-wrap:wrap;
+
+            }
+
+
+            .categories-main{
+
+                padding:
+                    24px 14px 50px;
+
+            }
+
+
+            .categories-hero{
+
+                padding:30px 23px;
+
+                border-radius:22px;
+
+            }
+
+
+            .categories-hero h1{
+
+                letter-spacing:-1px;
+
+            }
+
+
+            .categories-hero p{
+
+                font-size:15px;
+
+            }
+
+
+            .categories-grid{
+
+                grid-template-columns:
+                    repeat(2,minmax(0,1fr));
+
+                gap:12px;
+
+            }
+
+
+            .category-card{
+
+                min-height:230px;
+
+                padding:17px;
+
+                border-radius:17px;
+
+            }
+
+
+            .category-icon{
+
+                width:50px;
+
+                height:50px;
+
+                flex-basis:50px;
+
+                font-size:24px;
+
+            }
+
+
+            .category-card h3{
+
+                font-size:16px;
+
+            }
+
+
+            .category-toolbar{
+
+                align-items:flex-start;
+
+            }
+
+        }
+
+
+        @media(max-width:480px){
+
+            .categories-header-actions{
+
+                gap:5px;
+
+            }
+
+
+            .category-header-action{
+
+                width:39px;
+
+                height:39px;
+
+                font-size:18px;
+
+            }
+
+
+            .categories-menu-button{
+
+                width:40px;
+
+                height:40px;
+
+                flex-basis:40px;
+
+            }
+
+
+            .categories-logo{
+
+                font-size:18px;
+
+            }
+
+
+            .categories-hero{
+
+                padding:27px 20px;
+
+            }
+
+
+            .categories-hero h1{
+
+                font-size:33px;
+
+            }
+
+
+            .categories-hero p{
+
+                font-size:14px;
+
+                line-height:1.6;
+
+            }
+
+
+            .category-toolbar{
+
+                display:block;
+
+            }
+
+
+            .category-result-count{
+
+                display:inline-block;
+
+                margin-top:12px;
+
+            }
+
+
+            .category-card{
+
+                min-height:225px;
+
+                padding:15px;
+
+            }
+
+
+            .category-subcategories{
+
+                display:none;
+
+            }
+
+
+            .category-description{
+
+                font-size:12px;
+
+            }
+
+
+            .category-products-count{
+
+                display:none;
+
+            }
+
+        }
+
+
+    </style>
+
+
+</head>
+
+
+<body>
+
+
+<header class="categories-header">
+
+    <div class="categories-header-inner">
+
+
+        <button
+            type="button"
+            class="categories-menu-button"
+            aria-label="Open menu"
+            onclick="goHome()"
+        >
+            ☰
+        </button>
+
+
+        <a
+            href="index.html"
+            class="categories-logo"
+        >
+            YOUR<span>STORE</span>
+        </a>
+
+
+        <div class="categories-search">
+
+            <input
+                id="categorySearch"
+                type="search"
+                placeholder="Search categories..."
+                autocomplete="off"
+            >
+
+            <span class="categories-search-icon">
+                🔍
+            </span>
+
+        </div>
+
+
+        <div class="categories-header-actions">
+
+            <a
+                href="cart.html"
+                class="category-header-action"
+                aria-label="Cart"
+            >
+                <img src="1000219817-removebg-preview.png" alt=" best shopping cart"></img>
+            </a>
+
+
+            <a
+                href="login.html"
+                class="category-header-action"
+                aria-label="Account"
+            >
+                👤
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<main class="categories-main">
+
+
+    <section class="categories-hero">
+
+        <div class="categories-hero-content">
+
+            <span class="categories-eyebrow">
+                EXPLORE NEOSTORE
+            </span>
+
+            <h1>
+                Shop by Category
+            </h1>
+
+            <p>
+                Explore our complete marketplace categories.
+                Find fashion, electronics, groceries, beauty,
+                home products, automotive items and much more
+                from sellers across the marketplace.
+            </p>
+
+            <div
+                class="categories-count"
+                id="heroCategoryCount"
+            >
+                🛍️ 60+ Categories
+            </div>
+
+        </div>
+
+    </section>
+    
+    <section
+    class="marketplace-ads-section"
+    id="marketplaceAdsSection"
+>
+
+    <div
+        id="marketplaceAds"
+        class="marketplace-ads"
+    ></div>
+
+</section>
+
+    <section>
+
+        <div class="category-toolbar">
+
+            <div>
+
+                <h2 class="category-toolbar-title">
+                    All Categories
+                </h2>
+
+                <p class="category-toolbar-subtitle">
+                    Choose a category to view products listed by sellers.
+                </p>
+
+            </div>
+
+
+            <div
+                class="category-result-count"
+                id="categoryResultCount"
+            >
+                60 categories
+            </div>
+
+        </div>
+
+
+        <div
+            class="categories-grid"
+            id="categoriesGrid"
+        ></div>
+
+
+        <div
+            class="category-no-results"
+            id="categoryNoResults"
+        >
+
+            <div class="category-no-results-icon">
+                🔎
+            </div>
+
+            <h3>
+                No category found
+            </h3>
+
+            <p>
+                Try searching for another category.
+            </p>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<script>
+
+
+/* ==========================================================
+   CATEGORY DATA
+========================================================== */
+
+const categories = [
+
+    {
+        name:"Fashion",
+        icon:"👗",
+        description:"Clothing, outfits and everyday fashion.",
+        subcategories:[
+            "Women",
+            "Men",
+            "Kids",
+            "Traditional Wear"
+        ]
+    },
+
+    {
+        name:"Women's Clothing",
+        icon:"👚",
+        description:"Stylish clothing and outfits for women.",
+        subcategories:[
+            "Dresses",
+            "Tops",
+            "Skirts",
+            "Trousers"
+        ]
+    },
+
+    {
+        name:"Men's Clothing",
+        icon:"👔",
+        description:"Men's clothing for work and casual wear.",
+        subcategories:[
+            "Shirts",
+            "Trousers",
+            "Suits",
+            "Jackets"
+        ]
+    },
+
+    {
+        name:"Children's Clothing",
+        icon:"🧒",
+        description:"Clothes and outfits for babies and children.",
+        subcategories:[
+            "Baby Wear",
+            "Boys",
+            "Girls",
+            "School Wear"
+        ]
+    },
+
+    {
+        name:"Shoes",
+        icon:"👟",
+        description:"Footwear for men, women and children.",
+        subcategories:[
+            "Sneakers",
+            "Sandals",
+            "Heels",
+            "Boots"
+        ]
+    },
+
+    {
+        name:"Bags",
+        icon:"👜",
+        description:"Bags for fashion, travel, work and everyday use.",
+        subcategories:[
+            "Handbags",
+            "Backpacks",
+            "Travel Bags",
+            "Wallets"
+        ]
+    },
+
+    {
+        name:"Jewelry",
+        icon:"💎",
+        description:"Jewelry and accessories for every occasion.",
+        subcategories:[
+            "Necklaces",
+            "Rings",
+            "Bracelets",
+            "Earrings"
+        ]
+    },
+
+    {
+        name:"Watches",
+        icon:"⌚",
+        description:"Watches for men, women and children.",
+        subcategories:[
+            "Smart Watches",
+            "Men",
+            "Women",
+            "Luxury"
+        ]
+    },
+
+    {
+        name:"Beauty",
+        icon:"💄",
+        description:"Beauty products and personal care essentials.",
+        subcategories:[
+            "Makeup",
+            "Skincare",
+            "Cosmetics",
+            "Beauty Tools"
+        ]
+    },
+
+    {
+        name:"Hair Care",
+        icon:"💇",
+        description:"Products for healthy and beautiful hair.",
+        subcategories:[
+            "Shampoo",
+            "Wigs",
+            "Extensions",
+            "Hair Tools"
+        ]
+    },
+
+    {
+        
+        name:"Health & Wellness",
+        icon:"❤️",
+        description:"Everyday wellness and personal health products.",
+        subcategories:[
+            "Wellness",
+            "Fitness",
+            "Personal Care",
+            "Health Items"
+        ]
+    },
+
+    {
+        name:"Supplements",
+        icon:"💊",
+        description:"Vitamins, supplements and nutritional products.",
+        subcategories:[
+            "Vitamins",
+            "Protein",
+            "Nutrition",
+            "Wellness"
+        ]
+    },
+
+    {
+        name:"Groceries",
+        icon:"🛒",
+        description:"Food and everyday grocery essentials.",
+        subcategories:[
+            "Food",
+            "Drinks",
+            "Snacks",
+            "Pantry"
+        ]
+    },
+
+    {
+        name:"Food & Beverages",
+        icon:"🍲",
+        description:"Food, drinks and refreshments.",
+        subcategories:[
+            "Packaged Food",
+            "Drinks",
+            "Snacks",
+            "Cooking"
+        ]
+    },
+
+    {
+        name:"Electronics",
+        icon:"📱",
+        description:"Electronic devices and everyday technology.",
+        subcategories:[
+            "Phones",
+            "Tablets",
+            "Gadgets",
+            "Accessories"
+        ]
+    },
+
+    {
+        name:"Mobile Phones",
+        icon:"📱",
+        description:"Smartphones and mobile devices.",
+        subcategories:[
+            "Android",
+            "iPhone",
+            "Feature Phones",
+            "Accessories"
+        ]
+    },
+
+    {
+        name:"Computers",
+        icon:"💻",
+        description:"Computers and accessories for work and study.",
+        subcategories:[
+            "Laptops",
+            "Desktops",
+            "Monitors",
+            "Accessories"
+        ]
+    },
+
+    {
+        name:"Computer Accessories",
+        icon:"🖱️",
+        description:"Accessories and peripherals for computers.",
+        subcategories:[
+            "Keyboards",
+            "Mouse",
+            "Webcams",
+            "USB Devices"
+        ]
+    },
+
+    {
+        name:"Audio",
+        icon:"🎧",
+        description:"Headphones, speakers and audio equipment.",
+        subcategories:[
+            "Headphones",
+            "Earbuds",
+            "Speakers",
+            "Microphones"
+        ]
+    },
+
+    {
+        name:"Cameras",
+        icon:"📷",
+        description:"Cameras and photography equipment.",
+        subcategories:[
+            "Digital Cameras",
+            "Lenses",
+            "Tripods",
+            "Accessories"
+        ]
+    },
+
+    {
+        name:"TV & Home Entertainment",
+        icon:"📺",
+        description:"Televisions and entertainment equipment.",
+        subcategories:[
+            "Televisions",
+            "Projectors",
+            "Streaming",
+            "Accessories"
+        ]
+    },
+
+    {
+        name:"Home Appliances",
+        icon:"🏠",
+        description:"Useful appliances for modern homes.",
+        subcategories:[
+            "Kitchen",
+            "Cleaning",
+            "Cooling",
+            "Heating"
+        ]
+    },
+
+    {
+        name:"Kitchen Appliances",
+        icon:"🍳",
+        description:"Appliances and tools for your kitchen.",
+        subcategories:[
+            "Blenders",
+            "Cookers",
+            "Microwaves",
+            "Kettles"
+        ]
+    },
+
+    {
+        name:"Furniture",
+        icon:"🛋️",
+        description:"Furniture for homes, offices and businesses.",
+        subcategories:[
+            "Sofas",
+            "Beds",
+            "Tables",
+            "Chairs"
+        ]
+    },
+
+    {
+        name:"Home & Living",
+        icon:"🏡",
+        description:"Products that make your home comfortable.",
+        subcategories:[
+            "Decor",
+            "Storage",
+            "Bedding",
+            "Lighting"
+        ]
+    },
+
+    {
+        name:"Home Decor",
+        icon:"🖼️",
+        description:"Decorative products for beautiful interiors.",
+        subcategories:[
+            "Wall Art",
+            "Curtains",
+            "Rugs",
+            "Decor"
+        ]
+    },
+
+    {
+        name:"Lighting",
+        icon:"💡",
+        description:"Lighting solutions for homes and businesses.",
+        subcategories:[
+            "Lamps",
+            "Bulbs",
+            "Chandeliers",
+            "Outdoor"
+        ]
+    },
+
+    {
+        name:"Garden & Outdoor",
+        icon:"🌳",
+        description:"Products for gardens, patios and outdoor spaces.",
+        subcategories:[
+            "Gardening",
+            "Outdoor Furniture",
+            "Tools",
+            "Decor"
+        ]
+    },
+
+    {
+        name:"Tools & Hardware",
+        icon:"🔧",
+        description:"Tools and hardware for projects and repairs.",
+        subcategories:[
+            "Hand Tools",
+            "Power Tools",
+            "Hardware",
+            "Safety"
+        ]
+    },
+
+    {
+        name:"Automotive",
+        icon:"🚗",
+        description:"Products and accessories for vehicles.",
+        subcategories:[
+            "Car Accessories",
+            "Motorcycle",
+            "Parts",
+            "Care"
+        ]
+    },
+
+    {
+        name:"Car Accessories",
+        icon:"🚘",
+        description:"Accessories for cars and vehicle interiors.",
+        subcategories:[
+            "Interior",
+            "Exterior",
+            "Electronics",
+            "Cleaning"
+        ]
+    },
+
+    {
+        name:"Motorcycle",
+        icon:"🏍️",
+        description:"Motorcycle accessories and equipment.",
+        subcategories:[
+            "Parts",
+            "Helmets",
+            "Accessories",
+            "Maintenance"
+        ]
+    },
+
+    {
+        name:"Baby Products",
+        icon:"👶",
+        description:"Essentials for babies and new parents.",
+        subcategories:[
+            "Baby Care",
+            "Feeding",
+            "Toys",
+            "Clothing"
+        ]
+    },
+
+    {
+        name:"Toys & Games",
+        icon:"🧸",
+        description:"Fun toys and games for children and families.",
+        subcategories:[
+            "Educational",
+            "Action Figures",
+            "Board Games",
+            "Outdoor"
+        ]
+    },
+
+    {
+        name:"Sports & Fitness",
+        icon:"🏋️",
+        description:"Sports equipment, clothing and fitness products.",
+        subcategories:[
+            "Gym",
+            "Football",
+            "Running",
+            "Equipment"
+        ]
+    },
+
+    {
+        name:"Books",
+        icon:"📚",
+        description:"Books and reading materials across many subjects.",
+        subcategories:[
+            "Education",
+            "Fiction",
+            "Business",
+            "Religion"
+        ]
+    },
+
+    {
+        name:"Office Supplies",
+        icon:"📎",
+        description:"Supplies and equipment for offices and businesses.",
+        subcategories:[
+            "Stationery",
+            "Printers",
+            "Paper",
+            "Storage"
+        ]
+    },
+
+    {
+        name:"School Supplies",
+        icon:"🎒",
+        description:"School essentials for students and teachers.",
+        subcategories:[
+            "Bags",
+            "Stationery",
+            "Writing",
+            "Learning"
+        ]
+    },
+
+    {
+        name:"Pet Supplies",
+        icon:"🐶",
+        description:"Products for pets and animal care.",
+        subcategories:[
+            "Dog",
+            "Cat",
+            "Food",
+            "Accessories"
+        ]
+    },
+
+    {
+        name:"Travel & Luggage",
+        icon:"🧳",
+        description:"Travel bags, luggage and useful travel accessories.",
+        subcategories:[
+            "Suitcases",
+            "Travel Bags",
+            "Accessories",
+            "Organizers"
+        ]
+    },
+
+    {
+        name:"Phones & Accessories",
+        icon:"📲",
+        description:"Cases, chargers and accessories for mobile phones.",
+        subcategories:[
+            "Cases",
+            "Chargers",
+            "Screen Protectors",
+            "Power Banks"
+        ]
+    },
+
+    {
+        name:"Power & Solar",
+        icon:"🔋",
+        description:"Power banks, solar products and backup power.",
+        subcategories:[
+            "Solar",
+            "Inverters",
+            "Batteries",
+            "Power Banks"
+        ]
+    },
+
+    {
+        name:"Generators",
+        icon:"⚡",
+        description:"Power generators and related equipment.",
+        subcategories:[
+            "Generators",
+            "Parts",
+            "Accessories",
+            "Maintenance"
+        ]
+    },
+
+    {
+        name:"Security",
+        icon:"🔐",
+        description:"Security equipment for homes and businesses.",
+        subcategories:[
+            "CCTV",
+            "Alarms",
+            "Locks",
+            "Access Control"
+        ]
+    },
+
+    {
+        name:"Musical Instruments",
+        icon:"🎸",
+        description:"Instruments and accessories for musicians.",
+        subcategories:[
+            "Guitars",
+            "Keyboards",
+            "Drums",
+            "Accessories"
+        ]
+    },
+
+    {
+        name:"Arts & Crafts",
+        icon:"🎨",
+        description:"Creative materials and crafting supplies.",
+        subcategories:[
+            "Painting",
+            "Drawing",
+            "Crafts",
+            "DIY"
+        ]
+    },
+
+    {
+        name:"Industrial & Commercial",
+        icon:"🏭",
+        description:"Equipment and supplies for businesses and industry.",
+        subcategories:[
+            "Equipment",
+            "Machinery",
+            "Supplies",
+            "Safety"
+        ]
+    },
+
+    {
+        name:"Construction",
+        icon:"🏗️",
+        description:"Construction materials, tools and equipment.",
+        subcategories:[
+            "Building",
+            "Tools",
+            "Electrical",
+            "Plumbing"
+        ]
+    },
+
+    {
+        name:"Electrical",
+        icon:"🔌",
+        description:"Electrical products and installation supplies.",
+        subcategories:[
+            "Cables",
+            "Switches",
+            "Sockets",
+            "Lighting"
+        ]
+    },
+
+    {
+        name:"Plumbing",
+        icon:"🚰",
+        description:"Plumbing products, fittings and accessories.",
+        subcategories:[
+            "Pipes",
+            "Fittings",
+            "Taps",
+            "Tools"
+        ]
+    },
+
+    {
+        name:"Agriculture",
+        icon:"🌾",
+        description:"Agricultural products, equipment and supplies.",
+        subcategories:[
+            "Farming",
+            "Seeds",
+            "Tools",
+            "Irrigation"
+        ]
+    },
+
+    {
+        name:"Farm Equipment",
+        icon:"🚜",
+        description:"Equipment and tools for farming operations.",
+        subcategories:[
+            "Machines",
+            "Tools",
+            "Irrigation",
+            "Accessories"
+        ]
+    },
+
+    {
+        name:"Clothing Accessories",
+        icon:"🧢",
+        description:"Fashion accessories to complete your outfit.",
+        subcategories:[
+            "Caps",
+            "Belts",
+            "Scarves",
+            "Socks"
+        ]
+    },
+
+    {
+        name:"Lingerie & Sleepwear",
+        icon:"🩱",
+        description:"Comfortable underwear and sleepwear.",
+        subcategories:[
+            "Lingerie",
+            "Pajamas",
+            "Underwear",
+            "Nightwear"
+        ]
+    },
+
+    {
+        name:"Traditional & Cultural",
+        icon:"🥻",
+        description:"Traditional clothing and cultural products.",
+        subcategories:[
+            "African Wear",
+            "Native Wear",
+            "Accessories",
+            "Fabrics"
+        ]
+    },
+
+    {
+        name:"Fabric & Textiles",
+        icon:"🧵",
+        description:"Fabrics, textiles and sewing materials.",
+        subcategories:[
+            "Ankara",
+            "Lace",
+            "Cotton",
+            "Textiles"
+        ]
+    },
+
+    {
+        name:"Cleaning Supplies",
+        icon:"🧹",
+        description:"Cleaning products for homes and businesses.",
+        subcategories:[
+            "Detergents",
+            "Tools",
+            "Disinfectants",
+            "Storage"
+        ]
+    },
+
+    {
+        name:"Personal Care",
+        icon:"🧴",
+        description:"Everyday personal hygiene and care products.",
+        subcategories:[
+            "Bath",
+            "Oral Care",
+            "Body Care",
+            "Hygiene"
+        ]
+    },
+
+    {
+        name:"Wedding & Events",
+        icon:"💍",
+        description:"Products for weddings, parties and special events.",
+        subcategories:[
+            "Decorations",
+            "Gifts",
+            "Wedding",
+            "Party"
+        ]
+    },
+
+    {
+        name:"Gifts",
+        icon:"🎁",
+        description:"Gift ideas for birthdays and special occasions.",
+        subcategories:[
+            "Birthday",
+            "Couples",
+            "Corporate",
+            "Special"
+        ]
+    },
+
+    {
+        name:"Religious Products",
+        icon:"🙏",
+        description:"Books, accessories and products for worship.",
+        subcategories:[
+            "Books",
+            "Accessories",
+            "Decor",
+            "Gifts"
+        ]
+    },
+
+    {
+        name:"Digital Products",
+        icon:"💾",
+        description:"Digital goods, downloads and online resources.",
+        subcategories:[
+            "Templates",
+            "Courses",
+            "Designs",
+            "Downloads"
+        ]
+    },
+
+    {
+        name:"Business Services",
+        icon:"💼",
+        description:"Products and services supporting businesses.",
+        subcategories:[
+            "Marketing",
+            "Printing",
+            "Business",
+            "Professional"
+        ]
+    },
+
+    {
+        name:"Phones & Gadgets",
+        icon:"📡",
+        description:"Smart gadgets and connected devices.",
+        subcategories:[
+            "Smart Devices",
+            "Trackers",
+            "Gadgets",
+            "Accessories"
+        ]
+    }
+
+];
+
+
+/* ==========================================================
+   ELEMENTS
+========================================================== */
+
+const categoriesGrid =
+    document.getElementById(
+        "categoriesGrid"
+    );
+
+
+const categorySearch =
+    document.getElementById(
+        "categorySearch"
+    );
+
+
+const categoryResultCount =
+    document.getElementById(
+        "categoryResultCount"
+    );
+
+
+const categoryNoResults =
+    document.getElementById(
+        "categoryNoResults"
+    );
+
+
+const heroCategoryCount =
+    document.getElementById(
+        "heroCategoryCount"
+    );
+
+
+/* ==========================================================
+   ESCAPE HTML
+========================================================== */
+
+function escapeHTML(value){
+
+    return String(value)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+
+/* ==========================================================
+   OPEN CATEGORY
+========================================================== */
+
+function openCategory(categoryName){
+
+    window.location.href =
+        "category.html?category=" +
+        encodeURIComponent(
+            categoryName
+        );
+
+}
+
+
+/* ==========================================================
+   RENDER CATEGORIES
+========================================================== */
+
+function renderCategories(list){
+
+    if(!categoriesGrid){
+
+        return;
+
+    }
+
+
+    categoriesGrid.innerHTML = "";
+
+
+    if(!list.length){
+
+        categoryNoResults.style.display =
+            "block";
+
+        categoryResultCount.textContent =
+            "0 categories";
+
+        return;
+
+    }
+
+
+    categoryNoResults.style.display =
+        "none";
+
+
+    categoryResultCount.textContent =
+        list.length === 1
+            ? "1 category"
+            : `${list.length} categories`;
+
+
+    list.forEach(
+        function(category,index){
+
+            const card =
+                document.createElement(
+                    "a"
+                );
+
+
+            card.className =
+                "category-card";
+
+
+            card.href =
+                "category.html?category=" +
+                encodeURIComponent(
+                    category.name
+                );
+
+
+            card.setAttribute(
+                "aria-label",
+                "View " +
+                category.name +
+                " products"
+            );
+
+
+            const subcategories =
+                category.subcategories
+                    .slice(0,4)
+                    .map(
+                        function(item){
+
+                            return `
+                                <span
+                                    class="category-subcategory"
+                                >
+                                    ${escapeHTML(item)}
+                                </span>
+                            `;
+
+                        }
+                    )
+                    .join("");
+
+
+            card.innerHTML = `
+
+                <div class="category-card-top">
+
+                    <div class="category-icon">
+
+                        ${category.icon}
+
+                    </div>
+
+
+                    <span class="category-arrow">
+
+                        →
+
+                    </span>
+
+                </div>
+
+
+                <h3>
+
+                    ${escapeHTML(
+                        category.name
+                    )}
+
+                </h3>
+
+
+                <p class="category-description">
+
+                    ${escapeHTML(
+                        category.description
+                    )}
+
+                </p>
+
+
+                <div class="category-subcategories">
+
+                    ${subcategories}
+
+                </div>
+
+
+                <div class="category-card-footer">
+
+                    <span class="category-view-text">
+
+                        View Products →
+
+                    </span>
+
+
+                    <span class="category-products-count">
+
+                        Shop now
+
+                    </span>
+
+                </div>
+
+            `;
+
+
+            categoriesGrid.appendChild(
+                card
+            );
+
+        }
+    );
+
+}
+
+
+/* ==========================================================
+   SEARCH CATEGORIES
+========================================================== */
+
+function searchCategories(){
+
+    const searchTerm =
+        categorySearch.value
+            .trim()
+            .toLowerCase();
+
+
+    if(!searchTerm){
+
+        renderCategories(
+            categories
+        );
+
+        return;
+
+    }
+
+
+    const filtered =
+        categories.filter(
+            function(category){
+
+                const mainName =
+                    category.name
+                        .toLowerCase();
+
+
+                const description =
+                    category.description
+                        .toLowerCase();
+
+
+                const subcategories =
+                    category.subcategories
+                        .join(" ")
+                        .toLowerCase();
+
+
+                return (
+                    mainName.includes(
+                        searchTerm
+                    ) ||
+
+                    description.includes(
+                        searchTerm
+                    ) ||
+
+                    subcategories.includes(
+                        searchTerm
+                    )
+                );
+
+            }
+        );
+
+
+    renderCategories(
+        filtered
+    );
+
+}
+
+
+/* ==========================================================
+   SEARCH LISTENER
+========================================================== */
+
+if(categorySearch){
+
+    categorySearch.addEventListener(
+        "input",
+        searchCategories
+    );
+
+}
+
+
+/* ==========================================================
+   HOME
+========================================================== */
+
+function goHome(){
+
+    window.location.href =
+        "index.html";
+
+}
+
+
+/* ==========================================================
+   INITIALIZE
+========================================================== */
+
+function initializeCategories(){
+
+    const count =
+        categories.length;
+
+
+    heroCategoryCount.textContent =
+        "🛍️ " +
+        count +
+        "+ Categories";
+
+
+    renderCategories(
+        categories
+    );
+
+}
+
+
+initializeCategories();
+
+
+</script>
+
+<script
+    type="module"
+    src="ads.js"
+></script>
+
+
+</body>
+
+</html>

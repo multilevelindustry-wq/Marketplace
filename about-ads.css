@@ -1,0 +1,2035 @@
+/* ==========================================================
+   ABOUT ADS — YOURSTORE
+   PART 1
+   GLOBAL RESET + HEADER + HERO
+========================================================== */
+
+
+/* ==========================================================
+   RESET
+========================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    background: #f5f6f8;
+    color: #111827;
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+button,
+input {
+    font: inherit;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* ==========================================================
+   PAGE CONTAINER
+========================================================== */
+
+.ads-page {
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+.ads-container {
+    width: min(1180px, calc(100% - 32px));
+    margin: 0 auto;
+}
+
+
+/* ==========================================================
+   DESKTOP HEADER
+   Keep the main header, hide the mobile/duplicate navigation
+========================================================== */
+
+.ads-header {
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.ads-header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+
+/* LOGO */
+
+.ads-logo {
+    flex-shrink: 0;
+
+    text-decoration: none;
+
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -1px;
+
+    color: #111827;
+}
+
+.ads-logo span {
+    color: #f4511e;
+}
+
+
+/* DESKTOP NAVIGATION */
+
+.ads-navigation {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.ads-navigation a {
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    color: #374151;
+
+    transition: 0.2s ease;
+}
+
+.ads-navigation a:hover {
+    color: #f4511e;
+}
+
+
+/* HEADER ACTIONS */
+
+.ads-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ads-login-button,
+.ads-start-button {
+    text-decoration: none;
+
+    padding: 11px 18px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    transition: 0.2s ease;
+}
+
+.ads-login-button {
+    color: #111827;
+    background: #f3f4f6;
+}
+
+.ads-start-button {
+    color: #ffffff;
+    background: #f4511e;
+}
+
+.ads-login-button:hover {
+    background: #e5e7eb;
+}
+
+.ads-start-button:hover {
+    background: #d93f10;
+}
+
+
+/* MOBILE MENU BUTTON */
+
+.ads-mobile-menu {
+    display: none;
+
+    border: 0;
+    background: #f3f4f6;
+
+    width: 46px;
+    height: 46px;
+
+    border-radius: 12px;
+
+    font-size: 25px;
+}
+
+
+/* ==========================================================
+   DUPLICATE MOBILE NAVIGATION UNDER HEADER
+========================================================== */
+
+.ads-mobile-navigation {
+    display: none;
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 768px) {
+
+    /* Hide desktop navigation completely */
+
+    .ads-navigation,
+    .ads-header-actions {
+        display: none;
+    }
+
+
+    /* Keep only logo + menu */
+
+    .ads-header-inner {
+        padding: 14px 18px;
+
+        justify-content: space-between;
+    }
+
+
+    .ads-logo {
+        font-size: 25px;
+    }
+
+
+    .ads-mobile-menu {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    /* Show the navigation UNDER the header */
+
+    .ads-mobile-navigation {
+        display: flex;
+
+        width: 100%;
+
+        padding: 10px 14px;
+
+        background: #ffffff;
+
+        border-bottom: 1px solid #e8e8e8;
+
+        gap: 8px;
+
+        overflow-x: auto;
+
+        scrollbar-width: none;
+    }
+
+    .ads-mobile-navigation::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    /* Fancy navigation buttons */
+
+    .ads-mobile-navigation a {
+        flex: 0 0 auto;
+
+        display: inline-flex;
+
+        align-items: center;
+        justify-content: center;
+
+        min-height: 42px;
+
+        padding: 0 17px;
+
+        border-radius: 12px;
+
+        background: #f5f6f8;
+
+        border: 1px solid #e5e7eb;
+
+        color: #172033;
+
+        text-decoration: none;
+
+        font-size: 14px;
+        font-weight: 800;
+
+        white-space: nowrap;
+
+        transition:
+            transform 0.2s ease,
+            background 0.2s ease,
+            color 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+
+    .ads-mobile-navigation a:hover,
+    .ads-mobile-navigation a:active {
+        background: #f4511e;
+
+        color: #ffffff;
+
+        border-color: #f4511e;
+
+        transform: translateY(-1px);
+
+        box-shadow: 0 6px 15px rgba(244, 81, 30, 0.18);
+    }
+
+
+    /* Active page */
+
+    .ads-mobile-navigation a.active {
+        background: #fff1eb;
+
+        color: #f4511e;
+
+        border-color: #ffd4c5;
+    }
+
+}
+
+
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.ads-hero {
+    position: relative;
+
+    margin-top: 34px;
+
+    min-height: 430px;
+
+    padding: 62px 58px;
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(244, 81, 30, 0.35),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 15% 100%,
+            rgba(37, 99, 235, 0.30),
+            transparent 38%
+        ),
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #172033 55%,
+            #261d21
+        );
+
+    color: #ffffff;
+
+    box-shadow:
+        0 24px 55px rgba(15, 23, 42, 0.18);
+}
+
+
+/* Decorative circles */
+
+.ads-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 360px;
+    height: 360px;
+
+    right: -140px;
+    top: -180px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.055);
+}
+
+
+.ads-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 230px;
+    height: 230px;
+
+    left: -100px;
+    bottom: -130px;
+
+    border-radius: 50%;
+
+    background: rgba(244, 81, 30, 0.10);
+}
+
+
+/* ==========================================================
+   HERO CONTENT
+========================================================== */
+
+.ads-hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 760px;
+}
+
+
+.ads-hero-label {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 18px;
+
+    color: #ff8a5b;
+
+    font-size: 14px;
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+.ads-hero-label::before {
+    content: "";
+
+    width: 28px;
+    height: 3px;
+
+    border-radius: 99px;
+
+    background: #f4511e;
+}
+
+
+.ads-hero h1 {
+    margin-bottom: 20px;
+
+    font-size: clamp(38px, 6vw, 68px);
+
+    line-height: 1.02;
+
+    letter-spacing: -2.5px;
+
+    font-weight: 900;
+}
+
+
+.ads-hero h1 span {
+    color: #ff7043;
+}
+
+
+.ads-hero p {
+    max-width: 700px;
+
+    color: #d6dce7;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+
+/* ==========================================================
+   HERO ACTIONS
+========================================================== */
+
+.ads-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+
+.ads-primary-button,
+.ads-secondary-button {
+    min-height: 50px;
+
+    padding: 0 22px;
+
+    border-radius: 14px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.ads-primary-button {
+    background: #f4511e;
+    color: #ffffff;
+
+    box-shadow:
+        0 10px 24px rgba(244, 81, 30, 0.25);
+}
+
+
+.ads-primary-button:hover {
+    background: #e94312;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 30px rgba(244, 81, 30, 0.32);
+}
+
+
+.ads-secondary-button {
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.16);
+
+    color: #ffffff;
+}
+
+
+.ads-secondary-button:hover {
+    background: rgba(255, 255, 255, 0.14);
+
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================================
+   COMING SOON BADGE
+========================================================== */
+
+.ads-coming-soon {
+    position: absolute;
+
+    right: 38px;
+    bottom: 34px;
+
+    z-index: 3;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 11px 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.16);
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(12px);
+
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 0.3px;
+}
+
+
+.ads-coming-soon::before {
+    content: "";
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #ff7043;
+
+    box-shadow:
+        0 0 0 5px rgba(255, 112, 67, 0.12);
+}
+
+
+/* ==========================================================
+   QUICK INTRO
+========================================================== */
+
+.ads-intro {
+    padding: 72px 0 25px;
+}
+
+
+.ads-section-label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #f4511e;
+
+    font-size: 13px;
+    font-weight: 900;
+
+    letter-spacing: 1.8px;
+
+    text-transform: uppercase;
+}
+
+
+.ads-section-title {
+    margin-bottom: 12px;
+
+    color: #111827;
+
+    font-size: clamp(30px, 5vw, 46px);
+
+    line-height: 1.1;
+
+    letter-spacing: -1.5px;
+
+    font-weight: 900;
+}
+
+
+.ads-section-description {
+    max-width: 760px;
+
+    color: #6b7280;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+/* ==========================================================
+   RESPONSIVE — TABLET
+========================================================== */
+
+@media (max-width: 850px) {
+
+    .ads-header-inner {
+        min-height: 68px;
+    }
+
+
+    .ads-header-nav {
+        gap: 4px;
+    }
+
+
+    .ads-header-nav a {
+        padding: 0 11px;
+    }
+
+
+    .ads-hero {
+        padding: 48px 38px;
+
+        min-height: 410px;
+    }
+
+
+    .ads-hero h1 {
+        font-size: clamp(38px, 8vw, 58px);
+    }
+
+
+    .ads-coming-soon {
+        position: relative;
+
+        right: auto;
+        bottom: auto;
+
+        margin-top: 30px;
+    }
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE — MOBILE
+========================================================== */
+
+@media (max-width: 600px) {
+
+    .ads-container {
+        width: min(100% - 24px, 1180px);
+    }
+
+
+    .ads-header-inner {
+        width: calc(100% - 24px);
+
+        min-height: 64px;
+
+        gap: 10px;
+    }
+
+
+    .ads-logo {
+        font-size: 22px;
+    }
+
+
+    .ads-header-nav {
+        display: none;
+    }
+
+
+    .ads-menu-button {
+        display: inline-flex;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .ads-hero {
+        margin-top: 20px;
+
+        padding: 38px 24px;
+
+        min-height: auto;
+
+        border-radius: 24px;
+    }
+
+
+    .ads-hero-label {
+        font-size: 12px;
+
+        letter-spacing: 1.4px;
+    }
+
+
+    .ads-hero h1 {
+        margin-bottom: 16px;
+
+        font-size: 40px;
+
+        letter-spacing: -1.8px;
+    }
+
+
+    .ads-hero p {
+        font-size: 16px;
+
+        line-height: 1.7;
+    }
+
+
+    .ads-hero-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .ads-primary-button,
+    .ads-secondary-button {
+        width: 100%;
+    }
+
+
+    .ads-coming-soon {
+        margin-top: 26px;
+
+        font-size: 12px;
+    }
+
+
+    .ads-intro {
+        padding-top: 50px;
+    }
+
+
+    .ads-section-title {
+        font-size: 32px;
+    }
+
+
+    .ads-section-description {
+        font-size: 15px;
+    }
+
+}
+
+/* ==========================================================
+   ABOUT ADS — YOURSTORE
+   PART 2
+   EDUCATION CARDS + AD TYPES + DO'S & DON'TS
+========================================================== */
+
+
+/* ==========================================================
+   GENERAL SECTION
+========================================================== */
+
+.ads-section {
+    padding: 58px 0;
+}
+
+
+.ads-section-heading {
+    margin-bottom: 30px;
+}
+
+
+.ads-section-heading h2 {
+    margin-bottom: 10px;
+
+    font-size: clamp(28px, 4vw, 40px);
+
+    line-height: 1.15;
+
+    letter-spacing: -1px;
+
+    color: #111827;
+
+    font-weight: 900;
+}
+
+
+.ads-section-heading p {
+    max-width: 720px;
+
+    color: #6b7280;
+
+    font-size: 16px;
+
+    line-height: 1.75;
+}
+
+
+/* ==========================================================
+   EDUCATION GRID
+========================================================== */
+
+.ads-learning-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+.ads-learning-card {
+    position: relative;
+
+    padding: 28px;
+
+    min-height: 230px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.05);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.ads-learning-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #ffd0bf;
+
+    box-shadow:
+        0 18px 38px rgba(15, 23, 42, 0.09);
+}
+
+
+.ads-learning-number {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    margin-bottom: 20px;
+
+    border-radius: 13px;
+
+    background: #fff1eb;
+
+    color: #f4511e;
+
+    font-size: 14px;
+    font-weight: 900;
+}
+
+
+.ads-learning-card h3 {
+    margin-bottom: 10px;
+
+    color: #111827;
+
+    font-size: 20px;
+
+    line-height: 1.25;
+
+    font-weight: 850;
+}
+
+
+.ads-learning-card p {
+    color: #6b7280;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+}
+
+
+/* ==========================================================
+   AD TYPES
+========================================================== */
+
+.ads-types-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+.ads-type-card {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    padding: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 20px;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.ads-type-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #ffc3ae;
+}
+
+
+.ads-type-icon {
+    flex: 0 0 52px;
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: #fff4ef;
+
+    font-size: 25px;
+}
+
+
+.ads-type-content {
+    flex: 1;
+}
+
+
+.ads-type-content h3 {
+    margin-bottom: 6px;
+
+    color: #111827;
+
+    font-size: 18px;
+
+    font-weight: 850;
+}
+
+
+.ads-type-content p {
+    color: #6b7280;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================================
+   HOW ADS WORK
+========================================================== */
+
+.ads-process {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 14px;
+
+    counter-reset: ads-process;
+}
+
+
+.ads-process-card {
+    position: relative;
+
+    padding: 25px 20px;
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    border: 1px solid #e5e7eb;
+
+    text-align: center;
+}
+
+
+.ads-process-card::before {
+    counter-increment: ads-process;
+
+    content: counter(ads-process);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    margin: 0 auto 16px;
+
+    border-radius: 50%;
+
+    background: #111827;
+
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 900;
+}
+
+
+.ads-process-card h3 {
+    margin-bottom: 8px;
+
+    font-size: 17px;
+
+    font-weight: 850;
+
+    color: #111827;
+}
+
+
+.ads-process-card p {
+    color: #6b7280;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================================
+   DO'S & DON'TS
+========================================================== */
+
+.ads-dos-donts {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+.ads-rules-card {
+    padding: 30px;
+
+    border-radius: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+}
+
+
+.ads-rules-card.do-card {
+    border-top: 4px solid #16a34a;
+}
+
+
+.ads-rules-card.dont-card {
+    border-top: 4px solid #dc2626;
+}
+
+
+.ads-rules-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 22px;
+}
+
+
+.ads-rules-title span {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 17px;
+}
+
+
+.do-card .ads-rules-title span {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+
+.dont-card .ads-rules-title span {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+
+.ads-rules-title h3 {
+    font-size: 22px;
+
+    font-weight: 900;
+
+    color: #111827;
+}
+
+
+.ads-rules-list {
+    list-style: none;
+
+    display: grid;
+
+    gap: 13px;
+}
+
+
+.ads-rules-list li {
+    position: relative;
+
+    padding-left: 29px;
+
+    color: #4b5563;
+
+    font-size: 14px;
+
+    line-height: 1.65;
+}
+
+
+.ads-rules-list li::before {
+    position: absolute;
+
+    left: 0;
+    top: 2px;
+
+    font-weight: 900;
+}
+
+
+.do-card .ads-rules-list li::before {
+    content: "✓";
+
+    color: #16a34a;
+}
+
+
+.dont-card .ads-rules-list li::before {
+    content: "×";
+
+    color: #dc2626;
+
+    font-size: 20px;
+
+    line-height: 14px;
+}
+
+
+/* ==========================================================
+   SELLER TIPS
+========================================================== */
+
+.ads-tips-box {
+    position: relative;
+
+    padding: 34px;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff7f3,
+            #ffffff
+        );
+
+    border: 1px solid #ffd8ca;
+}
+
+
+.ads-tips-box::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: -70px;
+    top: -80px;
+
+    border-radius: 50%;
+
+    background: rgba(244, 81, 30, 0.07);
+}
+
+
+.ads-tips-box h3 {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 12px;
+
+    font-size: 25px;
+
+    font-weight: 900;
+
+    color: #111827;
+}
+
+
+.ads-tips-box p {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 760px;
+
+    color: #6b7280;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+.ads-tip-pills {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-top: 22px;
+}
+
+
+.ads-tip-pill {
+    display: inline-flex;
+
+    align-items: center;
+
+    min-height: 38px;
+
+    padding: 0 14px;
+
+    border-radius: 999px;
+
+    background: #ffffff;
+
+    border: 1px solid #f0d8cf;
+
+    color: #374151;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+/* ==========================================================
+   RESPONSIVE TABLET
+========================================================== */
+
+@media (max-width: 900px) {
+
+    .ads-learning-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .ads-process {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE MOBILE
+========================================================== */
+
+@media (max-width: 600px) {
+
+    .ads-section {
+        padding: 42px 0;
+    }
+
+
+    .ads-learning-grid,
+    .ads-types-grid,
+    .ads-dos-donts {
+        grid-template-columns: 1fr;
+    }
+
+
+    .ads-process {
+        grid-template-columns: 1fr;
+    }
+
+
+    .ads-learning-card {
+        padding: 23px;
+
+        min-height: auto;
+    }
+
+
+    .ads-type-card {
+        padding: 20px;
+
+        gap: 14px;
+    }
+
+
+    .ads-type-icon {
+        flex-basis: 46px;
+
+        width: 46px;
+        height: 46px;
+    }
+
+
+    .ads-rules-card {
+        padding: 24px;
+    }
+
+
+    .ads-tips-box {
+        padding: 25px 21px;
+    }
+
+
+    .ads-tips-box h3 {
+        font-size: 22px;
+    }
+
+}
+
+/* ==========================================================
+   ABOUT ADS — YOURSTORE
+   PART 3
+   COMING SOON + CTA + FAQ + FOOTER + MOBILE POLISH
+========================================================== */
+
+
+/* ==========================================================
+   COMING SOON ADVERTISEMENT SECTION
+========================================================== */
+
+.ads-coming-section {
+    padding: 30px 0 70px;
+}
+
+
+.ads-coming-card {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 48px;
+
+    border-radius: 28px;
+
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(244, 81, 30, 0.28),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #111827,
+            #1f2937
+        );
+
+    color: #ffffff;
+
+    box-shadow:
+        0 24px 55px rgba(15, 23, 42, 0.18);
+}
+
+
+.ads-coming-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    right: -120px;
+    bottom: -150px;
+
+    border-radius: 50%;
+
+    background: rgba(244, 81, 30, 0.12);
+}
+
+
+.ads-coming-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 720px;
+}
+
+
+.ads-coming-label {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 16px;
+
+    padding: 8px 12px;
+
+    border-radius: 999px;
+
+    background: rgba(244, 81, 30, 0.13);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    color: #ff9b79;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.3px;
+
+    text-transform: uppercase;
+}
+
+
+.ads-coming-card h2 {
+    margin-bottom: 14px;
+
+    font-size: clamp(30px, 5vw, 45px);
+
+    line-height: 1.1;
+
+    letter-spacing: -1.3px;
+
+    font-weight: 900;
+}
+
+
+.ads-coming-card p {
+    color: #d1d5db;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* ==========================================================
+   COMING SOON FEATURES
+========================================================== */
+
+.ads-coming-features {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin-top: 28px;
+}
+
+
+.ads-coming-feature {
+    padding: 17px;
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+
+.ads-coming-feature strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+}
+
+
+.ads-coming-feature span {
+    color: #aeb7c5;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* ==========================================================
+   SELLER CTA
+========================================================== */
+
+.ads-seller-cta {
+    margin: 0 0 70px;
+
+    padding: 42px;
+
+    text-align: center;
+
+    border-radius: 26px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+
+.ads-seller-cta h2 {
+    margin-bottom: 12px;
+
+    color: #111827;
+
+    font-size: clamp(28px, 5vw, 40px);
+
+    font-weight: 900;
+
+    letter-spacing: -1px;
+}
+
+
+.ads-seller-cta p {
+    max-width: 680px;
+
+    margin: 0 auto;
+
+    color: #6b7280;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+.ads-seller-cta .ads-primary-button {
+    margin-top: 25px;
+}
+
+
+/* ==========================================================
+   FAQ
+========================================================== */
+
+.ads-faq {
+    display: grid;
+
+    gap: 12px;
+}
+
+
+.ads-faq-item {
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 17px;
+
+    overflow: hidden;
+}
+
+
+.ads-faq-item summary {
+    position: relative;
+
+    padding: 20px 52px 20px 21px;
+
+    cursor: pointer;
+
+    list-style: none;
+
+    color: #111827;
+
+    font-size: 15px;
+
+    font-weight: 800;
+}
+
+
+.ads-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+
+.ads-faq-item summary::after {
+    content: "+";
+
+    position: absolute;
+
+    right: 20px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f3f4f6;
+
+    color: #374151;
+
+    font-size: 18px;
+
+    font-weight: 500;
+}
+
+
+.ads-faq-item[open] summary {
+    color: #f4511e;
+}
+
+
+.ads-faq-item[open] summary::after {
+    content: "−";
+
+    background: #fff1eb;
+
+    color: #f4511e;
+}
+
+
+.ads-faq-answer {
+    padding: 0 21px 21px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* ==========================================================
+   FINAL CALL TO ACTION
+========================================================== */
+
+.ads-final-cta {
+    padding: 70px 0 75px;
+
+    text-align: center;
+}
+
+
+.ads-final-cta-inner {
+    max-width: 760px;
+
+    margin: 0 auto;
+}
+
+
+.ads-final-cta h2 {
+    margin-bottom: 14px;
+
+    color: #111827;
+
+    font-size: clamp(30px, 5vw, 45px);
+
+    line-height: 1.1;
+
+    font-weight: 900;
+
+    letter-spacing: -1.4px;
+}
+
+
+.ads-final-cta p {
+    color: #6b7280;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+.ads-final-cta-actions {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 26px;
+}
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.ads-footer {
+    padding: 34px 0;
+
+    background: #111827;
+
+    color: #ffffff;
+}
+
+
+.ads-footer-inner {
+    width: min(1180px, calc(100% - 32px));
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+.ads-footer-brand {
+    font-size: 19px;
+
+    font-weight: 900;
+}
+
+
+.ads-footer-brand span {
+    color: #f4511e;
+}
+
+
+.ads-footer-text {
+    color: #9ca3af;
+
+    font-size: 13px;
+}
+
+
+.ads-footer-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+
+.ads-footer-links a {
+    color: #cbd5e1;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: color 0.2s ease;
+}
+
+
+.ads-footer-links a:hover {
+    color: #ff7043;
+}
+
+
+/* ==========================================================
+   SMALL SCREEN COMING SOON
+========================================================== */
+
+@media (max-width: 700px) {
+
+    .ads-coming-card {
+        padding: 32px 24px;
+
+        border-radius: 23px;
+    }
+
+
+    .ads-coming-features {
+        grid-template-columns: 1fr;
+    }
+
+
+    .ads-seller-cta {
+        margin-bottom: 50px;
+
+        padding: 32px 21px;
+    }
+
+
+    .ads-final-cta {
+        padding: 50px 0 60px;
+    }
+
+
+    .ads-final-cta-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .ads-final-cta-actions a {
+        width: 100%;
+    }
+
+
+    .ads-footer-inner {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+
+    .ads-footer-links {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+}
+
+
+/* ==========================================================
+   EXTRA SMALL PHONES
+========================================================== */
+
+@media (max-width: 390px) {
+
+    .ads-container {
+        width: calc(100% - 20px);
+    }
+
+
+    .ads-header-inner {
+        width: calc(100% - 20px);
+    }
+
+
+    .ads-logo {
+        font-size: 20px;
+    }
+
+
+    .ads-hero {
+        padding: 31px 19px;
+
+        border-radius: 21px;
+    }
+
+
+    .ads-hero h1 {
+        font-size: 35px;
+    }
+
+
+    .ads-section-title {
+        font-size: 29px;
+    }
+
+
+    .ads-learning-card,
+    .ads-type-card,
+    .ads-rules-card {
+        border-radius: 18px;
+    }
+
+
+    .ads-coming-card {
+        padding: 28px 19px;
+    }
+
+
+    .ads-coming-card h2 {
+        font-size: 29px;
+    }
+
+}
+
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+.ads-primary-button:focus-visible,
+.ads-secondary-button:focus-visible,
+.ads-header-nav a:focus-visible,
+.ads-menu-button:focus-visible,
+.ads-faq-item summary:focus-visible {
+    outline: 3px solid rgba(244, 81, 30, 0.35);
+
+    outline-offset: 3px;
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+
+}
+

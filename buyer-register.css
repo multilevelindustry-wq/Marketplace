@@ -1,0 +1,875 @@
+/* ==========================================================
+   BUYER REGISTER PAGE
+========================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    min-height: 100vh;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    background: #f5f5f5;
+    color: #222;
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.buyer-register-header {
+    width: 100%;
+    height: 64px;
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 20px;
+
+    border-bottom: 1px solid #e8e8e8;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+.buyer-register-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #f68b1e;
+    text-decoration: none;
+
+    font-size: 21px;
+    font-weight: 800;
+}
+
+
+.buyer-register-logo-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff3e6;
+    border-radius: 50%;
+
+    font-size: 20px;
+}
+
+
+.buyer-register-login-link {
+    text-decoration: none;
+
+    color: #f68b1e;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    padding: 9px 16px;
+
+    border: 1px solid #f68b1e;
+    border-radius: 6px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.buyer-register-login-link:hover {
+    background: #f68b1e;
+    color: #ffffff;
+}
+
+
+/* ==========================================================
+   MAIN
+========================================================== */
+
+.buyer-register-main {
+    width: 100%;
+
+    min-height: calc(100vh - 120px);
+
+    display: flex;
+    justify-content: center;
+
+    padding:
+        28px
+        16px
+        40px;
+}
+
+
+/* ==========================================================
+   REGISTER CARD
+========================================================== */
+
+.buyer-register-card {
+    width: 100%;
+    max-width: 520px;
+
+    background: #ffffff;
+
+    border-radius: 12px;
+
+    padding: 28px 22px;
+
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.07);
+
+    border: 1px solid #eeeeee;
+}
+
+
+/* ==========================================================
+   INTRO
+========================================================== */
+
+.buyer-register-intro {
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+
+.buyer-register-icon {
+    width: 62px;
+    height: 62px;
+
+    margin:
+        0 auto
+        14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fff3e6;
+
+    font-size: 30px;
+}
+
+
+.buyer-register-intro h1 {
+    font-size: 24px;
+    line-height: 1.25;
+
+    color: #222;
+
+    margin-bottom: 9px;
+}
+
+
+.buyer-register-intro p {
+    color: #777;
+
+    font-size: 14px;
+    line-height: 1.6;
+
+    max-width: 430px;
+    margin: auto;
+}
+
+
+/* ==========================================================
+   MESSAGES
+========================================================== */
+
+.buyer-register-message {
+    display: none;
+
+    padding: 12px 14px;
+
+    margin-bottom: 18px;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+.buyer-register-message.error {
+    background: #fff0f0;
+
+    color: #c62828;
+
+    border: 1px solid #ffcaca;
+}
+
+
+.buyer-register-message.success {
+    background: #eefbf2;
+
+    color: #218838;
+
+    border: 1px solid #bce5c8;
+}
+
+
+.buyer-register-message.show {
+    display: block;
+}
+
+
+/* ==========================================================
+   FORM
+========================================================== */
+
+.buyer-register-form {
+    width: 100%;
+}
+
+
+.buyer-register-field {
+    width: 100%;
+
+    margin-bottom: 17px;
+}
+
+
+.buyer-register-field label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #333;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+.buyer-register-field input {
+    width: 100%;
+
+    height: 48px;
+
+    padding:
+        0
+        14px;
+
+    border: 1px solid #d8d8d8;
+
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    color: #222;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.buyer-register-field input::placeholder {
+    color: #aaa;
+}
+
+
+.buyer-register-field input:focus {
+    border-color: #f68b1e;
+
+    box-shadow:
+        0 0 0 3px rgba(246, 139, 30, 0.12);
+}
+
+
+.buyer-register-field input.invalid {
+    border-color: #e53935;
+
+    background: #fffafa;
+}
+
+
+.buyer-register-field input.valid {
+    border-color: #34a853;
+}
+
+
+/* ==========================================================
+   PASSWORD
+========================================================== */
+
+.buyer-password-wrapper {
+    position: relative;
+
+    width: 100%;
+}
+
+
+.buyer-password-wrapper input {
+    padding-right: 52px;
+}
+
+
+.password-toggle {
+    position: absolute;
+
+    top: 50%;
+    right: 5px;
+
+    transform: translateY(-50%);
+
+    width: 42px;
+    height: 40px;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 6px;
+}
+
+
+.password-toggle:hover {
+    background: #f5f5f5;
+}
+
+
+/* ==========================================================
+   FIELD ERRORS
+========================================================== */
+
+.field-error {
+    display: block;
+
+    min-height: 0;
+
+    margin-top: 5px;
+
+    color: #d32f2f;
+
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+
+.field-error:empty {
+    display: none;
+}
+
+
+/* ==========================================================
+   TERMS
+========================================================== */
+
+.buyer-register-terms {
+    margin:
+        4px
+        0
+        20px;
+}
+
+
+.buyer-register-terms label {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 9px;
+
+    color: #666;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    cursor: pointer;
+}
+
+
+.buyer-register-terms input {
+    width: 17px;
+    height: 17px;
+
+    margin-top: 1px;
+
+    flex-shrink: 0;
+
+    accent-color: #f68b1e;
+
+    cursor: pointer;
+}
+
+
+.buyer-register-terms a {
+    color: #f68b1e;
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+
+.buyer-register-terms a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==========================================================
+   REGISTER BUTTON
+========================================================== */
+
+.buyer-register-button {
+    position: relative;
+
+    width: 100%;
+    height: 50px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #f68b1e;
+
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        background 0.2s ease,
+        transform 0.15s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.buyer-register-button:hover {
+    background: #e97c0d;
+
+    box-shadow:
+        0 5px 14px rgba(246, 139, 30, 0.25);
+}
+
+
+.buyer-register-button:active {
+    transform: scale(0.98);
+}
+
+
+.buyer-register-button:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.7;
+
+    box-shadow: none;
+}
+
+
+/* ==========================================================
+   BUTTON SPINNER
+========================================================== */
+
+.button-spinner {
+    display: none;
+
+    width: 19px;
+    height: 19px;
+
+    margin-left: 9px;
+
+    border:
+        2px solid rgba(255, 255, 255, 0.45);
+
+    border-top-color: #ffffff;
+
+    border-radius: 50%;
+
+    animation:
+        buyerRegisterSpin
+        0.7s linear infinite;
+}
+
+
+.buyer-register-button.loading
+.button-spinner {
+    display: block;
+}
+
+
+.buyer-register-button.loading
+#buyerRegisterButtonText {
+    opacity: 0.9;
+}
+
+
+@keyframes buyerRegisterSpin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* ==========================================================
+   FOOTER LOGIN
+========================================================== */
+
+.buyer-register-footer {
+    text-align: center;
+
+    margin-top: 22px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #eeeeee;
+}
+
+
+.buyer-register-footer p {
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+.buyer-register-footer a {
+    color: #f68b1e;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    margin-left: 4px;
+}
+
+
+.buyer-register-footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==========================================================
+   PAGE FOOTER
+========================================================== */
+
+.buyer-register-page-footer {
+    width: 100%;
+
+    text-align: center;
+
+    padding:
+        18px
+        15px;
+
+    color: #888;
+
+    font-size: 12px;
+
+    background: #ffffff;
+
+    border-top: 1px solid #eeeeee;
+}
+
+
+/* ==========================================================
+   PAGE LOADER
+========================================================== */
+
+.buyer-register-loader {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    background:
+        rgba(255, 255, 255, 0.96);
+}
+
+
+.buyer-register-loader.show {
+    display: flex;
+}
+
+
+.buyer-register-spinner {
+    width: 40px;
+    height: 40px;
+
+    border:
+        4px solid #eeeeee;
+
+    border-top-color: #f68b1e;
+
+    border-radius: 50%;
+
+    animation:
+        buyerRegisterLoaderSpin
+        0.8s linear infinite;
+}
+
+
+.buyer-register-loader p {
+    color: #555;
+
+    font-size: 14px;
+}
+
+
+@keyframes buyerRegisterLoaderSpin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (min-width: 600px) {
+
+    .buyer-register-header {
+        height: 70px;
+
+        padding:
+            0
+            32px;
+    }
+
+
+    .buyer-register-logo {
+        font-size: 23px;
+    }
+
+
+    .buyer-register-main {
+        padding:
+            45px
+            20px
+            60px;
+    }
+
+
+    .buyer-register-card {
+        padding:
+            34px
+            32px;
+    }
+
+
+    .buyer-register-intro h1 {
+        font-size: 27px;
+    }
+
+}
+
+
+/* ==========================================================
+   DESKTOP
+========================================================== */
+
+@media (min-width: 900px) {
+
+    body {
+        background:
+            linear-gradient(
+                135deg,
+                #f7f7f7,
+                #fff7ed
+            );
+    }
+
+
+    .buyer-register-header {
+        padding:
+            0
+            60px;
+    }
+
+
+    .buyer-register-main {
+        min-height:
+            calc(100vh - 135px);
+
+        align-items: flex-start;
+
+        padding-top: 55px;
+    }
+
+
+    .buyer-register-card {
+        max-width: 560px;
+
+        padding:
+            38px
+            42px;
+
+        border-radius: 14px;
+
+        box-shadow:
+            0 10px 35px
+            rgba(0, 0, 0, 0.08);
+    }
+
+
+    .buyer-register-intro {
+        margin-bottom: 30px;
+    }
+
+
+    .buyer-register-intro h1 {
+        font-size: 29px;
+    }
+
+
+    .buyer-register-intro p {
+        font-size: 14px;
+    }
+
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width: 380px) {
+
+    .buyer-register-header {
+        padding:
+            0
+            12px;
+    }
+
+
+    .buyer-register-logo {
+        font-size: 18px;
+    }
+
+
+    .buyer-register-logo-icon {
+        width: 34px;
+        height: 34px;
+
+        font-size: 17px;
+    }
+
+
+    .buyer-register-login-link {
+        padding:
+            8px
+            12px;
+
+        font-size: 13px;
+    }
+
+
+    .buyer-register-main {
+        padding:
+            18px
+            10px
+            30px;
+    }
+
+
+    .buyer-register-card {
+        padding:
+            23px
+            16px;
+
+        border-radius: 9px;
+    }
+
+
+    .buyer-register-intro h1 {
+        font-size: 21px;
+    }
+
+
+    .buyer-register-intro p {
+        font-size: 13px;
+    }
+
+
+    .buyer-register-field input {
+        height: 46px;
+    }
+
+
+    .buyer-register-button {
+        height: 48px;
+    }
+
+}
+
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+.buyer-register-field input:focus-visible,
+.password-toggle:focus-visible,
+.buyer-register-button:focus-visible,
+.buyer-register-login-link:focus-visible,
+.buyer-register-footer a:focus-visible {
+    outline:
+        3px solid rgba(246, 139, 30, 0.3);
+
+    outline-offset: 2px;
+}
+

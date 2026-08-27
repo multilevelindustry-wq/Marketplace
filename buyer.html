@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Buyer Dashboard | NEOSTORE
+    </title>
+
+    <meta
+        name="description"
+        content="NEOSTORE buyer dashboard"
+    >
+
+    <link
+        rel="stylesheet"
+        href="buyer.css"
+    >
+
+<link
+    rel="stylesheet"
+    href="ads.css"
+>
+
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================================
+     PAGE LOADER
+========================================================== -->
+
+<div
+    id="buyerPageLoader"
+    class="buyer-page-loader"
+>
+
+    <div
+        class="buyer-loader-spinner"
+    ></div>
+
+    <p>
+        Loading your dashboard...
+    </p>
+
+</div>
+
+
+
+<!-- ==========================================================
+     HEADER
+========================================================== -->
+
+<header
+    class="buyer-header"
+>
+
+    <div
+        class="buyer-header-inner"
+    >
+
+
+        <!-- LOGO -->
+
+        <a
+            href="index.html"
+            class="buyer-logo"
+        >
+
+            NEOSTORE
+
+        </a>
+
+
+
+        <!-- SEARCH -->
+
+        <form
+            class="buyer-search"
+            id="buyerSearchForm"
+        >
+
+            <input
+                type="search"
+                id="buyerSearch"
+                placeholder="Search products..."
+                autocomplete="off"
+            >
+
+            <button
+                type="submit"
+                aria-label="Search"
+            >
+
+                🔍
+
+            </button>
+
+        </form>
+
+
+
+        <!-- HEADER ACTIONS -->
+
+        <div
+            class="buyer-header-actions"
+        >
+
+
+            <!-- CART -->
+
+            <a
+                href="cart.html"
+                class="buyer-header-cart"
+                aria-label="Shopping cart"
+            >
+
+                🛒
+
+                <span
+                    id="buyerCartCount"
+                    class="buyer-cart-count"
+                >
+                    0
+                </span>
+
+            </a>
+
+
+
+            <!-- MOBILE MENU BUTTON -->
+
+            <button
+                type="button"
+                id="buyerMenuButton"
+                class="buyer-menu-button"
+                aria-label="Open menu"
+            >
+
+                ☰
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- ==========================================================
+     MOBILE MENU OVERLAY
+========================================================== -->
+
+<div
+    id="buyerMenuOverlay"
+    class="buyer-menu-overlay"
+></div>
+
+
+
+<!-- ==========================================================
+     MOBILE MENU
+========================================================== -->
+
+<aside
+    id="buyerMobileMenu"
+    class="buyer-mobile-menu"
+>
+
+
+    <div
+        class="buyer-mobile-menu-header"
+    >
+
+        <strong>
+            Buyer Menu
+        </strong>
+
+        <button
+            type="button"
+            id="buyerMenuClose"
+            aria-label="Close menu"
+        >
+
+            ×
+
+        </button>
+
+    </div>
+
+
+
+    <nav>
+
+
+        <a href="index.html">
+
+            🏠
+
+            <span>
+                Home
+            </span>
+
+        </a>
+
+
+        <a href="cart.html">
+
+            🛒
+
+            <span>
+                My Cart
+            </span>
+
+        </a>
+
+
+        <a href="orders.html">
+
+            📦
+
+            <span>
+                My Orders
+            </span>
+
+        </a>
+
+
+        <a href="profile.html">
+
+            👤
+
+            <span>
+                My Profile
+            </span>
+
+        </a>
+
+
+        <a href="wishlist.html">
+
+            ❤️
+
+            <span>
+                Wishlist
+            </span>
+
+        </a>
+
+
+        <a href="index.html">
+
+            🛍️
+
+            <span>
+                Continue Shopping
+            </span>
+
+        </a>
+
+
+    </nav>
+
+
+</aside>
+
+
+<!-- ==========================================================
+     MAIN BUYER APP
+========================================================== -->
+
+<main
+    id="buyerApp"
+    class="buyer-main"
+>
+
+
+    <!-- ======================================================
+         WELCOME
+    ======================================================= -->
+
+    <section
+        class="buyer-welcome"
+    >
+
+
+        <div
+            class="buyer-welcome-content"
+        >
+
+            <span
+                class="buyer-welcome-label"
+            >
+
+                Welcome back
+
+            </span>
+
+
+            <h1>
+
+                Hello,
+
+                <span
+                    id="buyerName"
+                >
+                    Buyer
+                </span>
+
+            </h1>
+
+
+            <p>
+
+                Discover products, manage your orders,
+                and continue shopping on NEOSTORE.
+
+            </p>
+
+        </div>
+
+
+
+   <div class="buyer-profile-mini">
+
+    <img
+        id="buyerPhoto"
+        class="buyer-avatar"
+        src="images/default-avatar.png"
+        alt="Buyer profile"
+    >
+
+    <input
+        type="file"
+        id="buyerPhotoInput"
+        accept="image/*"
+        hidden
+    >
+
+    <button
+        type="button"
+        id="buyerPhotoButton"
+        class="buyer-photo-button"
+    >
+        Add Photo
+    </button>
+
+    <span
+        id="buyerPhotoStatus"
+        class="buyer-photo-status"
+    ></span>
+
+</div>
+
+
+    </section>
+
+
+<section
+    class="marketplace-ads-section"
+    id="marketplaceAdsSection"
+>
+
+    <div
+        id="marketplaceAds"
+        class="marketplace-ads"
+    ></div>
+
+</section>
+
+    <!-- ======================================================
+         QUICK ACTIONS
+    ======================================================= -->
+
+    <section
+        class="buyer-section"
+    >
+
+
+        <div
+            class="buyer-section-header"
+        >
+
+            <div>
+
+                <span
+                    class="buyer-section-label"
+                >
+                    QUICK ACCESS
+                </span>
+
+                <h2>
+                    What would you like to do?
+                </h2>
+
+            </div>
+
+        </div>
+
+
+
+        <div
+            class="buyer-quick-grid"
+        >
+
+
+            <a
+                href="orders.html"
+                class="buyer-quick-card"
+            >
+
+                <div
+                    class="buyer-quick-icon"
+                >
+                    📦
+                </div>
+
+                <div>
+
+                    <strong>
+                        My Orders
+                    </strong>
+
+                    <span>
+                        Track your purchases
+                    </span>
+
+                </div>
+
+            </a>
+
+
+
+            <a
+                href="cart.html"
+                class="buyer-quick-card"
+            >
+
+                <div
+                    class="buyer-quick-icon"
+                >
+                    🛒
+                </div>
+
+                <div>
+
+                    <strong>
+                        Shopping Cart
+                    </strong>
+
+                    <span>
+                        Review items before checkout
+                    </span>
+
+                </div>
+
+
+                <b
+                    id="buyerQuickCartCount"
+                >
+                    0
+                </b>
+
+            </a>
+
+
+
+            <a
+                href="wishlist.html"
+                class="buyer-quick-card"
+            >
+
+                <div
+                    class="buyer-quick-icon"
+                >
+                    ❤️
+                </div>
+
+                <div>
+
+                    <strong>
+                        Wishlist
+                    </strong>
+
+                    <span>
+                        Products you saved
+                    </span>
+
+                </div>
+
+            </a>
+
+
+
+            <a
+                href="profile.html"
+                class="buyer-quick-card"
+            >
+
+                <div
+                    class="buyer-quick-icon"
+                >
+                    👤
+                </div>
+
+                <div>
+
+                    <strong>
+                        My Profile
+                    </strong>
+
+                    <span>
+                        Manage your account
+                    </span>
+
+                </div>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         ACCOUNT INFORMATION
+    ======================================================= -->
+
+    <section
+        class="buyer-section"
+    >
+
+
+        <div
+            class="buyer-section-header"
+        >
+
+            <div>
+
+                <span
+                    class="buyer-section-label"
+                >
+                    ACCOUNT
+                </span>
+
+                <h2>
+                    Your Information
+                </h2>
+
+            </div>
+
+
+            <a
+                href="profile.html"
+                class="buyer-section-link"
+            >
+                Edit Profile
+            </a>
+
+        </div>
+
+
+
+        <div
+            class="buyer-account-grid"
+        >
+
+
+            <div
+                class="buyer-account-card"
+            >
+
+                <div
+                    class="buyer-account-card-icon"
+                >
+                    👤
+                </div>
+
+                <div>
+
+                    <small>
+                        NAME
+                    </small>
+
+                    <strong
+                        id="buyerAccountName"
+                    >
+                        Buyer
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="buyer-account-card"
+            >
+
+                <div
+                    class="buyer-account-card-icon"
+                >
+                    ✉️
+                </div>
+
+                <div>
+
+                    <small>
+                        EMAIL
+                    </small>
+
+                    <strong
+                        id="buyerEmail"
+                    >
+                        Loading...
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="buyer-account-card"
+            >
+
+                <div
+                    class="buyer-account-card-icon"
+                >
+                    🛍️
+                </div>
+
+                <div>
+
+                    <small>
+                        ACCOUNT TYPE
+                    </small>
+
+                    <strong>
+                        Buyer
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="buyer-account-card"
+            >
+
+                <div
+                    class="buyer-account-card-icon"
+                >
+                    🔐
+                </div>
+
+                <div>
+
+                    <small>
+                        ACCOUNT STATUS
+                    </small>
+
+                    <strong>
+                        Active
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+   <!-- ==========================================================
+     CHAT NOTIFICATION
+========================================================== -->
+
+<div
+    class="dashboard-chat-wrapper"
+    id="dashboardChatWrapper"
+>
+
+    <button
+        type="button"
+        class="dashboard-chat-button"
+        id="dashboardChatButton"
+        aria-label="Open chats"
+    >
+
+        <span class="dashboard-chat-icon">
+            💬
+        </span>
+
+
+        <span
+            class="dashboard-chat-badge"
+            id="dashboardChatBadge"
+            hidden
+        >
+            0
+        </span>
+
+    </button>
+
+
+    <!-- ======================================================
+         CHAT LIST PANEL
+    ====================================================== -->
+
+    <div
+        class="dashboard-chat-panel"
+        id="dashboardChatPanel"
+        hidden
+    >
+
+        <div class="dashboard-chat-panel-header">
+
+            <div>
+
+                <span class="dashboard-chat-eyebrow">
+                    MESSAGES
+                </span>
+
+                <h3>
+                    Chats
+                </h3>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="closeDashboardChatPanel"
+                class="dashboard-chat-close"
+                aria-label="Close chats"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- ==================================================
+             CHAT LIST
+        ================================================== -->
+
+        <div
+            class="dashboard-chat-list"
+            id="dashboardChatList"
+        >
+
+            <div
+                class="dashboard-chat-loading"
+                id="dashboardChatLoading"
+            >
+
+                Loading chats...
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             EMPTY STATE
+        ================================================== -->
+
+        <div
+            class="dashboard-chat-empty"
+            id="dashboardChatEmpty"
+            hidden
+        >
+
+            <div class="dashboard-chat-empty-icon">
+                💬
+            </div>
+
+            <strong>
+                No chats yet
+            </strong>
+
+            <span>
+                Your conversations will appear here.
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- ======================================================
+         PRODUCTS
+    ======================================================= -->
+
+    <section
+        class="buyer-section"
+    >
+
+
+        <div
+            class="buyer-section-header"
+        >
+
+            <div>
+
+                <span
+                    class="buyer-section-label"
+                >
+                    SHOP
+                </span>
+
+                <h2>
+                    Discover Products
+                </h2>
+
+            </div>
+
+
+            <a
+                href="categories.html"
+                class="buyer-section-link"
+            >
+
+                View All
+
+            </a>
+
+        </div>
+
+
+
+        <div
+            id="buyerProductGrid"
+            class="buyer-product-grid"
+        >
+
+            <div
+                class="buyer-loading-card"
+            >
+
+                Loading products...
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         LOGOUT
+    ======================================================= -->
+
+    <section
+        class="buyer-logout-section"
+    >
+
+        <button
+            type="button"
+            id="buyerLogoutButton"
+            class="buyer-logout-button"
+        >
+
+            🚪
+
+            Logout
+
+        </button>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ==========================================================
+     JAVASCRIPT
+========================================================== -->
+
+<script
+    type="module"
+    src="buyer.js"
+></script>
+
+<script>
+
+(function(){
+
+    const menu =
+        document.getElementById(
+            "buyerMobileMenu"
+        );
+
+    const overlay =
+        document.getElementById(
+            "buyerMenuOverlay"
+        );
+
+    const openButton =
+        document.getElementById(
+            "buyerMenuButton"
+        );
+
+    const closeButton =
+        document.getElementById(
+            "buyerMenuClose"
+        );
+
+
+    function openMenu(){
+
+        if(menu){
+
+            menu.classList.add(
+                "open"
+            );
+
+        }
+
+
+        if(overlay){
+
+            overlay.classList.add(
+                "open"
+            );
+
+        }
+
+    }
+
+
+    function closeMenu(){
+
+        if(menu){
+
+            menu.classList.remove(
+                "open"
+            );
+
+        }
+
+
+        if(overlay){
+
+            overlay.classList.remove(
+                "open"
+            );
+
+        }
+
+    }
+
+
+    if(openButton){
+
+        openButton.addEventListener(
+            "click",
+            openMenu
+        );
+
+    }
+
+
+    if(closeButton){
+
+        closeButton.addEventListener(
+            "click",
+            closeMenu
+        );
+
+    }
+
+
+    if(overlay){
+
+        overlay.addEventListener(
+            "click",
+            closeMenu
+        );
+
+    }
+
+
+})();
+
+</script>
+
+<script
+    type="module"
+    src="ads.js"
+></script>
+
+
+</body>
+
+</html>

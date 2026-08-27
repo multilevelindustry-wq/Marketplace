@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Seller notifications on NEOSTORE."
+    >
+
+    <title>
+        Notifications | NEOSTORE Seller Center
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="notification.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================================
+     PAGE LOADER
+========================================================== -->
+
+<div
+    id="notificationPageLoader"
+    class="notification-page-loader"
+>
+
+    <div
+        class="notification-loader-spinner"
+    ></div>
+
+    <p>
+        Loading notifications...
+    </p>
+
+</div>
+
+
+
+<!-- ==========================================================
+     HEADER
+========================================================== -->
+
+<header class="notification-header">
+
+    <div class="notification-header-left">
+
+        <a
+            href="seller.html"
+            class="notification-logo"
+        >
+
+            <span>
+                NEOSTORE
+            </span>
+
+            <small>
+                SELLER CENTER
+            </small>
+
+        </a>
+
+    </div>
+
+
+    <div class="notification-header-actions">
+
+        <a
+            href="seller.html"
+            class="notification-dashboard-button"
+        >
+            Dashboard
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- ==========================================================
+     MAIN
+========================================================== -->
+
+<main
+    id="notificationApp"
+    class="notification-app"
+>
+
+
+    <!-- ======================================================
+         PAGE TITLE
+    ======================================================= -->
+
+    <section class="notification-title-section">
+
+        <div>
+
+            <span class="notification-label">
+                SELLER CENTER
+            </span>
+
+            <h1>
+                Notifications
+            </h1>
+
+            <p>
+                Stay updated about your store, products,
+                orders and important account activity.
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="markAllNotificationsRead"
+            class="mark-all-read-button"
+        >
+            Mark all as read
+        </button>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         NOTIFICATION SUMMARY
+    ======================================================= -->
+
+    <section class="notification-summary">
+
+        <div class="notification-summary-card">
+
+            <span>
+                All Notifications
+            </span>
+
+            <strong id="allNotificationsCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="notification-summary-card">
+
+            <span>
+                Unread
+            </span>
+
+            <strong id="unreadNotificationsCount">
+                0
+            </strong>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         NOTIFICATION FILTERS
+    ======================================================= -->
+
+    <section class="notification-controls">
+
+        <button
+            type="button"
+            class="notification-filter active"
+            data-filter="all"
+        >
+            All
+        </button>
+
+
+        <button
+            type="button"
+            class="notification-filter"
+            data-filter="unread"
+        >
+            Unread
+        </button>
+
+
+        <button
+            type="button"
+            class="notification-filter"
+            data-filter="orders"
+        >
+            Orders
+        </button>
+
+
+        <button
+            type="button"
+            class="notification-filter"
+            data-filter="store"
+        >
+            Store
+        </button>
+
+
+        <button
+            type="button"
+            class="notification-filter"
+            data-filter="account"
+        >
+            Account
+        </button>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         NOTIFICATIONS
+    ======================================================= -->
+
+    <section class="notification-section">
+
+        <div class="notification-section-header">
+
+            <div>
+
+                <span>
+                    UPDATES
+                </span>
+
+                <h2>
+                    Your Notifications
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="notificationsList"
+            class="notifications-list"
+        >
+        </div>
+
+
+        <!-- EMPTY -->
+
+        <div
+            id="notificationsEmpty"
+            class="notifications-empty"
+            style="display:none;"
+        >
+
+            <div class="notifications-empty-icon">
+                🔔
+            </div>
+
+            <h3>
+                No notifications
+            </h3>
+
+            <p>
+                You are all caught up.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<script
+    type="module"
+    src="notification.js"
+></script>
+
+
+</body>
+</html>
+

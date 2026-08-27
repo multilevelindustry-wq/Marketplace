@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        My Orders | NEOSTORE
+    </title>
+
+    <meta
+        name="description"
+        content="View and manage your NEOSTORE orders."
+    >
+
+    <link
+        rel="stylesheet"
+        href="orders.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================================
+     PAGE LOADER
+========================================================== -->
+
+<div
+    id="ordersPageLoader"
+    class="orders-page-loader"
+>
+
+    <div
+        class="orders-loader-spinner"
+    ></div>
+
+    <p>
+        Loading your orders...
+    </p>
+
+</div>
+
+
+
+<!-- ==========================================================
+     HEADER
+========================================================== -->
+
+<header
+    class="orders-header"
+>
+
+    <div
+        class="orders-header-inner"
+    >
+
+
+        <!-- BACK -->
+
+        <a
+            href="buyer.html"
+            class="orders-back-button"
+            aria-label="Back to buyer dashboard"
+        >
+
+            ←
+
+        </a>
+
+
+        <!-- LOGO -->
+
+        <a
+            href="index.html"
+            class="orders-logo"
+        >
+
+            NEOSTORE
+
+        </a>
+
+
+        <!-- SEARCH -->
+
+        <form
+            id="ordersSearchForm"
+            class="orders-search"
+        >
+
+            <input
+                type="search"
+                id="ordersSearchInput"
+                placeholder="Search your orders..."
+                autocomplete="off"
+            >
+
+            <button
+                type="submit"
+                aria-label="Search orders"
+            >
+
+                🔍
+
+            </button>
+
+        </form>
+
+
+        <!-- CART -->
+
+        <a
+            href="cart.html"
+            class="orders-cart"
+            aria-label="Shopping cart"
+        >
+
+            <img src="1000219817-removebg-preview.png" alt=""></img>
+
+            <span
+                id="ordersCartCount"
+                class="orders-cart-count"
+            >
+                0
+            </span>
+
+        </a>
+
+
+        <!-- MENU -->
+
+        <button
+            type="button"
+            id="ordersMenuButton"
+            class="orders-menu-button"
+            aria-label="Open menu"
+        >
+
+            ☰
+
+        </button>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- ==========================================================
+     MOBILE MENU OVERLAY
+========================================================== -->
+
+<div
+    id="ordersMenuOverlay"
+    class="orders-menu-overlay"
+></div>
+
+
+
+<!-- ==========================================================
+     MOBILE MENU
+========================================================== -->
+
+<aside
+    id="ordersMobileMenu"
+    class="orders-mobile-menu"
+>
+
+    <div
+        class="orders-mobile-menu-header"
+    >
+
+        <strong>
+            Buyer Menu
+        </strong>
+
+        <button
+            type="button"
+            id="ordersMenuClose"
+            aria-label="Close menu"
+        >
+
+            ×
+
+        </button>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            🏠
+            <span>Home</span>
+        </a>
+
+        <a href="buyer.html">
+            👤
+            <span>Dashboard</span>
+        </a>
+
+        <a href="cart.html">
+            <img src="1000219817-removebg-preview.png" alt=""></img>
+            <span>My Cart</span>
+        </a>
+
+        <a href="orders.html">
+            📦
+            <span>My Orders</span>
+        </a>
+
+    </nav>
+
+</aside>
+
+
+
+<!-- ==========================================================
+     MAIN
+========================================================== -->
+
+<main
+    id="ordersApp"
+    class="orders-main"
+>
+
+
+    <!-- ======================================================
+         PAGE INTRO
+    ======================================================= -->
+
+    <section
+        class="orders-page-intro"
+    >
+
+        <div>
+
+            <span
+                class="orders-section-label"
+            >
+                PURCHASES
+            </span>
+
+            <h1>
+                My Orders
+            </h1>
+
+            <p>
+                Track and manage all your NEOSTORE purchases.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         ORDER SUMMARY
+    ======================================================= -->
+
+    <section
+        class="orders-summary-grid"
+    >
+
+        <button
+            type="button"
+            class="orders-summary-card active"
+            data-summary-status="all"
+        >
+
+            <span>
+                📦
+            </span>
+
+            <strong
+                id="ordersTotalCount"
+            >
+                0
+            </strong>
+
+            <small>
+                All Orders
+            </small>
+
+        </button>
+
+
+        <button
+            type="button"
+            class="orders-summary-card"
+            data-summary-status="pending"
+        >
+
+            <span>
+                ⏳
+            </span>
+
+            <strong
+                id="ordersPendingCount"
+            >
+                0
+            </strong>
+
+            <small>
+                Pending
+            </small>
+
+        </button>
+
+
+        <button
+            type="button"
+            class="orders-summary-card"
+            data-summary-status="processing"
+        >
+
+            <span>
+                ⚙️
+            </span>
+
+            <strong
+                id="ordersProcessingCount"
+            >
+                0
+            </strong>
+
+            <small>
+                Processing
+            </small>
+
+        </button>
+
+
+        <button
+            type="button"
+            class="orders-summary-card"
+            data-summary-status="shipped"
+        >
+
+            <span>
+                🚚
+            </span>
+
+            <strong
+                id="ordersShippedCount"
+            >
+                0
+            </strong>
+
+            <small>
+                Shipped
+            </small>
+
+        </button>
+
+
+        <button
+            type="button"
+            class="orders-summary-card"
+            data-summary-status="delivered"
+        >
+
+            <span>
+                ✅
+            </span>
+
+            <strong
+                id="ordersDeliveredCount"
+            >
+                0
+            </strong>
+
+            <small>
+                Delivered
+            </small>
+
+        </button>
+
+
+        <button
+            type="button"
+            class="orders-summary-card"
+            data-summary-status="cancelled"
+        >
+
+            <span>
+                ❌
+            </span>
+
+            <strong
+                id="ordersCancelledCount"
+            >
+                0
+            </strong>
+
+            <small>
+                Cancelled
+            </small>
+
+        </button>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         FILTER AREA
+    ======================================================= -->
+
+    <section
+        class="orders-filter-section"
+    >
+
+        <div
+            class="orders-filter-top"
+        >
+
+            <h2>
+                Your Orders
+            </h2>
+
+            <button
+                type="button"
+                id="refreshOrdersButton"
+                class="orders-refresh-button"
+            >
+
+                ↻
+                Refresh
+
+            </button>
+
+        </div>
+
+
+        <div
+            class="orders-filter-controls"
+        >
+
+            <div
+                class="orders-filter-group"
+            >
+
+                <label
+                    for="ordersStatusFilter"
+                >
+                    Status
+                </label>
+
+                <select
+                    id="ordersStatusFilter"
+                >
+
+                    <option value="all">
+                        All Orders
+                    </option>
+
+                    <option value="pending">
+                        Pending
+                    </option>
+
+                    <option value="processing">
+                        Processing
+                    </option>
+
+                    <option value="shipped">
+                        Shipped
+                    </option>
+
+                    <option value="out_for_delivery">
+                        Out for Delivery
+                    </option>
+
+                    <option value="delivered">
+                        Delivered
+                    </option>
+
+                    <option value="cancelled">
+                        Cancelled
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div
+                class="orders-filter-group"
+            >
+
+                <label
+                    for="ordersSortFilter"
+                >
+                    Sort
+                </label>
+
+                <select
+                    id="ordersSortFilter"
+                >
+
+                    <option value="newest">
+                        Newest First
+                    </option>
+
+                    <option value="oldest">
+                        Oldest First
+                    </option>
+
+                    <option value="highest">
+                        Highest Amount
+                    </option>
+
+                    <option value="lowest">
+                        Lowest Amount
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         ORDERS LIST
+    ======================================================= -->
+
+    <section
+        class="orders-list-section"
+    >
+
+        <div
+            id="ordersList"
+            class="orders-list"
+        >
+
+            <!-- JavaScript renders orders here -->
+
+        </div>
+
+
+        <!-- EMPTY -->
+
+        <div
+            id="ordersEmpty"
+            class="orders-empty"
+            hidden
+        >
+
+            <div
+                class="orders-empty-icon"
+            >
+                📦
+            </div>
+
+            <h3>
+                No orders found
+            </h3>
+
+            <p>
+                Your purchases will appear here after you place an order.
+            </p>
+
+            <a
+                href="index.html"
+                class="orders-shop-button"
+            >
+                Start Shopping
+            </a>
+
+        </div>
+
+
+        <!-- ERROR -->
+
+        <div
+            id="ordersError"
+            class="orders-error"
+            hidden
+        >
+
+            <div>
+                ⚠️
+            </div>
+
+            <h3>
+                Unable to load orders
+            </h3>
+
+            <p
+                id="ordersErrorMessage"
+            >
+                Something went wrong.
+            </p>
+
+            <button
+                type="button"
+                id="retryOrdersButton"
+            >
+                Try Again
+            </button>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ==========================================================
+     JAVASCRIPT
+========================================================== -->
+
+<script
+    type="module"
+    src="orders.js"
+></script>
+
+
+
+<!-- ==========================================================
+     MOBILE MENU
+========================================================== -->
+
+<script>
+
+(function(){
+
+    const menu =
+        document.getElementById(
+            "ordersMobileMenu"
+        );
+
+
+    const overlay =
+        document.getElementById(
+            "ordersMenuOverlay"
+        );
+
+
+    const openButton =
+        document.getElementById(
+            "ordersMenuButton"
+        );
+
+
+    const closeButton =
+        document.getElementById(
+            "ordersMenuClose"
+        );
+
+
+    function openMenu(){
+
+        if(menu){
+
+            menu.classList.add(
+                "open"
+            );
+
+        }
+
+
+        if(overlay){
+
+            overlay.classList.add(
+                "open"
+            );
+
+        }
+
+    }
+
+
+    function closeMenu(){
+
+        if(menu){
+
+            menu.classList.remove(
+                "open"
+            );
+
+        }
+
+
+        if(overlay){
+
+            overlay.classList.remove(
+                "open"
+            );
+
+        }
+
+    }
+
+
+    if(openButton){
+
+        openButton.addEventListener(
+            "click",
+            openMenu
+        );
+
+    }
+
+
+    if(closeButton){
+
+        closeButton.addEventListener(
+            "click",
+            closeMenu
+        );
+
+    }
+
+
+    if(overlay){
+
+        overlay.addEventListener(
+            "click",
+            closeMenu
+        );
+
+    }
+
+
+})();
+
+</script>
+
+
+</body>
+
+</html>
+

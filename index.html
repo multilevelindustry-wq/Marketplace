@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="theme-color"
+    content="#f59e0b"
+>
+
+<meta
+    name="description"
+    content="Shop fashion, electronics, groceries, beauty, home products and more."
+>
+
+<title>NEOSTORE — Shop Everything You Love</title>
+
+<link
+    rel="stylesheet"
+    href="home.css"
+>
+<link
+    rel="stylesheet"
+    href="ads.css"
+>
+
+</head>
+
+
+<body>
+
+
+<!-- ======================================================
+ s    TOP ANNOUNCEMENT
+====================================================== -->
+<div class="fixed-top-wrapper">
+    
+    
+    
+<div class="top-announcement">
+
+    <div class="announcement-track">
+
+        <span>
+            🚚 Fast delivery across Africa
+        </span>
+
+        <span>
+            🔒 Secure payments
+        </span>
+
+        <span>
+            🛍️ Thousands of products
+        </span>
+
+        <span>
+            ⭐ Trusted marketplace
+        </span>
+
+        <span>
+            🌍 Shop locally and globally
+        </span>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     MAIN HEADER
+====================================================== -->
+
+
+
+
+
+
+
+<header class="main-header">
+    <div class="header-inner">
+
+        <!-- ==========================================================
+           1. TOP CONTROL ROW (LOGO ON LEFT, ACTIONS ON RIGHT)
+        ========================================================== -->
+        <div class="header-top-row">
+    
+    <!-- LOGO AREA (HAMBURGER REMOVED) -->
+    <div class="logo-area">
+        <a href="index.html" class="store-logo">
+            <strong style="font-size: 24px; >NEOSTORE</strong>
+            <span class="logo-text">
+                <strong>NEOSTORE</strong>
+                <small class="desktop-only-text">MARKETPLACE</small>
+            </span>
+        </a>
+    </div>
+
+    <!-- HEADER ACTIONS (JUMIA STYLE SVGS) -->
+    <div class="header-actions">
+        
+        
+        <!-- ACCOUNT -->    
+        <a id="accountButton" href="buyer.html" class="header-action">
+            
+              <span class="action-content">
+                <strong id="buyerFirstName">Sign In</strong>
+            </span>
+            
+            <span class="action-icon">
+                <svg xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="jumia-svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                </svg>
+            </span>
+          
+        </a>
+
+        <!-- CART -->
+        <a href="cart.html" class="header-cart">
+            <span class="cart-icon">
+                <svg xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="jumia-svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                </svg>
+                <span id="cartCount" class="cart-count">0</span>
+            </span>
+        </a>
+    </div>
+
+</div>
+
+
+        <!-- ==========================================================
+           2. BOTTOM ROW (FULL-WIDTH SEARCH INPUT PANEL)
+        ========================================================== -->
+        <div class="header-search">
+            <div class="search-wrapper">
+                <span class="search-icon-hint">🔍</span>
+                <input
+                    id="homeSearch"
+                    type="search"
+                    placeholder="Search products, brands and categories..."
+                    autocomplete="off"
+                >
+                <button id="searchButton" type="button" aria-label="Search">
+                    <img src="search.png" alt="Search">
+                </button>
+            </div>
+        </div>
+
+    </div>
+</header>
+
+
+
+
+
+
+<!-- ======================================================
+     CATEGORY NAVIGATION
+====================================================== -->
+
+<nav class="category-navigation">
+
+    <div class="category-nav-inner">
+
+        <button
+            id="allCategoriesButton"
+            class="all-categories-button"
+            type="button"
+        >
+            ☰
+            <span>
+                All Categories
+            </span>
+        </button>
+
+
+        <div class="quick-links">
+
+            <a href="category.html?category=Fashion">
+                Fashion
+            </a>
+
+            <a href="category.html?category=Electronics">
+                Electronics
+            </a>
+
+            <a href="category.html?category=Beauty">
+                Beauty
+            </a>
+
+            <a href="category.html?category=Home">
+                Home
+            </a>
+
+            <a href="category.html?category=Groceries">
+                Groceries
+            </a>
+
+            <a href="category.html?category=Shoes">
+                Shoes
+            </a>
+
+            <a href="category.html?category=Kids">
+                Kids
+            </a>
+
+            <a href="category.html?category=Sports">
+                Sports
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+</div>
+<!-- ======================================================
+     MAIN
+====================================================== -->
+
+<main class="home-main">
+
+
+<!-- ======================================================
+     HERO AREA
+====================================================== -->
+
+<section class="hero-section">
+
+    
+
+    <!-- PROMO CARDS -->
+
+    <div class="hero-promos">
+
+        <a
+            href="category.html?category=Fashion"
+            class="promo-card"
+        >
+
+            <span>
+                🔥
+            </span>
+
+            <div>
+
+                <strong>
+                    Hot Deals
+                </strong>
+
+                <small>
+                    Great prices today
+                </small>
+
+            </div>
+
+        </a>
+
+
+        <a
+            href="category.html?category=Electronics"
+            class="promo-card"
+        >
+
+            <span>
+                ✨
+            </span>
+
+            <div>
+
+                <strong>
+                    New Arrivals
+                </strong>
+
+                <small>
+                    Fresh products
+                </small>
+
+            </div>
+
+        </a>
+
+
+        <a
+            href="category.html?category=Kitchen Appliance"
+            class="promo-card"
+        >
+
+            <span>
+                ⭐
+            </span>
+
+            <div>
+
+                <strong>
+                    Top Sellers
+                </strong>
+
+                <small>
+                    Popular right now
+                </small>
+
+            </div>
+
+        </a>
+
+
+        <a
+            href="category.html?category=Home Appliance"
+            class="promo-card"
+        >
+
+            <span>
+                🏷️
+            </span>
+
+            <div>
+
+                <strong>
+                    Clearance
+                </strong>
+
+                <small>
+                    Limited-time prices
+                </small>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<section
+    class="marketplace-ads-section"
+    id="marketplaceAdsSection"
+>
+
+    <div
+        id="marketplaceAds"
+        class="marketplace-ads"
+    ></div>
+
+</section>
+
+<!-- ======================================================
+     MOVING CATEGORIES
+====================================================== -->
+
+<section class="category-section">
+
+    <div class="section-header">
+
+        <div>
+
+            <span class="section-eyebrow">
+                EXPLORE
+            </span>
+
+            <h2>
+                Shop by Category
+            </h2>
+
+        </div>
+
+        <a
+            href="categories.html"
+            class="view-all"
+        >
+            View All →
+        </a>
+
+    </div>
+
+
+    <div class="category-slider">
+
+        <div
+            id="categoryTrack"
+            class="category-track"
+        >
+
+            <!-- Categories inserted by home.js -->
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     FEATURED CATEGORY BOXES
+====================================================== -->
+
+<section class="featured-categories">
+
+    <div class="section-header">
+
+        <div>
+
+            <span class="section-eyebrow">
+                TRENDING NOW
+            </span>
+
+            <h2>
+                Popular Categories
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="featuredCategoryGrid"
+        class="featured-category-grid"
+    >
+
+        <!-- Category boxes inserted by home.js -->
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     PRODUCTS
+====================================================== -->
+
+<section
+    id="products"
+    class="products-section"
+>
+
+    <div class="section-header">
+
+        <div>
+
+            <span class="section-eyebrow">
+                DISCOVER
+            </span>
+
+            <h2>
+                Popular Products
+            </h2>
+
+            <p>
+                Discover products customers are
+                loving right now.
+            </p>
+
+        </div>
+
+        <a
+            href="category.html"
+            class="view-all"
+        >
+            View All →
+        </a>
+
+    </div>
+
+
+    <div
+        id="productGrid"
+        class="product-grid"
+    >
+
+        <!-- Products will be inserted here -->
+
+    </div>
+
+
+    <div
+        id="productLoading"
+        class="product-loading"
+    >
+
+        <span class="loading-spinner"></span>
+
+        <span>
+            Loading more products...
+        </span>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ============================================lp==========
+     FOOTER
+====================================================== -->
+
+<footer class="store-footer">
+
+    <div class="footer-main">
+
+        <div class="footer-brand">
+
+            <a
+                href="index.html"
+                class="footer-logo"
+            >
+                NEOSTORE
+            </a>
+
+            <p>
+                Your trusted marketplace for
+                discovering products from sellers
+                across Africa and around the world.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Shop
+            </h3>
+
+            <a href="categories.html">
+                Categories
+            </a>
+
+            <a href="category.html?category=Deals">
+                Deals
+            </a>
+
+            <a href="category.html?category=New Arrivals">
+                New Arrivals
+            </a>
+
+            <a href="cart.html">
+                Cart
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Account
+            </h3>
+
+            <a href="signup.html">
+                Create Account
+            </a>
+
+            <a href="login.html">
+                Sign In
+            </a>
+
+            <a href="orders.html">
+                My Orders
+            </a>
+
+            <a href="profile.html">
+                My Profile
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Sell
+            </h3>
+
+            <a href="seller-register.html">
+                Become a Seller
+            </a>
+
+            <a href="seller.html">
+                Seller Center
+            </a>
+
+            <a href="seller-help.html">
+                Seller Help
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Help
+            </h3>
+
+            <a href="help.html">
+                Help Center
+            </a>
+
+            <a href="contact.html">
+                Contact Us
+            </a>
+
+            <a href="privacy.html">
+                Privacy
+            </a>
+
+            <a href="terms.html">
+                Terms
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 NEOSTORE.
+            All rights reserved.
+        </p>
+
+        <span>
+            🌍 Africa & Worldwide
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script
+    type="module"
+    src="home.js"
+></script>
+
+<script
+    type="module"
+    src="ads.js"
+></script>
+
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    
+    
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+>
+    
+
+    <meta
+        name="theme-color"
+        content="#f4511e"
+    >
+
+    <meta
+        name="description"
+        content="Shop products by category."
+    >
+
+    <title>Category | NEOSTORE</title>
+
+    <link
+        rel="stylesheet"
+        href="category.css"
+    >
+
+<link
+    rel="stylesheet"
+    href="ads.css"
+>
+
+
+</head>
+
+<body>
+
+<!-- ==========================================================
+     NEOSTORE CATEGORY HEADER
+========================================================== -->
+
+<header class="category-page-header">
+
+    <!-- TRUST BAR -->
+    <div class="store-trust-bar">
+
+        <div class="trust-left">
+            ⭐ Trusted marketplace
+        </div>
+
+        <div class="trust-right">
+            🌎 Shop locally and globally
+        </div>
+
+    </div>
+
+
+    <!-- MAIN HEADER -->
+    <div class="store-main-header">
+
+        <!-- LOGO -->
+        <a
+            href="index.html"
+            class="store-logo"
+        >
+            NEOSTORE
+        </a>
+
+
+        <!-- HEADER ACTIONS -->
+        <div class="store-header-actions">
+
+            <!-- SIGN IN -->
+            <a
+                href="login.html"
+                id="signupLink"
+                class="store-signin"
+            >
+
+                <span id="buyerName">
+                    Sign In
+                </span>
+
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.8"
+                    stroke="currentColor"
+                    class="store-user-icon"
+                >
+
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15.75 6a3.75 3.75 0 1 1-7.5 0
+                        3.75 3.75 0 0 1 7.5 0ZM4.501 20.118
+                        a7.5 7.5 0 0 1 14.998 0
+                        A17.933 17.933 0 0 1 12 21.75
+                        c-2.676 0-5.216-.584-7.499-1.632Z"
+                    />
+
+                </svg>
+
+            </a>
+
+
+            <!-- CART -->
+            <a
+                href="cart.html"
+                id="categoryCartLink"
+                class="store-cart"
+            >
+
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.8"
+                    stroke="currentColor"
+                    class="store-cart-icon"
+                >
+
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M2.25 3h1.386
+                        c.51 0 .955.343 1.087.835l.383 1.437
+                        M7.5 14.25a3 3 0 0 0-3 3h15.75
+                        m-12.75-3h11.218
+                        c1.121-2.3 2.1-4.684 2.924-7.138
+                        a60.114 60.114 0 0 0-16.536-1.84
+                        M7.5 14.25L5.106 5.272
+                        M6 20.25a.75.75 0 1 1-1.5 0
+                        .75.75 0 0 1 1.5 0Zm12.75 0
+                        a.75.75 0 1 1-1.5 0
+                        .75.75 0 0 1 1.5 0Z"
+                    />
+
+                </svg>
+
+
+                <strong id="cartCount">
+                    0
+                </strong>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- SEARCH -->
+    <div class="store-search-wrapper">
+
+        <div class="store-search">
+
+            <span class="search-icon">
+                🔍
+            </span>
+
+            <input
+                id="categorySearch"
+                type="search"
+                placeholder="Search products, brands and categories..."
+                autocomplete="off"
+            >
+
+            <button
+                id="categorySearchButton"
+                type="button"
+                aria-label="Search"
+            >
+                Search
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- CATEGORY NAVIGATION -->
+    <nav class="store-category-nav">
+
+        <a
+            href="index.html"
+            class="category-nav-item all-categories"
+        >
+
+            <span class="category-menu-icon">
+                ☰
+            </span>
+
+            <span>
+                All<br>
+                Categories
+            </span>
+
+        </a>
+
+
+        <a
+            href="category.html?category=Fashion"
+            class="category-nav-item"
+        >
+            Fashion
+        </a>
+
+
+        <a
+            href="category.html?category=Electronics"
+            class="category-nav-item"
+        >
+            Electronics
+        </a>
+
+
+        <a
+            href="category.html?category=Beauty"
+            class="category-nav-item"
+        >
+            Beauty
+        </a>
+
+
+        <a
+            href="category.html?category=Home"
+            class="category-nav-item"
+        >
+            Home
+        </a>
+
+
+        <a
+            href="category.html?category=Groceries"
+            class="category-nav-item"
+        >
+            Groceries
+        </a>
+
+    </nav>
+
+</header>
+
+
+                <!-- =====================================================
+     CATEGORY HERO
+====================================================== -->
+
+<section class="category-hero">
+
+    <div class="category-hero-content">
+
+        <span class="category-eyebrow">
+            SHOP CATEGORY
+        </span>
+
+        <h1 id="categoryTitle">
+            Products
+        </h1>
+
+        <p id="categoryDescription">
+            Explore products in this category.
+        </p>
+
+    </div>
+
+</section>
+
+<section
+    class="marketplace-ads-section"
+    id="marketplaceAdsSection"
+>
+
+    <div
+        id="marketplaceAds"
+        class="marketplace-ads"
+    ></div>
+
+</section>
+
+    <section class="category-content">
+
+
+        <div class="category-toolbar">
+
+            <div>
+
+                <strong id="productCount">
+                    0 Products
+                </strong>
+
+                <span id="categoryResultText">
+                    Available now
+                </span>
+
+            </div>
+
+
+            <select
+                id="sortProducts"
+                aria-label="Sort products"
+            >
+
+                <option value="default">
+                    Recommended
+                </option>
+
+                <option value="low">
+                    Price: Low to High
+                </option>
+
+                <option value="high">
+                    Price: High to Low
+                </option>
+
+                <option value="rating">
+                    Highest Rated
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div
+            id="categoryProductGrid"
+            class="category-product-grid"
+        >
+
+        </div>
+
+
+        <div
+            id="categoryEmpty"
+            class="category-empty"
+            hidden
+        >
+
+            <div class="empty-icon">
+                🛍️
+            </div>
+
+            <h2>
+                No products found
+            </h2>
+
+            <p>
+                There are currently no products
+                available in this category.
+            </p>
+
+            <a
+                href="index.html"
+                class="back-home-button"
+            >
+                Continue Shopping
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="category-footer">
+
+    <div class="footer-content">
+
+        <div>
+
+            <strong>
+                NEOSTORE
+            </strong>
+
+            <p>
+                A marketplace connecting customers
+                with sellers across Africa and beyond.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Marketplace
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="category.html?category=Fashion">
+                Fashion
+            </a>
+
+            <a href="category.html?category=Electronics">
+                Electronics
+            </a>
+
+            <a href="category.html?category=Phones">
+                Phones
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Customer Service
+            </h3>
+
+            <a href="help.html">
+                Help Center
+            </a>
+
+            <a href="delivery-quote.html">
+                Delivery
+            </a>
+
+            <a href="return.html">
+                Returns
+            </a>
+
+            <a href="contact.html">
+                Contact Us
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © <span id="footerYear"></span>
+        NEOSTORE. All rights reserved.
+
+    </div>
+
+</footer>
+
+
+<script
+    type="module"
+    src="category.js"
+></script>
+
+<script
+    type="module"
+    src="ads.js"
+></script>
+
+</body>
+
+</html>

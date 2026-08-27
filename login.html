@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Sign In | NEOSTORE</title>
+
+    <meta
+        name="description"
+        content="Sign in to your NEOSTORE account."
+    >
+
+    <link
+        rel="stylesheet"
+        href="login.css"
+    >
+
+<link
+    rel="stylesheet"
+    href="ads.css"
+>
+
+
+</head>
+
+
+<body>
+
+
+<!-- ======================================================
+     PAGE LOADER
+====================================================== -->
+
+<div
+    id="loginLoader"
+    class="login-loader"
+>
+
+    <div class="loader-spinner"></div>
+
+    <p>
+        Preparing secure sign in...
+    </p>
+
+</div>
+
+
+<!-- ======================================================
+     LOGIN PAGE
+====================================================== -->
+
+<main class="login-page">
+
+
+    <!-- ==================================================
+         HEADER
+    ================================================== -->
+
+    <header class="login-header">
+
+        <a
+            href="index.html"
+            class="login-logo"
+        >
+
+            <span class="logo-mark">
+                N
+            </span>
+
+            <span>
+                NEOSTORE
+            </span>
+
+        </a>
+
+
+        <div class="header-signup">
+
+            <span>
+                New to NEOSTORE?
+            </span>
+
+            <a href="signup.html">
+                Create account
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==================================================
+         LOGIN CONTENT
+    ================================================== -->
+
+    <section class="login-content">
+
+
+        <div class="login-intro">
+
+            <span class="eyebrow">
+                WELCOME BACK
+            </span>
+
+            <h1>
+                Sign in to NEOSTORE
+            </h1>
+
+            <p>
+                Access your account, orders,
+                store and personalized dashboard.
+            </p>
+
+        </div>
+
+
+        <!-- ==================================================
+             LOGIN CARD
+        ================================================== -->
+
+        <div class="login-card">
+
+
+            <div class="login-card-heading">
+
+                <h2>
+                    Sign in
+                </h2>
+
+                <p>
+                    Enter your account details below.
+                </p>
+
+            </div>
+
+
+            <!-- ==================================================
+                 LOGIN FORM
+            ================================================== -->
+
+            <form
+                id="loginForm"
+                class="login-form"
+            >
+
+
+                <div class="form-group">
+
+                    <label for="loginEmail">
+                        Email address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        name="email"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <div class="password-label">
+
+                        <label for="loginPassword">
+                            Password
+                        </label>
+
+                        <a
+                            href="forgot-password.html"
+                        >
+                            Forgot password?
+                        </a>
+
+                    </div>
+
+
+                    <div class="password-field">
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="toggle-password"
+                            aria-label="Show password"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <label class="remember-account">
+
+                    <input
+                        type="checkbox"
+                        id="rememberAccount"
+                    >
+
+                    <span>
+                        Keep me signed in
+                    </span>
+
+                </label>
+
+
+                <button
+                    type="submit"
+                    id="loginButton"
+                    class="login-button"
+                >
+
+                    <span>
+                        Sign in
+                    </span>
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <div
+                    id="loginMessage"
+                    class="login-message"
+                ></div>
+
+
+            </form>
+
+
+<section
+    class="marketplace-ads-section"
+    id="marketplaceAdsSection"
+>
+
+    <div
+        id="marketplaceAds"
+        class="marketplace-ads"
+    ></div>
+
+</section>
+
+            <!-- ==================================================
+                 ACCOUNT INFORMATION
+            ================================================== -->
+
+            <div class="account-info">
+
+                <div class="info-line"></div>
+
+                <span>
+                    One login for every NEOSTORE account
+                </span>
+
+                <div class="info-line"></div>
+
+            </div>
+
+
+            <div class="account-types">
+
+                <div class="account-type">
+
+                    <span class="type-icon">
+                        🛍️
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Buyer
+                        </strong>
+
+                        <p>
+                            Shop and manage orders
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="account-type">
+
+                    <span class="type-icon">
+                        🏪
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Seller
+                        </strong>
+
+                        <p>
+                            Manage your store
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- ==================================================
+             SECURITY NOTE
+        ================================================== -->
+
+        <div class="security-note">
+
+            <span>
+                🔒
+            </span>
+
+            <p>
+                Your login is securely handled
+                through Firebase Authentication.
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- ==================================================
+         FOOTER
+    ================================================== -->
+
+    <footer class="login-footer">
+
+        <p>
+            © 2026 NEOSTORE. All rights reserved.
+        </p>
+
+        <div>
+
+            <a href="privacy.html">
+                Privacy
+            </a>
+
+            <a href="terms.html">
+                Terms
+            </a>
+
+            <a href="help.html">
+                Help Center
+            </a>
+
+        </div>
+
+    </footer>
+
+
+</main>
+
+
+<script
+    type="module"
+    src="login.js"
+></script>
+
+<script
+    type="module"
+    src="ads.js"
+></script>
+
+</body>
+
+</html>

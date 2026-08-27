@@ -1,0 +1,678 @@
+/* ==========================================================
+   MARKETPLACE ADS SECTION
+========================================================== */
+
+.marketplace-ads-section {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    margin: 18px auto;
+
+    padding: 0 10px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+}
+
+
+/* ==========================================================
+   ADS CONTAINER
+========================================================== */
+
+.marketplace-ads {
+
+    width: 100%;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr;
+
+    gap: 10px;
+
+    box-sizing: border-box;
+
+}
+
+
+/* ==========================================================
+   AD CARD
+========================================================== */
+
+.marketplace-seller-ad {
+
+    width: 100%;
+
+    height: 90px;
+
+    min-height: 90px;
+
+    max-height: 90px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    flex-direction: row;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 9px;
+
+}
+
+
+/* ==========================================================
+   IMAGE
+========================================================== */
+
+.marketplace-ad-image {
+
+    width: 34%;
+
+    min-width: 34%;
+
+    height: 90px;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+
+}
+
+
+.marketplace-ad-image img {
+
+    width: 100%;
+
+    height: 90px;
+
+    min-height: 0;
+
+    max-height: 90px;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.marketplace-ad-content {
+
+    flex: 1;
+
+    min-width: 0;
+
+    height: 90px;
+
+    padding: 7px 9px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    overflow: hidden;
+
+}
+
+
+/* ==========================================================
+   PRODUCT NAME
+========================================================== */
+
+.marketplace-ad-content h3 {
+
+    width: 100%;
+
+    margin: 0 0 2px;
+
+    font-size: 12px;
+
+    line-height: 1.25;
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 2;
+
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+
+}
+
+
+/* ==========================================================
+   DESCRIPTION
+========================================================== */
+
+.marketplace-ad-content p {
+
+    width: 100%;
+
+    margin: 0 0 3px;
+
+    font-size: 9px;
+
+    line-height: 1.25;
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 1;
+
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+
+}
+
+
+/* ==========================================================
+   PRICE
+========================================================== */
+
+.marketplace-ad-price {
+
+    margin: 0 0 3px;
+
+    font-size: 11px;
+
+    line-height: 1.2;
+
+}
+
+
+/* ==========================================================
+   BUY BUTTON
+========================================================== */
+
+.marketplace-ad-action {
+
+    padding: 4px 9px;
+
+    margin: 0;
+
+    border: none;
+
+    border-radius: 5px;
+
+    font-size: 9px;
+
+    line-height: 1.2;
+
+    cursor: pointer;
+
+}
+
+
+/* ==========================================================
+   SPONSORED BADGE
+========================================================== */
+
+.marketplace-ad-badge {
+
+    position: absolute;
+
+    top: 5px;
+
+    left: 5px;
+
+    z-index: 5;
+
+    padding: 3px 5px;
+
+    border-radius: 4px;
+
+    font-size: 8px;
+
+}
+
+
+/* ==========================================================
+   NO IMAGE
+========================================================== */
+
+.marketplace-ad-no-image {
+
+    width: 100%;
+
+    height: 90px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 9px;
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (min-width: 600px) {
+
+    .marketplace-ads-section {
+
+        padding: 0 15px;
+
+    }
+
+
+    .marketplace-ads {
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+        gap: 12px;
+
+    }
+
+
+    .marketplace-seller-ad {
+
+        height: 100px;
+
+        min-height: 100px;
+
+        max-height: 100px;
+
+    }
+
+
+    .marketplace-ad-image {
+
+        height: 100px;
+
+    }
+
+
+    .marketplace-ad-image img {
+
+        height: 100px;
+
+        max-height: 100px;
+
+    }
+
+
+    .marketplace-ad-content {
+
+        height: 100px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   DESKTOP
+========================================================== */
+
+@media (min-width: 1000px) {
+
+    .marketplace-ads {
+
+        grid-template-columns:
+            repeat(
+                3,
+                minmax(0, 1fr)
+            );
+
+        gap: 14px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   LARGE DESKTOP
+========================================================== */
+
+@media (min-width: 1350px) {
+
+    .marketplace-ads {
+
+        grid-template-columns:
+            repeat(
+                4,
+                minmax(0, 1fr)
+            );
+
+    }
+
+}
+
+
+/* ==========================================================
+   PREVENT HORIZONTAL OVERFLOW
+========================================================== */
+
+.marketplace-ads-section,
+.marketplace-ads,
+.marketplace-seller-ad,
+.marketplace-ad-content,
+.marketplace-ad-image {
+
+    max-width: 100%;
+
+    box-sizing: border-box;
+
+}
+
+
+/* ==========================================================
+   MOBILE — FORCE SHORT HEIGHT
+========================================================== */
+
+@media (max-width: 599px) {
+
+    .marketplace-seller-ad {
+
+        height: 90px !important;
+
+        min-height: 90px !important;
+
+        max-height: 90px !important;
+
+    }
+
+
+    .marketplace-ad-image {
+
+        height: 90px !important;
+
+        min-height: 90px !important;
+
+    }
+
+
+    .marketplace-ad-image img {
+
+        height: 90px !important;
+
+        min-height: 0 !important;
+
+        max-height: 90px !important;
+
+    }
+
+
+    .marketplace-ad-content {
+
+        height: 90px !important;
+
+        min-height: 0 !important;
+
+    }
+
+}
+
+
+
+
+
+
+/* ==========================================================
+   MARKETPLACE RESPONSIVE RECTANGLE AD
+========================================================== */
+
+.marketplace-ad-section {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    margin: 24px auto;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+}
+
+
+/* ==========================================================
+   AD LABEL
+========================================================== */
+
+.marketplace-ad-label {
+
+    width: 100%;
+
+    margin-bottom: 6px;
+
+    text-align: center;
+
+    font-size: 10px;
+
+    line-height: 1.3;
+
+    color: #9ca3af;
+
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
+
+    text-transform: uppercase;
+
+}
+
+
+/* ==========================================================
+   AD BOX
+========================================================== */
+
+.marketplace-ad-box {
+
+    width: 100%;
+
+    max-width: 728px;
+
+    min-height: 90px;
+
+    margin: 0 auto;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 10px;
+
+}
+
+
+/* ==========================================================
+   PLACEHOLDER
+========================================================== */
+
+.marketplace-ad-placeholder {
+
+    font-size: 12px;
+
+    color: #9ca3af;
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 600px) {
+
+    .marketplace-ad-section {
+
+        width: 100%;
+
+        margin: 18px auto;
+
+        padding: 0 10px;
+
+    }
+
+
+    .marketplace-ad-box {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        min-height: 70px;
+
+        border-radius: 8px;
+
+    }
+
+
+    .marketplace-ad-label {
+
+        font-size: 9px;
+
+        margin-bottom: 5px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    .marketplace-ad-section {
+
+        padding: 0 20px;
+
+    }
+
+
+    .marketplace-ad-box {
+
+        max-width: 600px;
+
+        min-height: 90px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   DESKTOP
+========================================================== */
+
+@media (min-width: 1025px) {
+
+    .marketplace-ad-section {
+
+        margin-top: 30px;
+
+        margin-bottom: 30px;
+
+    }
+
+
+    .marketplace-ad-box {
+
+        min-height: 90px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   PREVENT AD FROM CAUSING PAGE OVERFLOW
+========================================================== */
+
+.marketplace-ad-section,
+.marketplace-ad-box {
+
+    max-width: 100%;
+
+}
+
+
+/* ==========================================================
+   AD CONTENT SAFETY
+========================================================== */
+
+.marketplace-ad-box iframe,
+.marketplace-ad-box img,
+.marketplace-ad-box video {
+
+    display: block;
+
+    max-width: 100%;
+
+}
+
+
+/* ==========================================================
+   DARK MODE
+========================================================== */
+
+@media (prefers-color-scheme: dark) {
+
+    .marketplace-ad-box {
+
+        background: #111827;
+
+        border-color: #1f2937;
+
+    }
+
+
+    .marketplace-ad-label,
+    .marketplace-ad-placeholder {
+
+        color: #6b7280;
+
+    }
+
+}
+
