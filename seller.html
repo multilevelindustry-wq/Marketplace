@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111827">
+<meta name="description"
+content="Seller dashboard and professional seller center.">
+<title>Seller Center</title>
+<link rel="stylesheet" href="seller.css">
+</head>
+
+<body>
+
+<div id="pageLoader" class="page-loader">
+    <div class="loader"></div>
+    <p>Loading Seller Center...</p>
+</div>
+
+<header class="seller-header">
+
+    <div class="header-left">
+
+        <button
+            id="menuButton"
+            class="menu-button"
+            type="button"
+            aria-label="Open menu"
+        >
+            ☰
+        </button>
+
+
+        <a
+            href="index.html"
+            class="seller-logo"
+        >
+            <span class="logo-main">
+                SELLER
+            </span>
+
+            <span class="logo-sub">
+                CENTER
+            </span>
+        </a>
+
+    </div>
+
+
+    <div class="header-search">
+
+        <input
+            id="sellerSearch"
+            type="search"
+            placeholder="Search your products, orders or statistics..."
+        >
+
+        <button
+            id="searchButton"
+            type="button"
+        >
+            🔍
+        </button>
+
+    </div>
+
+
+    <div class="header-actions">
+
+
+        <!-- NOTIFICATIONS -->
+
+        <button
+    id="notificationButton"
+    class="header-icon"
+    type="button"
+    aria-label="Seller notifications"
+>
+
+    🔔
+
+    <span
+        id="notificationCount"
+        class="notification-count"
+    >
+        0
+    </span>
+
+</button>
+
+
+
+        <!-- ==================================================
+             SELLER PROFILE + STORE PHOTO
+        =================================================== -->
+
+        <div
+            class="seller-profile-wrapper"
+        >
+
+
+            <!-- SELLER PROFILE BUTTON -->
+
+            <button
+                id="sellerProfileButton"
+                class="header-profile"
+                type="button"
+            >
+
+                <img
+                    id="headerSellerPhoto"
+                    src="default-avatar.png"
+                    alt="Seller"
+                >
+
+                <span
+                    id="headerSellerName"
+                >
+                    Seller
+                </span>
+
+            </button>
+
+
+
+            <!-- ==================================================
+                 STORE PHOTO MANAGEMENT PANEL
+            =================================================== -->
+
+            <div
+                id="sellerPhotoPanel"
+                class="seller-photo-panel"
+            >
+
+
+                <!-- PHOTO PREVIEW -->
+
+                <div
+                    class="seller-photo-preview"
+                >
+
+                    <img
+                        id="sellerStorePhotoPreview"
+                        src="default-avatar.png"
+                        alt="Store photo"
+                    >
+
+                </div>
+
+
+
+                <!-- HIDDEN FILE INPUT -->
+
+                <input
+                    type="file"
+                    id="sellerStorePhotoInput"
+                    accept="image/*"
+                    hidden
+                >
+
+
+
+                <!-- ADD PHOTO -->
+
+                <button
+                    type="button"
+                    id="addStorePhotoButton"
+                    class="store-photo-button"
+                >
+                    📷 Add Store Photo
+                </button>
+
+
+
+                <!-- EDIT PHOTO -->
+
+                <button
+                    type="button"
+                    id="editStorePhotoButton"
+                    class="store-photo-button"
+                    style="display:none;"
+                >
+                    ✏️ Edit Store Photo
+                </button>
+
+
+
+                <!-- UPLOAD STATUS -->
+
+                <p
+                    id="storePhotoUploadStatus"
+                    class="store-photo-upload-status"
+                ></p>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</header>
+
+
+ 
+
+<div class="seller-layout">
+
+    <aside id="sellerSidebar"
+    class="seller-sidebar">
+
+        <div class="sidebar-profile">
+
+            <img
+            id="sidebarSellerPhoto"
+            src="default-avatar.png"
+            alt="Seller photo">
+
+            <h3 id="sidebarSellerName">
+                Seller
+            </h3>
+
+            <p id="sidebarSellerCountry">
+                Country
+            </p>
+
+        </div>
+
+        <nav class="seller-navigation">
+
+            <a href="#overview"
+            class="nav-item active">
+                <span>📊</span>
+                Dashboard
+            </a>
+
+            <a href="#profile"
+            class="nav-item">
+                <span>👤</span>
+                Seller Profile
+            </a>
+
+            <a href="#products"
+            class="nav-item">
+                <span>📦</span>
+                My Products
+            </a>
+
+            <a href="#orders"
+            class="nav-item">
+                <span>🛒</span>
+                Orders
+            </a>
+
+            <a href="#analytics"
+            class="nav-item">
+                <span>📈</span>
+                Analytics
+            </a>
+
+            <a href="#discounts"
+            class="nav-item">
+                <span>🏷️</span>
+                Discounts
+            </a>
+
+            <a href="#promocodes"
+            class="nav-item">
+                <span>🎟️</span>
+                Promo Codes
+            </a>
+
+            <a href="#advertising"
+            class="nav-item">
+                <span>📢</span>
+                Advertise Products
+            </a>
+
+            <a href="#social"
+            class="nav-item">
+                <span>🌐</span>
+                Social Accounts
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <main id="sellerMain"
+    class="seller-main">
+
+        <section id="overview"
+        class="seller-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="eyebrow">
+                        SELLER CENTER
+                    </span>
+
+                    <h1>
+                        Welcome back,
+                        <span id="welcomeSellerName">
+                            Seller
+                        </span>
+                    </h1>
+
+                    <p>
+                        Manage your store, products,
+                        customers and sales performance
+                        from one professional dashboard.
+                    </p>
+                </div>
+
+                <a
+                id="uploadProductsLink"
+                href="seller-upload.html"
+                class="primary-button">
+                    + Upload Products
+                </a>
+                <a
+                id="uploadProductsLink"
+                href="seller-store.html"
+                class="primary-button">
+                    View Your Store
+                </a>
+                
+                <a
+                id="uploadProductsLink"
+                href="tracking.html"
+                class="primary-button">
+                    Track Your Goods
+                </a>
+
+            </div>
+
+            <div id="sellerVerification"
+            class="verification-banner">
+
+                <div>
+                    <strong>Seller account</strong>
+                    <p id="verificationMessage">
+                        Your seller information is being loaded.
+                    </p>
+                </div>
+
+                <span id="verificationStatus"
+                class="status-badge">
+                    Checking
+                </span>
+</div>
+            </div>
+        </section>
+        
+        
+        <!-- ==========================================================
+     SELLER AD PERFORMANCE
+========================================================== -->
+
+<section
+    class="seller-ads-performance-section"
+    id="sellerAdsPerformance"
+>
+
+    <div class="seller-ads-performance-header">
+
+        <div>
+
+            <span class="seller-ads-label">
+                ADVERTISEMENT
+            </span>
+
+            <h2>
+                My Ads Performance
+            </h2>
+
+            <p>
+                Monitor your advertising campaigns,
+                impressions and clicks.
+            </p>
+
+        </div>
+
+        <button
+            type="button"
+            id="refreshSellerAds"
+            class="seller-ads-refresh"
+        >
+            ↻ Refresh
+        </button>
+
+    </div>
+
+
+    <!-- ======================================================
+         STATISTICS
+    ======================================================= -->
+
+    <div class="seller-ads-statistics">
+
+        <div class="seller-ads-stat-card">
+
+            <span>
+                Total Ads
+            </span>
+
+            <strong id="sellerTotalAds">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="seller-ads-stat-card">
+
+            <span>
+                Active Ads
+            </span>
+
+            <strong id="sellerActiveAds">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="seller-ads-stat-card">
+
+            <span>
+                Impressions
+            </span>
+
+            <strong id="sellerTotalImpressions">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="seller-ads-stat-card">
+
+            <span>
+                Clicks
+            </span>
+
+            <strong id="sellerTotalClicks">
+                0
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- ======================================================
+         LOADING
+    ======================================================= -->
+
+    <div
+        id="sellerAdsLoading"
+        class="seller-ads-loading"
+    >
+        Loading advertising performance...
+    </div>
+
+
+    <!-- ======================================================
+         ADS LIST
+    ======================================================= -->
+
+    <div
+        id="sellerAdsList"
+        class="seller-ads-list"
+    ></div>
+
+
+    <!-- ======================================================
+         EMPTY
+    ======================================================= -->
+
+    <div
+        id="sellerAdsEmpty"
+        class="seller-ads-empty"
+        style="display:none;"
+    >
+        No advertising campaigns found.
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     SELLER BANK ACCOUNT
+========================================================== -->
+
+<section class="seller-bank-section">
+
+    <div class="seller-bank-header">
+
+        <span>
+            PAYMENT INFORMATION
+        </span>
+
+        <h2>
+            Bank Account Details
+        </h2>
+
+        <p>
+            Enter the bank account where you want to receive
+            your seller payments.
+        </p>
+
+    </div>
+
+
+    <form id="sellerBankForm">
+
+        <div class="bank-field">
+
+            <label for="bankName">
+                Bank Name
+            </label>
+
+            <input
+                type="text"
+                id="bankName"
+                placeholder="e.g. Access Bank"
+                required
+            >
+
+        </div>
+
+
+        <div class="bank-field">
+
+            <label for="accountName">
+                Account Name
+            </label>
+
+            <input
+                type="text"
+                id="accountName"
+                placeholder="Name on bank account"
+                required
+            >
+
+        </div>
+
+
+        <div class="bank-field">
+
+            <label for="accountNumber">
+                Account Number
+            </label>
+
+            <input
+                type="text"
+                id="accountNumber"
+                inputmode="numeric"
+                maxlength="10"
+                placeholder="10-digit account number"
+                required
+            >
+
+        </div>
+
+
+        <button
+            type="submit"
+            id="saveBankDetails"
+        >
+            Save Bank Details
+        </button>
+
+    </form>
+
+
+    <div
+        id="bankDetailsStatus"
+        class="bank-details-status"
+    ></div>
+
+</section>
+
+<section id="profile"
+class="seller-section">
+
+    <div class="section-heading compact">
+
+        <div>
+            <span class="eyebrow">
+                SELLER PROFILE
+            </span>
+
+            <h2>
+                Your Business Information
+            </h2>
+
+            <p>
+                Information displayed on your public
+                seller page.
+            </p>
+        </div>
+
+        <a
+        id="publicSellerPage"
+        href="#"
+        class="secondary-button">
+            View Store
+        </a>
+
+    </div>
+
+    <div class="seller-profile-card">
+        <div class="seller-basic-info">
+
+            <h2 id="profileSellerName">
+                Seller Name
+            </h2>
+
+            <p id="profileSellerEmail">
+                seller@email.com
+            </p>
+
+            <span id="sellerAccountStatus"
+            class="status-badge">
+                Active Seller
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="information-grid">
+
+        <div class="information-item">
+            <span class="information-label">
+                Full Name
+            </span>
+            <strong id="sellerFullName">
+                —
+            </strong>
+        </div>
+
+        <div class="information-item">
+            <span class="information-label">
+                Email Address
+            </span>
+            <strong id="sellerEmail">
+                —
+            </strong>
+        </div>
+
+        <div class="information-item">
+            <span class="information-label">
+                Country
+            </span>
+            <strong id="sellerCountry">
+                —
+            </strong>
+        </div>
+
+        <div class="information-item">
+            <span class="information-label">
+                Location
+            </span>
+            <strong id="sellerLocation">
+                —
+            </strong>
+        </div>
+
+        <div class="information-item">
+            <span class="information-label">
+                Phone Number
+            </span>
+            <strong id="sellerPhone">
+                —
+            </strong>
+        </div>
+
+        <div class="information-item">
+            <span class="information-label">
+                Seller ID
+            </span>
+            <strong id="sellerId">
+                —
+            </strong>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section
+    class="seller-social-section"
+>
+
+    <div class="seller-section-label">
+        SOCIAL MEDIA
+    </div>
+
+    <h2>
+        Connect With Our Store
+    </h2>
+
+    <p>
+        Follow this seller and visit their
+        official online pages.
+    </p>
+
+
+    <div
+        id="sellerSocialMedia"
+        class="seller-social-media"
+    >
+
+        <div class="seller-social-empty">
+            Loading social accounts...
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<section id="products"
+class="seller-section">
+
+    <div class="section-heading compact">
+
+        <div>
+            <span class="eyebrow">
+                PRODUCT MANAGEMENT
+            </span>
+
+            <h2>
+                Manage Your Products
+            </h2>
+
+            <p>
+                Add products, update listings and
+                monitor product performance.
+            </p>
+        </div>
+
+        <a
+        href="seller-upload.html"
+        class="primary-button">
+            Upload Product
+        </a>
+
+    </div>
+
+    <div class="product-management-card">
+
+        <div class="management-icon">
+            📦
+        </div>
+
+        <div>
+            <h3>
+                Seller Upload Center
+            </h3>
+
+            <p>
+                Upload products with photos, videos,
+                descriptions, prices, stock and
+                delivery information.
+            </p>
+        </div>
+
+        <a
+        href="seller-upload.html"
+        class="secondary-button">
+            Open Upload Page
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<section id="discounts"
+class="seller-section">
+
+<style>
+    #discounts{
+        display: none
+    }
+</style>
+
+    <div class="section-heading compact">
+
+        <div>
+            <span class="eyebrow">
+                CUSTOMER DISCOUNTS
+            </span>
+
+            <h2>
+                Seller Discount
+            </h2>
+
+            <p>
+                Create discounts that customers can
+                use during checkout.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="promotion-card">
+
+        <div class="promotion-icon">
+            🏷️
+        </div>
+
+        <div class="promotion-content">
+
+            <h3>
+                Current Seller Discount
+            </h3>
+
+            <p>
+                Customers will automatically receive
+                this discount when eligible products
+                are purchased.
+            </p>
+
+            <div class="discount-value">
+                <strong id="sellerDiscount">
+                    0%
+                </strong>
+
+                <span>
+                    Customer discount
+                </span>
+            </div>
+
+        </div>
+
+        <button
+        id="manageDiscountButton"
+        class="secondary-button"
+        type="button">
+            Manage Discount
+        </button>
+
+    </div>
+
+</section>
+
+
+<section id="promocodes"
+class="seller-section">
+
+<style>
+    #promocodes{
+        display: none
+    }
+</style>
+
+    <div class="section-heading compact">
+
+        <div>
+            <span class="eyebrow">
+                PROMOTIONS
+            </span>
+
+            <h2>
+                Seller Promo Codes
+            </h2>
+
+            <p>
+                Give customers special promotional
+                codes to use at checkout.
+            </p>
+        </div>
+
+        <button
+        id="createPromoButton"
+        class="primary-button"
+        type="button">
+            + Create Promo Code
+        </button>
+
+    </div>
+
+    <div id="promoCodesContainer"
+    class="promo-codes-container">
+
+        <div class="empty-promo">
+
+            <span>🎟️</span>
+
+            <h3>
+                No promo codes yet
+            </h3>
+
+            <p>
+                Create your first promo code to
+                attract more customers.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="advertising"
+class="seller-section">
+
+    <div class="seller-ad-card">
+
+        <div class="seller-ad-content">
+
+            <span class="ad-label">
+                GROW YOUR STORE
+            </span>
+
+            <h2>
+                Put Your Products in Front of More Customers
+            </h2>
+
+            <p>
+                Your products deserve more visibility.
+                Launch a professional advertising campaign
+                and place your products in front of customers
+                who are actively searching for what you sell.
+            </p>
+
+            <p>
+                Promote your best-selling products, reach
+                new customers and increase product
+                conversations across the marketplace.
+            </p>
+
+            <div class="ad-actions">
+
+                <a
+                href="buy-ads.html"
+                class="primary-button">
+                    Start Advertising Now
+                </a>
+
+                <a
+                href="buy-ads.html"
+                class="text-button">
+                    Learn More →
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="seller-ad-visual">
+
+            <div class="ad-chart">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="ad-visual-label">
+                <strong>
+                    More Visibility
+                </strong>
+
+                <small>
+                    More Product Conversations
+                </small>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="seller-section">
+
+    <div class="seller-tools-grid">
+
+        <article class="seller-tool-card">
+
+            <span>⭐</span>
+
+            <h3>
+                Customer Reviews
+            </h3>
+
+            <p>
+                Monitor customer feedback and
+                improve your store reputation.
+            </p>
+
+            <a href="seller-reviews.html">
+                View Reviews →
+            </a>
+
+        </article>
+
+        <article class="seller-tool-card">
+
+            <span>🚚</span>
+
+            <h3>
+                Delivery Performance
+            </h3>
+
+            <p>
+                Monitor order fulfillment and
+                delivery performance.
+            </p>
+
+            <a href="seller-delivery.html">
+                View Delivery →
+            </a>
+
+        </article>
+
+        <article class="seller-tool-card">
+
+            <span>📋</span>
+
+            <h3>
+                Business Reports
+            </h3>
+
+            <p>
+                Review detailed reports for your
+                marketplace business.
+            </p>
+
+            <a href="seller-reports.html">
+                Open Reports →
+            </a>
+
+        </article>
+
+        <article class="seller-tool-card">
+
+            <span>🛡️</span>
+
+            <h3>
+                Seller Protection
+            </h3>
+
+            <p>
+                Learn about marketplace policies,
+                disputes and seller protection.
+            </p>
+
+            <a href="seller-protection.html">
+                Learn More →
+            </a>
+
+        </article>
+
+    </div>
+
+</section>
+  </main>
+
+<footer class="seller-footer">
+
+    <div class="footer-main">
+
+        <div class="footer-brand">
+
+            <a href="index.html"
+            class="footer-logo">
+                NEOSTORE
+            </a>
+
+            <p>
+                A professional marketplace connecting
+                sellers with customers across Africa
+                and around the world.
+            </p>
+
+            <div class="footer-socials">
+
+                <a href="#" aria-label="Facebook">
+                    f
+                </a>
+
+                <a href="#" aria-label="Instagram">
+                    ◎
+                </a>
+
+                <a href="#" aria-label="YouTube">
+                    ▶
+                </a>
+
+                <a href="#" aria-label="X">
+                    𝕏
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Seller Center
+            </h3>
+
+            <a href="#overview">
+                Dashboard
+            </a>
+
+            <a href="#products">
+                My Products
+            </a>
+
+            <a href="#orders">
+                Orders
+            </a>
+
+            <a href="#analytics">
+                Analytics
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Grow Your Business
+            </h3>
+
+            <a href="#advertising">
+                Advertise Products
+            </a>
+
+            <a href="discount.html">
+                Seller Discounts
+            </a>
+
+            <a href="about-promo.html">
+                Promo Codes
+            </a>
+
+            <a href="seller-reports.html">
+                Business Reports
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Help & Support
+            </h3>
+
+            <a href="seller-help.html">
+                Seller Help Center
+            </a>
+
+            <a href="seller-policy.html">
+                Seller Policies
+            </a>
+
+            <a href="seller-delivery.html">
+                Delivery Information
+            </a>
+
+            <a href="contact.html">
+                Contact Support
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Marketplace
+            </h3>
+
+            <a href="index.html">
+                Shop
+            </a>
+
+            <a href="categories.html">
+                Categories
+            </a>
+
+            <a href="seller-register.html">
+                Become a Seller
+            </a>
+
+            <a href="terms.html">
+                Terms & Conditions
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © <span id="footerYear"></span>
+            NEOSTORE. All rights reserved.
+        </p>
+
+        <div>
+
+            <a href="privacy.html">
+                Privacy
+            </a>
+
+            <a href="terms.html">
+                Terms
+            </a>
+
+            <a href="cookies.html">
+                Cookies
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+
+
+<div id="discountModal"
+class="modal">
+
+    <div class="modal-box">
+
+        <button
+        class="modal-close"
+        data-close-modal="discountModal"
+        type="button">
+            ×
+        </button>
+
+        <h2>
+            Seller Discount
+        </h2>
+
+        <p>
+            Set the discount customers can receive
+            on your eligible products.
+        </p>
+
+        <label for="discountInput">
+            Discount Percentage
+        </label>
+
+        <input
+        id="discountInput"
+        type="number"
+        min="0"
+        max="90"
+        placeholder="Example: 10">
+
+        <button
+        id="saveDiscountButton"
+        class="primary-button"
+        type="button">
+            Save Discount
+        </button>
+
+    </div>
+
+</div>
+
+
+<div id="promoModal"
+class="modal">
+
+    <div class="modal-box">
+
+        <button
+        class="modal-close"
+        data-close-modal="promoModal"
+        type="button">
+            ×
+        </button>
+
+        <h2>
+            Create Promo Code
+        </h2>
+
+        <p>
+            Create a promotional code customers
+            can use during checkout.
+        </p>
+
+        <label for="promoCodeInput">
+            Promo Code
+        </label>
+
+        <input
+        id="promoCodeInput"
+        type="text"
+        maxlength="30"
+        placeholder="Example: SAVE10">
+
+        <label for="promoPercentInput">
+            Discount Percentage
+        </label>
+
+        <input
+        id="promoPercentInput"
+        type="number"
+        min="1"
+        max="90"
+        placeholder="10">
+
+        <button
+        id="savePromoButton"
+        class="primary-button"
+        type="button">
+            Create Promo Code
+        </button>
+
+    </div>
+
+</div>
+
+
+<script type="module"
+src="seller.js"></script>
+
+<script
+    type="module"
+    src="seller-ads.js"
+></script>
+
+
+</body>
+</html>

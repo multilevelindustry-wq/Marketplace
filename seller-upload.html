@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Upload Product</title>
+
+    <link
+        rel="stylesheet"
+        href="seller-upload.css"
+    >
+
+<link
+    rel="stylesheet"
+    href="ads.css"
+>
+
+
+</head>
+
+<body>
+
+<main class="seller-upload-page">
+
+    <div class="seller-upload-card">
+
+        <h1>Upload Product</h1>
+
+        <p class="upload-subtitle">
+            Add your product to your store.
+        </p>
+
+
+        <!-- PRODUCT IMAGE -->
+
+        <section class="upload-section">
+
+            <label>
+                Product Image
+            </label>
+
+            <input
+                id="productImage"
+                type="file"
+                accept="image/*"
+            >
+
+            <div
+                id="imagePreview"
+                class="image-preview"
+            ></div>
+
+        </section>
+
+
+        <!-- PRODUCT NAME -->
+
+        <section class="upload-section">
+
+            <label for="productName">
+                Product Name
+            </label>
+
+            <input
+                id="productName"
+                type="text"
+                placeholder="Enter product name"
+                maxlength="150"
+            >
+
+        </section>
+
+
+        <!-- CATEGORY -->
+
+        <section class="upload-section">
+
+            <label for="productCategory">
+                Category
+            </label>
+
+            <select id="productCategory">
+
+                <option value="">
+                    Select Category
+                </option>
+
+                <option value="Fashion">
+                    Fashion
+                </option>
+                
+                <option value="Women's Clothing">
+                    Women's Clothing
+                </option>
+
+                <option value="Children's Clothing">
+                    Children's Clothing
+                </option>
+
+                <option value="Men's Clothing">
+                    Men's Wear 
+                </option>
+
+                <option value="Watches">
+                    Watches
+                </option>
+
+                <option value="Electronics">
+                    Electronics
+                </option>
+
+                <option value="Phones & Gadgets">
+                    Phones & Gadgets
+                </option>
+
+                <option value="Computers">
+                    Computers
+                </option>
+
+                <option value="Home & Kitchen">
+                    Home & Kitchen
+                </option>
+                
+                 <option value="Home Decor">
+                    Home Decor
+                </option>
+
+                <option value="Beauty">
+                    Beauty
+                </option>
+
+                <option value="Health & Wellness">
+                    Health & Wellness
+                </option>
+
+                <option value="Groceries">
+                    Groceries
+                </option>
+                
+                 <option value="Home & Kitchen">
+                    Tv & Home Entertainment 
+                </option>
+
+                <option value="Baby Products">
+                    Baby Products 
+                </option>
+
+                <option value="Sports & Fitness">
+                    Sports & Fitness
+                </option>
+                
+                 <option value="Computer Accessories">
+                    Computer Accessories 
+                </option>
+
+                <option value="Automotive">
+                    Automotive
+                </option>
+
+                <option value="Shoes">
+                    Shoes
+                </option>
+
+                <option value="Bags">
+                    Bags
+                </option>
+
+                <option value="Car Accessories">
+                   Car Accessories
+                </option>
+
+                <option value="Power & Solar">
+                    Power & Solar
+                </option>
+
+                <option value="Audio">
+                    Audio
+                </option>
+
+                <option value="Cameras">
+                    Cameras
+                </option>
+
+                <option value="Mobile Phones">
+                    Mobile Phones
+                </option>
+
+                <option value="Garden & Outdoor">
+                    Garden & Outdoor 
+                </option>
+
+                <option value="Home & Kitchen">
+                    Home & Kitchen
+                </option>
+
+                <option value="Books">
+                    Books
+                </option>
+
+                <option value="Health & Wellness">
+                    musical instruments 
+                </option>
+
+                <option value="School Supplies">
+                    School Supplies 
+                </option>
+
+                <option value="Food & Beverags">
+                    Food & Beverages
+                </option>
+
+                <option value="Sports & Fitness">
+                    Sports & Fitness
+                </option>
+
+                <option value="Automotive">
+                    Automotive
+                </option>
+
+                <option value="Pet Supplies">
+                    Pet Supplies 
+                </option>
+
+                <option value="Bags">
+                    travel and luggage
+                </option>
+
+                <option value="Toys & Games">
+                    Toys & Games
+                </option>
+
+                <option value="Motorcycle">
+                    Motorcycle
+                </option>
+                
+                  <option value="Office Supplies">
+                    Office Supplies 
+                </option>
+
+                <option value="Tools & Hardware">
+                    Tools & Hardware
+                </option>
+
+                <option value="Home & Living">
+                    Home & Living 
+                </option>
+
+                <option value="Furniture">
+                    Furniture
+                </option>
+
+                <option value="Lighting">
+                    Lighting 
+                </option>
+
+                <option value="Phones & Accessories">
+                    Phones & Accessories 
+                </option>
+
+                <option value="Generators">
+                    Generators
+                </option>
+
+                <option value="Security">
+                    Security 
+                </option>
+
+                <option value="Jewelry">
+                    Jewelry 
+                </option>
+
+                <option value="Supplements">
+                    Supplements
+                </option>
+
+                <option value="Hair Care">
+                    Hair Care
+                </option>
+
+                <option value="Home Appliances">
+                    Home Appliances
+                </option>
+
+                <option value="Arts & Crafts">
+                    Arts & Crafts
+                </option>
+
+                <option value="Industrial & Commercial">
+                    Industrial & Commercial
+                </option>
+
+                <option value="Construction">
+                    Construction
+                </option>
+
+                <option value="Electrical">
+                    Electrical 
+                </option>
+                
+                  <option value="Plumbing">
+                    Plumbing
+                </option>
+
+                <option value="Agriculture">
+                    Agriculture
+                </option>
+
+                <option value="Farm Equipment">
+                    Farm Equipment
+                </option>
+
+                <option value="Clothing Accessories">
+                    Clothing Accessories
+                </option>
+
+                <option value="Lingerie & Sleepwear">
+                    Lingerie & Sleepwear
+                </option>
+
+                <option value="Traditional & Cultural">
+                    Traditional & Cultural
+                </option>
+
+                <option value="Fabric & Textiles">
+                    Fabric & Textiles
+                </option>
+
+                <option value="Health & Wellness">
+                    Cleaning Supplies 
+                </option>
+
+                <option value="Personal Care">
+                    Personal Care
+                </option>
+
+                <option value="Wedding & Events">
+                    Wedding & Events
+                </option>
+
+                <option value="Gifts">
+                    Gifts
+                </option>
+
+                <option value="Religious Products">
+                    Religious Products 
+                </option>
+
+                <option value="Business Services">
+                    Business Services
+                </option>
+
+                <option value="Kitchen Appliances">
+                   Kitchen Appliances
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <!-- PRICE -->
+
+        <section class="upload-section">
+
+            <label for="productPrice">
+                Your Price
+            </label>
+
+            <div class="price-input">
+
+                <span>₦</span>
+
+                <input
+                    id="productPrice"
+                    type="number"
+                    min="1"
+                    step="1"
+                    placeholder="10000"
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- AUTOMATIC 5% -->
+
+        <div class="price-summary">
+
+            <div>
+
+                <span>
+                    Your Price
+                </span>
+
+                <strong id="sellerPriceDisplay">
+                    ₦0
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Platform 15%
+                </span>
+
+                <strong id="platformFeeDisplay">
+                    ₦0
+                </strong>
+
+            </div>
+
+
+            <div class="buyer-price">
+
+                <span>
+                    Buyer Price
+                </span>
+
+                <strong id="buyerPriceDisplay">
+                    ₦0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- DESCRIPTION -->
+
+        <section class="upload-section">
+
+            <label for="productDescription">
+                Description
+            </label>
+
+            <textarea
+                id="productDescription"
+                rows="5"
+                placeholder="Describe your product..."
+            ></textarea>
+
+        </section>
+
+
+        <!-- VARIATION 1 -->
+
+        <section class="upload-section">
+
+            <label>
+                Variation 1
+            </label>
+
+            <input
+                id="variation1Name"
+                type="text"
+                placeholder="e.g. Size"
+            >
+
+            <input
+                id="variation1Options"
+                type="text"
+                placeholder="e.g. Small, Medium, Large"
+            >
+
+        </section>
+
+
+        <!-- VARIATION 2 -->
+
+        <section class="upload-section">
+
+            <label>
+                Variation 2
+            </label>
+
+            <input
+                id="variation2Name"
+                type="text"
+                placeholder="e.g. Color"
+            >
+
+            <input
+                id="variation2Options"
+                type="text"
+                placeholder="e.g. Red, Blue, Black"
+            >
+
+        </section>
+        
+        
+        <!-- ==========================================================
+     DELIVERY & SHIPPING INFORMATION
+========================================================== -->
+
+<section class="upload-section shipping-section">
+
+    <div class="upload-section-heading">
+
+        <h2>
+            Delivery & Shipping
+        </h2>
+
+        <p>
+            Provide accurate product and pickup information.
+            This will be used to calculate delivery charges.
+        </p>
+
+    </div>
+
+
+    <!-- ======================================================
+         PACKAGE WEIGHT
+    ====================================================== -->
+
+    <div class="shipping-field-group">
+
+        <label for="productWeight">
+            Product Weight
+        </label>
+
+        <div class="shipping-input-with-unit">
+
+            <input
+                id="productWeight"
+                type="number"
+                min="0.01"
+                step="0.01"
+                placeholder="e.g. 1"
+            >
+
+            <span>
+                kg
+            </span>
+
+        </div>
+
+        <small class="shipping-field-help">
+            Enter the approximate packed weight of the product.
+        </small>
+
+    </div>
+
+
+
+    <!-- ======================================================
+         PACKAGE SIZE
+    ====================================================== -->
+
+    <div class="shipping-field-group">
+
+        <label for="productPackageSize">
+            Package Size
+        </label>
+
+        <select id="productPackageSize">
+
+            <option value="">
+                Select package size
+            </option>
+
+            <option value="small">
+                Small
+            </option>
+
+            <option value="medium">
+                Medium
+            </option>
+
+            <option value="large">
+                Large
+            </option>
+
+        </select>
+
+        <small class="shipping-field-help">
+
+            Select the size of the packed product.
+
+        </small>
+
+    </div>
+
+
+
+    <!-- ======================================================
+         PACKAGE DIMENSIONS
+    ====================================================== -->
+
+    <div class="shipping-field-group">
+
+        <label>
+            Package Dimensions
+        </label>
+
+        <div class="package-dimensions-grid">
+
+
+            <div>
+
+                <input
+                    id="packageLength"
+                    type="number"
+                    min="0"
+                    step="0.1"
+                    placeholder="Length"
+                >
+
+                <span>
+                    cm
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <input
+                    id="packageWidth"
+                    type="number"
+                    min="0"
+                    step="0.1"
+                    placeholder="Width"
+                >
+
+                <span>
+                    cm
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <input
+                    id="packageHeight"
+                    type="number"
+                    min="0"
+                    step="0.1"
+                    placeholder="Height"
+                >
+
+                <span>
+                    cm
+                </span>
+
+            </div>
+
+        </div>
+
+        <small class="shipping-field-help">
+
+            Enter the approximate dimensions after packaging.
+
+        </small>
+
+    </div>
+
+
+
+    <!-- ======================================================
+         FREE SHIPPING
+    ====================================================== -->
+
+    <div class="free-shipping-box">
+
+        <label
+            class="free-shipping-option"
+            for="freeShipping"
+        >
+
+            <input
+                id="freeShipping"
+                type="checkbox"
+            >
+
+            <span class="free-shipping-check"></span>
+
+            <span class="free-shipping-content">
+
+                <strong>
+                    Offer Free Shipping
+                </strong>
+
+                <small>
+                    The buyer will not pay the delivery fee.
+                    The delivery cost will be deducted from
+                    the seller's order payment.
+                </small>
+
+            </span>
+
+        </label>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==========================================================
+     SELLER PICKUP LOCATION
+========================================================== -->
+
+<section
+    class="upload-section pickup-location-section"
+>
+
+    <div class="upload-section-heading">
+
+        <h2>
+            Pickup Location
+        </h2>
+
+        <p>
+            This is where our courier will collect the product
+            after you accept an order.
+        </p>
+
+    </div>
+
+
+
+    <!-- ======================================================
+         USE CURRENT LOCATION
+    ====================================================== -->
+
+    <button
+        type="button"
+        id="getSellerLocationButton"
+        class="get-location-button"
+    >
+
+        📍 Use My Current Location
+
+    </button>
+
+
+    <div
+        id="sellerLocationStatus"
+        class="seller-location-status"
+    ></div>
+
+
+
+    <!-- ======================================================
+         COUNTRY
+    ====================================================== -->
+
+    <div class="shipping-field-group">
+
+        <label for="sellerCountry">
+            Country
+        </label>
+
+        <select id="sellerCountry">
+
+            <option value="">
+                Select country
+            </option>
+
+            <option value="Nigeria">
+                Nigeria
+            </option>
+
+        </select>
+
+    </div>
+
+
+
+    <!-- ======================================================
+         STATE
+    ====================================================== -->
+
+    <div class="shipping-field-group">
+
+        <label for="sellerState">
+            State
+        </label>
+
+        <select id="sellerState">
+
+            <option value="">
+                Select state
+            </option>
+
+        </select>
+
+    </div>
+
+
+
+    <!-- ======================================================
+         LGA
+    ====================================================== -->
+
+    <div class="shipping-field-group">
+
+        <label for="sellerLga">
+            LGA
+        </label>
+
+        <select id="sellerLga">
+
+            <option value="">
+                Select LGA
+            </option>
+
+        </select>
+
+    </div>
+
+
+
+    <!-- ======================================================
+         CITY
+    ====================================================== -->
+
+    <div class="shipping-field-group">
+
+        <label for="sellerCity">
+            City / Town
+        </label>
+
+        <input
+            id="sellerCity"
+            type="text"
+            placeholder="Enter city or town"
+        >
+
+    </div>
+
+
+
+    <!-- ======================================================
+         AREA
+    ====================================================== -->
+
+    <div class="shipping-field-group">
+
+        <label for="sellerArea">
+            Area / District
+        </label>
+
+        <input
+            id="sellerArea"
+            type="text"
+            placeholder="Enter area or district"
+        >
+
+    </div>
+
+
+
+    <!-- ======================================================
+         STREET
+    ====================================================== -->
+
+    <div class="shipping-field-group">
+
+        <label for="sellerStreet">
+            Street Address
+        </label>
+
+        <input
+            id="sellerStreet"
+            type="text"
+            placeholder="Enter street name"
+        >
+
+    </div>
+
+
+
+    <!-- ======================================================
+         HOUSE NUMBER
+    ====================================================== -->
+
+    <div class="shipping-field-group">
+
+        <label for="sellerHouseNumber">
+            House / Building Number
+        </label>
+
+        <input
+            id="sellerHouseNumber"
+            type="text"
+            placeholder="e.g. 24"
+        >
+
+    </div>
+
+
+
+    <!-- ======================================================
+         LANDMARK
+    ====================================================== -->
+
+    <div class="shipping-field-group">
+
+        <label for="sellerLandmark">
+            Landmark
+        </label>
+
+        <input
+            id="sellerLandmark"
+            type="text"
+            placeholder="Nearby landmark"
+        >
+
+    </div>
+
+
+
+    <!-- ======================================================
+         PICKUP INSTRUCTIONS
+    ====================================================== -->
+
+    <div class="shipping-field-group">
+
+        <label for="sellerPickupInstructions">
+            Pickup Instructions
+        </label>
+
+        <textarea
+            id="sellerPickupInstructions"
+            rows="4"
+            placeholder="Tell the courier anything important about collecting this product..."
+        ></textarea>
+
+    </div>
+
+
+
+    <!-- ======================================================
+         LOCATION TYPE
+    ====================================================== -->
+
+    <div class="shipping-field-group">
+
+        <label for="sellerLocationType">
+            Pickup Area Type
+        </label>
+
+        <select id="sellerLocationType">
+
+            <option value="">
+                Select area type
+            </option>
+
+            <option value="urban">
+                Urban
+            </option>
+
+            <option value="rural">
+                Rural
+            </option>
+
+        </select>
+
+        <small class="shipping-field-help">
+
+            This describes the seller's pickup area.
+            The buyer's destination type will be determined
+            separately during checkout.
+
+        </small>
+
+    </div>
+
+
+
+    <!-- ======================================================
+         GPS COORDINATES
+    ====================================================== -->
+
+    <div class="seller-coordinates-box">
+
+        <div>
+
+            <span>
+                Latitude
+            </span>
+
+            <strong id="sellerLatitudeDisplay">
+                Not set
+            </strong>
+
+        </div>
+
+
+        <div>
+
+            <span>
+                Longitude
+            </span>
+
+            <strong id="sellerLongitudeDisplay">
+                Not set
+            </strong>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ======================================================
+         HIDDEN GPS VALUES
+    ====================================================== -->
+
+    <input
+        type="hidden"
+        id="sellerLatitude"
+        value=""
+    >
+
+    <input
+        type="hidden"
+        id="sellerLongitude"
+        value=""
+    >
+
+
+</section>
+
+<section
+    class="marketplace-ads-section"
+    id="marketplaceAdsSection"
+>
+
+    <div
+        id="marketplaceAds"
+        class="marketplace-ads"
+    ></div>
+
+</section>
+
+        <!-- STATUS -->
+
+        <div
+            id="uploadStatus"
+            class="upload-status"
+        ></div>
+
+
+        <!-- UPLOAD -->
+
+        <button
+            id="uploadProductButton"
+            class="upload-product-button"
+            type="button"
+        >
+            Upload Product
+        </button>
+
+    </div>
+
+</main>
+
+
+<script
+    type="module"
+    src="seller-upload.js"
+></script>
+
+<script
+    type="module"
+    src="ads.js"
+></script>
+
+
+</body>
+
+</html>
+

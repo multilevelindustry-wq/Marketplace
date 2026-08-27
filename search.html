@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Search products across all categories on NEOSTORE."
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <title>
+        Search Products | NEOSTORE
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="search.css"
+    >
+
+<link
+    rel="stylesheet"
+    href="ads.css"
+>
+
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================================
+     HEADER
+========================================================== -->
+
+<header class="search-header">
+
+    <div class="search-header-inner">
+
+
+        <!-- HOME / MENU -->
+
+        <a
+            href="index.html"
+            class="search-back-button"
+            aria-label="Back to home"
+        >
+            ←
+        </a>
+
+
+        <!-- LOGO -->
+
+        <a
+            href="index.html"
+            class="search-logo"
+        >
+            NEO<span>STORE</span>
+        </a>
+
+
+        <!-- SEARCH -->
+
+        <form
+            id="searchPageForm"
+            class="search-page-form"
+        >
+
+            <div class="search-page-input-wrapper">
+
+                <span class="search-page-icon">
+                    🔍
+                </span>
+
+                <input
+                    id="searchPageInput"
+                    type="search"
+                    placeholder="Search products, brands and categories..."
+                    autocomplete="off"
+                >
+
+                <button
+                    id="searchPageButton"
+                    type="submit"
+                    aria-label="Search"
+                >
+                    <img
+                        src="search.png"
+                        alt="Search"
+                    >
+                </button>
+
+            </div>
+
+        </form>
+
+
+        <!-- CART -->
+
+        <a
+            href="cart.html"
+            class="search-cart"
+            aria-label="Shopping cart"
+        >
+
+            <img
+                src="1000219817-removebg-preview.png"
+                alt="Shopping cart"
+            >
+
+            <span
+                id="searchCartCount"
+                class="search-cart-count"
+            >
+                0
+            </span>
+
+        </a>
+
+
+        <!-- ACCOUNT -->
+
+        <a
+            href="login.html"
+            class="search-account"
+            aria-label="Account"
+        >
+            👤
+        </a>
+
+
+    </div>
+
+</header>
+
+<section
+    class="marketplace-ads-section"
+    id="marketplaceAdsSection"
+>
+
+    <div
+        id="marketplaceAds"
+        class="marketplace-ads"
+    ></div>
+
+</section>
+
+<!-- ==========================================================
+     MAIN
+========================================================== -->
+
+<main class="search-page">
+
+
+    <!-- ======================================================
+         SEARCH INTRO
+    ======================================================= -->
+
+    <section class="search-intro">
+
+        <div>
+
+            <span class="search-eyebrow">
+                NEOSTORE MARKETPLACE
+            </span>
+
+            <h1>
+                Search Products
+            </h1>
+
+            <p id="searchQueryText">
+                Search across all products and categories.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         SEARCH CONTENT
+    ======================================================= -->
+
+    <section class="search-content">
+
+
+        <!-- ==================================================
+             FILTER SIDEBAR
+        =================================================== -->
+
+        <aside
+            id="searchFilters"
+            class="search-filters"
+        >
+
+
+            <div class="filter-header">
+
+                <div>
+
+                    <span>
+                        FILTERS
+                    </span>
+
+                    <h2>
+                        Refine Results
+                    </h2>
+
+                </div>
+
+
+                <button
+                    id="clearFiltersButton"
+                    type="button"
+                >
+                    Clear
+                </button>
+
+            </div>
+
+
+
+            <!-- CATEGORY -->
+
+            <div class="filter-group">
+
+                <label
+                    for="searchCategoryFilter"
+                >
+                    Category
+                </label>
+
+                <select
+                    id="searchCategoryFilter"
+                >
+
+                    <option value="">
+                        All Categories
+                    </option>
+
+                    <option value="Fashion">
+                        Fashion
+                    </option>
+
+                    <option value="Electronics">
+                        Electronics
+                    </option>
+
+                    <option value="Shoes">
+                        Shoes
+                    </option>
+
+                    <option value="Beauty">
+                        Beauty
+                    </option>
+
+                    <option value="Groceries">
+                        Groceries
+                    </option>
+
+                    <option value="Home">
+                        Home
+                    </option>
+
+                    <option value="Kids">
+                        Kids
+                    </option>
+
+                    <option value="Sports">
+                        Sports
+                    </option>
+
+                    <option value="Computers">
+                        Computers
+                    </option>
+
+                    <option value="Phones">
+                        Phones
+                    </option>
+
+                    <option value="Accessories">
+                        Accessories
+                    </option>
+
+                    <option value="Appliances">
+                        Appliances
+                    </option>
+
+                    <option value="Furniture">
+                        Furniture
+                    </option>
+
+                    <option value="Automotive">
+                        Automotive
+                    </option>
+
+                    <option value="Books">
+                        Books
+                    </option>
+
+                    <option value="Toys">
+                        Toys
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- SUBCATEGORY -->
+
+            <div class="filter-group">
+
+                <label
+                    for="searchSubcategoryFilter"
+                >
+                    Subcategory
+                </label>
+
+                <select
+                    id="searchSubcategoryFilter"
+                >
+
+                    <option value="">
+                        All Subcategories
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- PRICE -->
+
+            <div class="filter-group">
+
+                <label>
+                    Price Range
+                </label>
+
+
+                <div class="price-inputs">
+
+                    <input
+                        id="minimumPrice"
+                        type="number"
+                        min="0"
+                        placeholder="Min ₦"
+                    >
+
+                    <input
+                        id="maximumPrice"
+                        type="number"
+                        min="0"
+                        placeholder="Max ₦"
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- AVAILABILITY -->
+
+            <div class="filter-group">
+
+                <label>
+                    Availability
+                </label>
+
+
+                <label class="filter-check">
+
+                    <input
+                        id="inStockFilter"
+                        type="checkbox"
+                    >
+
+                    <span>
+                        In stock only
+                    </span>
+
+                </label>
+
+            </div>
+
+
+
+            <!-- APPLY -->
+
+            <button
+                id="applyFiltersButton"
+                type="button"
+                class="apply-filters-button"
+            >
+                Apply Filters
+            </button>
+
+
+        </aside>
+
+
+
+        <!-- ==================================================
+             RESULTS
+        =================================================== -->
+
+        <section class="search-results-area">
+
+
+            <!-- RESULTS HEADER -->
+
+            <div class="results-toolbar">
+
+
+                <div>
+
+                    <span class="results-label">
+                        SEARCH RESULTS
+                    </span>
+
+                    <h2>
+                        <span
+                            id="searchResultCount"
+                        >
+                            0
+                        </span>
+
+                        Products Found
+                    </h2>
+
+                </div>
+
+
+                <!-- SORT -->
+
+                <div class="sort-wrapper">
+
+                    <label
+                        for="searchSort"
+                    >
+                        Sort:
+                    </label>
+
+                    <select
+                        id="searchSort"
+                    >
+
+                        <option value="relevance">
+                            Relevance
+                        </option>
+
+                        <option value="newest">
+                            Newest
+                        </option>
+
+                        <option value="price-low">
+                            Price: Low to High
+                        </option>
+
+                        <option value="price-high">
+                            Price: High to Low
+                        </option>
+
+                        <option value="name">
+                            Name A-Z
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ACTIVE FILTERS -->
+
+            <div
+                id="activeSearchFilters"
+                class="active-search-filters"
+            >
+            </div>
+
+
+
+            <!-- =================================================
+                 LOADING
+            ================================================== -->
+
+            <div
+                id="searchLoading"
+                class="search-loading"
+            >
+
+                <div class="search-spinner"></div>
+
+                <p>
+                    Searching products...
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PRODUCTS
+            ================================================== -->
+
+            <div
+                id="searchProductsGrid"
+                class="search-products-grid"
+            >
+            </div>
+
+
+
+            <!-- =================================================
+                 EMPTY STATE
+            ================================================== -->
+
+            <div
+                id="searchEmptyState"
+                class="search-empty-state"
+                style="display:none;"
+            >
+
+                <div class="empty-search-icon">
+                    🔎
+                </div>
+
+                <h2>
+                    No products found
+                </h2>
+
+                <p>
+                    We couldn't find products matching
+                    your search. Try another product,
+                    brand, category or keyword.
+                </p>
+
+                <button
+                    id="emptySearchButton"
+                    type="button"
+                >
+                    Search Again
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ERROR STATE
+            ================================================== -->
+
+            <div
+                id="searchErrorState"
+                class="search-error-state"
+                style="display:none;"
+            >
+
+                <div>
+                    ⚠️
+                </div>
+
+                <h2>
+                    Something went wrong
+                </h2>
+
+                <p
+                    id="searchErrorMessage"
+                >
+                    We couldn't load the products.
+                </p>
+
+                <button
+                    id="retrySearchButton"
+                    type="button"
+                >
+                    Try Again
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 LOAD MORE
+            ================================================== -->
+
+            <div
+                id="searchLoadMoreContainer"
+                class="search-load-more-container"
+                style="display:none;"
+            >
+
+                <button
+                    id="searchLoadMoreButton"
+                    type="button"
+                >
+                    Load More Products
+                </button>
+
+            </div>
+
+
+        </section>
+
+    </section>
+
+</main>
+
+
+
+<!-- ==========================================================
+     MOBILE FILTER BUTTON
+========================================================== -->
+
+<button
+    id="mobileFilterButton"
+    type="button"
+    class="mobile-filter-button"
+>
+    ⚙ Filters
+</button>
+
+
+
+<!-- ==========================================================
+     MOBILE FILTER OVERLAY
+========================================================== -->
+
+<div
+    id="filterOverlay"
+    class="filter-overlay"
+    style="display:none;"
+></div>
+
+
+
+<!-- ==========================================================
+     JAVASCRIPT
+========================================================== -->
+
+<script
+    type="module"
+    src="search.js"
+></script>
+
+<script
+    type="module"
+    src="ads.js"
+></script>
+
+
+
+</body>
+</html>
+

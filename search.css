@@ -1,0 +1,1792 @@
+/* ==========================================================
+   YOURSTORE SEARCH PAGE
+   Professional marketplace search design
+========================================================== */
+
+
+/* ==========================================================
+   GLOBAL
+========================================================== */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+body{
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:#f5f6f8;
+
+    color:#222;
+
+    min-height:100vh;
+}
+
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+
+button,
+input,
+select{
+    font:inherit;
+}
+
+
+button{
+    cursor:pointer;
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.search-header{
+    width:100%;
+
+    background:#ffffff;
+
+    border-bottom:1px solid #e4e7eb;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    box-shadow:
+        0 2px 10px rgba(0,0,0,.05);
+}
+
+
+.search-header-inner{
+    width:100%;
+
+    max-width:1500px;
+
+    margin:auto;
+
+    min-height:72px;
+
+    padding:
+        10px
+        24px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+}
+
+
+/* ==========================================================
+   BACK
+========================================================== */
+
+.search-back-button{
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#f3f4f6;
+
+    color:#222;
+
+    font-size:24px;
+
+    flex-shrink:0;
+
+    transition:
+        .2s ease;
+}
+
+
+.search-back-button:hover{
+    background:#eceff2;
+
+    transform:translateX(-2px);
+}
+
+
+/* ==========================================================
+   LOGO
+========================================================== */
+
+.search-logo{
+    font-size:24px;
+
+    font-weight:900;
+
+    letter-spacing:-1px;
+
+    white-space:nowrap;
+
+    color:#111;
+}
+
+
+.search-logo span{
+    color:#f28c00;
+}
+
+
+/* ==========================================================
+   SEARCH FORM
+========================================================== */
+
+.search-page-form{
+    flex:1;
+
+    max-width:850px;
+
+    margin:auto;
+}
+
+
+.search-page-input-wrapper{
+    height:48px;
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    background:#f4f5f7;
+
+    border:
+        1px solid
+        #dfe3e8;
+
+    border-radius:8px;
+
+    overflow:hidden;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.search-page-input-wrapper:focus-within{
+    border-color:#f28c00;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(242,140,0,.10);
+
+    background:#fff;
+}
+
+
+.search-page-icon{
+    width:44px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:18px;
+
+    opacity:.65;
+}
+
+
+#searchPageInput{
+    flex:1;
+
+    min-width:0;
+
+    height:100%;
+
+    border:0;
+
+    outline:none;
+
+    background:transparent;
+
+    font-size:15px;
+
+    color:#222;
+
+    padding:
+        0 8px;
+}
+
+
+#searchPageInput::placeholder{
+    color:#8a9098;
+}
+
+
+#searchPageButton{
+    width:58px;
+
+    height:100%;
+
+    border:0;
+
+    background:#f28c00;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:
+        background .2s ease;
+}
+
+
+#searchPageButton:hover{
+    background:#df7f00;
+}
+
+
+#searchPageButton img{
+    width:21px;
+
+    height:21px;
+
+    object-fit:contain;
+}
+
+
+/* ==========================================================
+   CART
+========================================================== */
+
+.search-cart{
+    width:44px;
+
+    height:44px;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-shrink:0;
+
+    border-radius:50%;
+
+    transition:
+        background .2s ease;
+}
+
+
+.search-cart:hover{
+    background:#f3f4f6;
+}
+
+
+.search-cart img{
+    width:28px;
+
+    height:28px;
+
+    object-fit:contain;
+}
+
+
+.search-cart-count{
+    position:absolute;
+
+    top:-2px;
+
+    right:-2px;
+
+    min-width:19px;
+
+    height:19px;
+
+    padding:
+        0 5px;
+
+    border-radius:20px;
+
+    background:#f28c00;
+
+    color:#fff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:11px;
+
+    font-weight:800;
+
+    border:2px solid #fff;
+}
+
+
+/* ==========================================================
+   ACCOUNT
+========================================================== */
+
+.search-account{
+    width:44px;
+
+    height:44px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#f3f4f6;
+
+    font-size:20px;
+
+    flex-shrink:0;
+
+    transition:
+        .2s ease;
+}
+
+
+.search-account:hover{
+    background:#eceff2;
+
+    transform:translateY(-1px);
+}
+
+
+/* ==========================================================
+   MAIN
+========================================================== */
+
+.search-page{
+    width:100%;
+
+    max-width:1500px;
+
+    margin:auto;
+
+    padding:
+        30px
+        24px
+        60px;
+}
+
+
+/* ==========================================================
+   INTRO
+========================================================== */
+
+.search-intro{
+    margin-bottom:25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #fff8ef
+        );
+
+    border:
+        1px solid
+        #ece8e1;
+
+    border-radius:16px;
+
+    padding:
+        30px;
+}
+
+
+.search-eyebrow{
+    display:block;
+
+    color:#f28c00;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    letter-spacing:1.5px;
+
+    margin-bottom:7px;
+}
+
+
+.search-intro h1{
+    font-size:
+        clamp(
+            25px,
+            4vw,
+            38px
+        );
+
+    line-height:1.1;
+
+    margin-bottom:8px;
+
+    color:#171717;
+}
+
+
+.search-intro p{
+    color:#69717d;
+
+    font-size:15px;
+
+    line-height:1.6;
+}
+
+
+/* ==========================================================
+   CONTENT LAYOUT
+========================================================== */
+
+.search-content{
+    display:grid;
+
+    grid-template-columns:
+        250px
+        minmax(0,1fr);
+
+    gap:24px;
+
+    align-items:start;
+}
+
+
+/* ==========================================================
+   FILTER SIDEBAR
+========================================================== */
+
+.search-filters{
+    background:#fff;
+
+    border:
+        1px solid
+        #e4e7eb;
+
+    border-radius:14px;
+
+    padding:20px;
+
+    position:sticky;
+
+    top:92px;
+
+    box-shadow:
+        0 4px 16px rgba(0,0,0,.04);
+}
+
+
+.filter-header{
+    display:flex;
+
+    align-items:flex-start;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+    padding-bottom:18px;
+
+    border-bottom:
+        1px solid
+        #edf0f2;
+
+    margin-bottom:18px;
+}
+
+
+.filter-header span{
+    display:block;
+
+    color:#f28c00;
+
+    font-size:10px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    margin-bottom:4px;
+}
+
+
+.filter-header h2{
+    font-size:17px;
+
+    color:#202328;
+}
+
+
+#clearFiltersButton{
+    border:0;
+
+    background:transparent;
+
+    color:#e27c00;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    padding:4px;
+
+    white-space:nowrap;
+}
+
+
+#clearFiltersButton:hover{
+    text-decoration:underline;
+}
+
+
+/* ==========================================================
+   FILTER GROUP
+========================================================== */
+
+.filter-group{
+    margin-bottom:20px;
+}
+
+
+.filter-group > label:first-child{
+    display:block;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    color:#33383f;
+
+    margin-bottom:8px;
+}
+
+
+.filter-group select,
+.filter-group input[type="number"]{
+    width:100%;
+
+    height:42px;
+
+    border:
+        1px solid
+        #dfe3e7;
+
+    border-radius:8px;
+
+    padding:
+        0 11px;
+
+    outline:none;
+
+    background:#fff;
+
+    color:#30343a;
+
+    font-size:13px;
+}
+
+
+.filter-group select:focus,
+.filter-group input[type="number"]:focus{
+    border-color:#f28c00;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(242,140,0,.09);
+}
+
+
+/* ==========================================================
+   PRICE
+========================================================== */
+
+.price-inputs{
+    display:grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap:8px;
+}
+
+
+/* ==========================================================
+   CHECKBOX
+========================================================== */
+
+.filter-check{
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    cursor:pointer;
+
+    color:#555b63;
+
+    font-size:13px;
+}
+
+
+.filter-check input{
+    width:17px;
+
+    height:17px;
+
+    accent-color:#f28c00;
+}
+
+
+/* ==========================================================
+   APPLY FILTERS
+========================================================== */
+
+.apply-filters-button{
+    width:100%;
+
+    min-height:44px;
+
+    border:0;
+
+    border-radius:8px;
+
+    background:#f28c00;
+
+    color:#fff;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
+}
+
+
+.apply-filters-button:hover{
+    background:#dd7d00;
+
+    transform:translateY(-1px);
+}
+
+
+/* ==========================================================
+   RESULTS AREA
+========================================================== */
+
+.search-results-area{
+    min-width:0;
+}
+
+
+/* ==========================================================
+   RESULTS TOOLBAR
+========================================================== */
+
+.results-toolbar{
+    min-height:72px;
+
+    background:#fff;
+
+    border:
+        1px solid
+        #e4e7eb;
+
+    border-radius:14px;
+
+    padding:
+        15px
+        18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-bottom:14px;
+}
+
+
+.results-label{
+    display:block;
+
+    color:#f28c00;
+
+    font-size:10px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    margin-bottom:4px;
+}
+
+
+.results-toolbar h2{
+    font-size:17px;
+
+    color:#22272d;
+}
+
+
+#searchResultCount{
+    color:#f28c00;
+}
+
+
+.sort-wrapper{
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    white-space:nowrap;
+}
+
+
+.sort-wrapper label{
+    color:#777e87;
+
+    font-size:12px;
+
+    font-weight:600;
+}
+
+
+#searchSort{
+    height:38px;
+
+    border:
+        1px solid
+        #dfe3e7;
+
+    border-radius:8px;
+
+    background:#fff;
+
+    padding:
+        0 9px;
+
+    outline:none;
+
+    font-size:12px;
+
+    color:#333;
+}
+
+
+#searchSort:focus{
+    border-color:#f28c00;
+}
+
+
+/* ==========================================================
+   ACTIVE FILTERS
+========================================================== */
+
+.active-search-filters{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:7px;
+
+    margin-bottom:14px;
+}
+
+
+.active-search-filters:empty{
+    display:none;
+}
+
+
+.search-filter-chip{
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    background:#fff4e5;
+
+    color:#a65e00;
+
+    border:
+        1px solid
+        #ffd69c;
+
+    border-radius:20px;
+
+    padding:
+        7px
+        10px;
+
+    font-size:11px;
+
+    font-weight:700;
+}
+
+
+.search-filter-chip button{
+    border:0;
+
+    background:transparent;
+
+    color:inherit;
+
+    font-weight:900;
+
+    line-height:1;
+
+    padding:0;
+}
+
+
+/* ==========================================================
+   PRODUCTS GRID
+========================================================== */
+
+.search-products-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+    gap:14px;
+}
+
+
+/* ==========================================================
+   PRODUCT CARD
+   Works with the cards generated by search.js
+========================================================== */
+
+.search-product-card{
+    position:relative;
+
+    background:#fff;
+
+    border:
+        1px solid
+        #e6e8eb;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    min-width:0;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        border-color .2s ease;
+}
+
+
+.search-product-card:hover{
+    transform:translateY(-3px);
+
+    border-color:#f0d3a9;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.08);
+}
+
+
+.search-product-image{
+    width:100%;
+
+    aspect-ratio:1 / 1;
+
+    background:#f5f5f5;
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+
+.search-product-image img{
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:
+        transform .3s ease;
+}
+
+
+.search-product-card:hover
+.search-product-image img{
+    transform:scale(1.04);
+}
+
+
+.search-product-content{
+    padding:12px;
+}
+
+
+.search-product-category{
+    display:block;
+
+    color:#8a9098;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    margin-bottom:5px;
+}
+
+
+.search-product-name{
+    font-size:14px;
+
+    font-weight:600;
+
+    line-height:1.35;
+
+    color:#25282c;
+
+    display:
+        -webkit-box;
+
+    -webkit-line-clamp:2;
+
+    -webkit-box-orient:vertical;
+
+    overflow:hidden;
+
+    min-height:38px;
+}
+
+
+.search-product-price{
+    display:block;
+
+    margin-top:9px;
+
+    color:#f28c00;
+
+    font-size:17px;
+
+    font-weight:900;
+}
+
+
+.search-product-old-price{
+    margin-left:6px;
+
+    color:#999;
+
+    text-decoration:line-through;
+
+    font-size:11px;
+
+    font-weight:500;
+}
+
+
+.search-product-seller{
+    display:block;
+
+    margin-top:7px;
+
+    color:#777e86;
+
+    font-size:10px;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+}
+
+
+/* ==========================================================
+   PRODUCT BADGE
+========================================================== */
+
+.search-product-badge{
+    position:absolute;
+
+    top:9px;
+
+    left:9px;
+
+    z-index:2;
+
+    background:#f28c00;
+
+    color:#fff;
+
+    border-radius:5px;
+
+    padding:
+        5px
+        7px;
+
+    font-size:9px;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+}
+
+
+/* ==========================================================
+   LOADING
+========================================================== */
+
+.search-loading{
+    min-height:300px;
+
+    background:#fff;
+
+    border:
+        1px solid
+        #e4e7eb;
+
+    border-radius:14px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:13px;
+}
+
+
+.search-spinner{
+    width:40px;
+
+    height:40px;
+
+    border:
+        4px solid
+        #eceff2;
+
+    border-top-color:#f28c00;
+
+    border-radius:50%;
+
+    animation:
+        searchSpin
+        .8s linear infinite;
+}
+
+
+@keyframes searchSpin{
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+
+.search-loading p{
+    color:#777e86;
+
+    font-size:13px;
+}
+
+
+/* ==========================================================
+   EMPTY STATE
+========================================================== */
+
+.search-empty-state{
+    min-height:360px;
+
+    background:#fff;
+
+    border:
+        1px solid
+        #e4e7eb;
+
+    border-radius:14px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:35px 20px;
+}
+
+
+.empty-search-icon{
+    width:70px;
+
+    height:70px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#fff4e5;
+
+    border-radius:50%;
+
+    font-size:30px;
+
+    margin-bottom:17px;
+}
+
+
+.search-empty-state h2{
+    font-size:20px;
+
+    margin-bottom:8px;
+}
+
+
+.search-empty-state p{
+    max-width:450px;
+
+    color:#747b84;
+
+    font-size:13px;
+
+    line-height:1.6;
+
+    margin-bottom:20px;
+}
+
+
+.search-empty-state button{
+    border:0;
+
+    background:#f28c00;
+
+    color:#fff;
+
+    border-radius:8px;
+
+    padding:
+        11px
+        22px;
+
+    font-weight:800;
+
+    font-size:13px;
+}
+
+
+/* ==========================================================
+   ERROR
+========================================================== */
+
+.search-error-state{
+    min-height:300px;
+
+    background:#fff;
+
+    border:
+        1px solid
+        #f0d8d8;
+
+    border-radius:14px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:30px;
+}
+
+
+.search-error-state > div{
+    font-size:32px;
+
+    margin-bottom:10px;
+}
+
+
+.search-error-state h2{
+    font-size:20px;
+
+    margin-bottom:8px;
+}
+
+
+.search-error-state p{
+    color:#777e86;
+
+    font-size:13px;
+
+    margin-bottom:18px;
+}
+
+
+.search-error-state button{
+    border:0;
+
+    background:#222;
+
+    color:#fff;
+
+    padding:
+        10px
+        20px;
+
+    border-radius:7px;
+
+    font-weight:700;
+}
+
+
+/* ==========================================================
+   LOAD MORE
+========================================================== */
+
+.search-load-more-container{
+    padding:
+        25px
+        0;
+
+    text-align:center;
+}
+
+
+#searchLoadMoreButton{
+    min-width:200px;
+
+    min-height:44px;
+
+    border:
+        1px solid
+        #f28c00;
+
+    background:#fff;
+
+    color:#d97900;
+
+    border-radius:8px;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    transition:
+        .2s ease;
+}
+
+
+#searchLoadMoreButton:hover{
+    background:#f28c00;
+
+    color:#fff;
+}
+
+
+/* ==========================================================
+   MOBILE FILTER BUTTON
+========================================================== */
+
+.mobile-filter-button{
+    display:none;
+
+    position:fixed;
+
+    right:15px;
+
+    bottom:18px;
+
+    z-index:900;
+
+    border:0;
+
+    border-radius:25px;
+
+    background:#f28c00;
+
+    color:#fff;
+
+    padding:
+        12px
+        19px;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    box-shadow:
+        0 6px 20px
+        rgba(0,0,0,.18);
+}
+
+
+/* ==========================================================
+   FILTER OVERLAY
+========================================================== */
+
+.filter-overlay{
+    position:fixed;
+
+    inset:0;
+
+    background:
+        rgba(0,0,0,.45);
+
+    z-index:950;
+}
+
+
+/* ==========================================================
+   LARGE TABLETS
+========================================================== */
+
+@media(max-width:1200px){
+
+    .search-products-grid{
+        grid-template-columns:
+            repeat(
+                3,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+    }
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media(max-width:900px){
+
+    .search-header-inner{
+        padding:
+            9px
+            14px;
+
+        gap:10px;
+    }
+
+
+    .search-logo{
+        font-size:20px;
+    }
+
+
+    .search-account{
+        display:none;
+    }
+
+
+    .search-content{
+        grid-template-columns:
+            210px
+            minmax(0,1fr);
+
+        gap:15px;
+    }
+
+
+    .search-products-grid{
+        grid-template-columns:
+            repeat(
+                3,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+
+        gap:10px;
+    }
+
+
+    .search-page{
+        padding:
+            20px
+            14px
+            50px;
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media(max-width:700px){
+
+    .search-header{
+        position:sticky;
+
+        top:0;
+    }
+
+
+    .search-header-inner{
+        min-height:62px;
+
+        padding:
+            8px
+            10px;
+
+        gap:8px;
+    }
+
+
+    .search-back-button{
+        width:34px;
+
+        height:34px;
+
+        font-size:21px;
+    }
+
+
+    .search-logo{
+        font-size:17px;
+
+        letter-spacing:-.5px;
+    }
+
+
+    .search-page-form{
+        min-width:0;
+
+        width:100%;
+    }
+
+
+    .search-page-input-wrapper{
+        height:40px;
+    }
+
+
+    .search-page-icon{
+        width:30px;
+
+        font-size:14px;
+    }
+
+
+    #searchPageInput{
+        font-size:12px;
+
+        padding:
+            0 4px;
+    }
+
+
+    #searchPageButton{
+        width:42px;
+    }
+
+
+    #searchPageButton img{
+        width:17px;
+
+        height:17px;
+    }
+
+
+    .search-cart{
+        width:35px;
+
+        height:35px;
+    }
+
+
+    .search-cart img{
+        width:24px;
+
+        height:24px;
+    }
+
+
+    .search-cart-count{
+        min-width:16px;
+
+        height:16px;
+
+        font-size:9px;
+
+        top:-1px;
+
+        right:-2px;
+    }
+
+
+    .search-page{
+        padding:
+            15px
+            10px
+            70px;
+    }
+
+
+    .search-intro{
+        padding:20px;
+
+        border-radius:12px;
+
+        margin-bottom:14px;
+    }
+
+
+    .search-intro h1{
+        font-size:25px;
+    }
+
+
+    .search-intro p{
+        font-size:12px;
+    }
+
+
+    /* FILTER DRAWER */
+
+    .search-content{
+        display:block;
+    }
+
+
+    .search-filters{
+        position:fixed;
+
+        left:-310px;
+
+        top:0;
+
+        bottom:0;
+
+        width:290px;
+
+        max-width:85vw;
+
+        z-index:1000;
+
+        border-radius:0;
+
+        overflow-y:auto;
+
+        transition:
+            left .25s ease;
+
+        box-shadow:
+            5px 0 25px
+            rgba(0,0,0,.2);
+    }
+
+
+    .search-filters.mobile-open{
+        left:0;
+    }
+
+
+    .mobile-filter-button{
+        display:block;
+    }
+
+
+    .results-toolbar{
+        padding:
+            13px;
+
+        border-radius:10px;
+
+        align-items:flex-start;
+
+        flex-direction:column;
+    }
+
+
+    .results-toolbar h2{
+        font-size:15px;
+    }
+
+
+    .sort-wrapper{
+        width:100%;
+
+        justify-content:space-between;
+    }
+
+
+    #searchSort{
+        flex:1;
+
+        max-width:200px;
+    }
+
+
+    .search-products-grid{
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+
+        gap:8px;
+    }
+
+
+    .search-product-content{
+        padding:9px;
+    }
+
+
+    .search-product-name{
+        font-size:12px;
+
+        min-height:33px;
+    }
+
+
+    .search-product-price{
+        font-size:15px;
+    }
+
+
+    .search-product-seller{
+        font-size:9px;
+    }
+
+}
+
+
+/* ==========================================================
+   SMALL PHONES
+========================================================== */
+
+@media(max-width:390px){
+
+    .search-logo{
+        display:none;
+    }
+
+
+    .search-products-grid{
+        gap:7px;
+    }
+
+
+    .search-product-name{
+        font-size:11px;
+    }
+
+
+    .search-product-price{
+        font-size:14px;
+    }
+
+
+    .search-intro h1{
+        font-size:22px;
+    }
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media(
+    prefers-reduced-motion:reduce
+){
+
+    *{
+        scroll-behavior:auto !important;
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            .01ms !important;
+    }
+
+}
+

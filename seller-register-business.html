@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Business Information | NEOSTORE</title>
+
+    <meta
+        name="description"
+        content="Complete your NEOSTORE seller business profile."
+    >
+
+    <link
+        rel="stylesheet"
+        href="seller-register-business.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ======================================================
+     LOADER
+====================================================== -->
+
+<div
+    id="businessLoader"
+    class="register-loader"
+>
+
+    <div class="loader-spinner"></div>
+
+    <p>
+        Loading seller registration...
+    </p>
+
+</div>
+
+
+<!-- ======================================================
+     PAGE
+====================================================== -->
+
+<main class="register-page">
+
+
+    <!-- ==================================================
+         HEADER
+    ================================================== -->
+
+    <header class="register-header">
+
+        <a
+            href="index.html"
+            class="register-logo"
+        >
+
+            <span class="logo-mark">
+                N
+            </span>
+
+            <span>
+                NEOSTORE
+            </span>
+
+        </a>
+
+
+        <div class="header-progress">
+
+            Seller registration
+
+        </div>
+
+    </header>
+
+
+    <!-- ==================================================
+         CONTENT
+    ================================================== -->
+
+    <section class="register-content">
+
+
+        <div class="register-intro">
+
+            <span class="eyebrow">
+                SELLER ONBOARDING
+            </span>
+
+            <h1>
+                Tell us about your store.
+            </h1>
+
+            <p>
+                Add your business information so
+                customers can recognize and connect
+                with your store.
+            </p>
+
+        </div>
+
+
+        <!-- ==================================================
+             PROGRESS
+        ================================================== -->
+
+        <div class="registration-progress">
+
+            <div class="progress-step completed">
+
+                <span>✓</span>
+
+                <p>
+                    Account
+                </p>
+
+            </div>
+
+
+            <div class="progress-line active"></div>
+
+
+            <div class="progress-step active">
+
+                <span>2</span>
+
+                <p>
+                    Business
+                </p>
+
+            </div>
+
+
+            <div class="progress-line"></div>
+
+
+            <div class="progress-step">
+
+                <span>3</span>
+
+                <p>
+                    Complete
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             BUSINESS FORM
+        ================================================== -->
+
+        <form
+            id="sellerBusinessForm"
+            class="registration-card"
+        >
+
+
+            <!-- ==================================================
+                 STORE INFORMATION
+            ================================================== -->
+
+            <div class="form-section">
+
+                <div class="section-title">
+
+                    <span>
+                        01
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Store information
+                        </h3>
+
+                        <p>
+                            Information customers will see
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-group full-width">
+
+                        <label for="storeName">
+                            Store name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="storeName"
+                            name="storeName"
+                            placeholder="Enter your store name"
+                            maxlength="80"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="businessType">
+                            Business type
+                        </label>
+
+                        <select
+                            id="businessType"
+                            name="businessType"
+                            required
+                        >
+
+                            <option value="">
+                                Select business type
+                            </option>
+
+                            <option value="individual">
+                                Individual seller
+                            </option>
+
+                            <option value="small-business">
+                                Small business
+                            </option>
+
+                            <option value="brand">
+                                Brand
+                            </option>
+
+                            <option value="retailer">
+                                Retailer
+                            </option>
+
+                            <option value="wholesaler">
+                                Wholesaler
+                            </option>
+
+                            <option value="dropshipper">
+                                Dropshipper
+                            </option>
+
+                            <option value="manufacturer">
+                                Manufacturer
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="businessCategory">
+                            Main category
+                        </label>
+
+                        <select
+                            id="businessCategory"
+                            name="businessCategory"
+                            required
+                        >
+
+                            <option value="">
+                                Select category
+                            </option>
+
+                            <option value="fashion">
+                                Fashion
+                            </option>
+
+                            <option value="electronics">
+                                Electronics
+                            </option>
+
+                            <option value="beauty">
+                                Beauty
+                            </option>
+
+                            <option value="home">
+                                Home & Living
+                            </option>
+
+                            <option value="groceries">
+                                Groceries
+                            </option>
+
+                            <option value="health">
+                                Health & Wellness
+                            </option>
+
+                            <option value="sports">
+                                Sports
+                            </option>
+
+                            <option value="baby">
+                                Baby & Kids
+                            </option>
+
+                            <option value="automotive">
+                                Automotive
+                            </option>
+
+                            <option value="other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group full-width">
+
+                        <label for="storeDescription">
+                            Store description
+                        </label>
+
+                        <textarea
+                            id="storeDescription"
+                            name="storeDescription"
+                            rows="5"
+                            maxlength="500"
+                            placeholder="Tell customers what your store offers..."
+                            required
+                        ></textarea>
+
+                        <small>
+                            Maximum 500 characters.
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 ONLINE PRESENCE
+            ================================================== -->
+
+            <div class="form-section">
+
+                <div class="section-title">
+
+                    <span>
+                        02
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Online presence
+                        </h3>
+
+                        <p>
+                            Help customers discover your business
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label for="sellerWebsite">
+                            Website
+                        </label>
+
+                        <input
+                            type="url"
+                            id="sellerWebsite"
+                            name="website"
+                            placeholder="https://example.com"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="sellerInstagram">
+                            Instagram
+                        </label>
+
+                        <input
+                            type="url"
+                            id="sellerInstagram"
+                            name="instagram"
+                            placeholder="Instagram profile URL"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="sellerFacebook">
+                            Facebook
+                        </label>
+
+                        <input
+                            type="url"
+                            id="sellerFacebook"
+                            name="facebook"
+                            placeholder="Facebook page URL"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="sellerTikTok">
+                            TikTok
+                        </label>
+
+                        <input
+                            type="url"
+                            id="sellerTikTok"
+                            name="tiktok"
+                            placeholder="TikTok profile URL"
+                        >
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 ACTIONS
+            ================================================== -->
+
+            <div class="form-actions">
+
+                <a
+                    href="seller-register.html"
+                    class="back-button"
+                >
+                    ← Back
+                </a>
+
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+
+                    Continue
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <div
+                id="businessMessage"
+                class="registration-message"
+            ></div>
+
+
+        </form>
+
+
+    </section>
+
+
+    <!-- ==================================================
+         FOOTER
+    ================================================== -->
+
+    <footer class="register-footer">
+
+        <p>
+            © 2026 NeoStore. All rights reserved.
+        </p>
+
+        <div>
+
+            <a href="privacy.html">
+                Privacy
+            </a>
+
+            <a href="terms.html">
+                Terms
+            </a>
+
+            <a href="help.html">
+                Help Center
+            </a>
+
+        </div>
+
+    </footer>
+
+
+</main>
+
+
+<script
+    type="module"
+    src="seller-register-business.js"
+></script>
+
+</body>
+
+</html>

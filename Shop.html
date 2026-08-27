@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        id="shopMetaDescription"
+        content="Visit this store on YOURSTORE."
+    >
+
+    <title>
+        Store | NEOSTORE
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="shop.css"
+    >
+
+<link
+    rel="stylesheet"
+    href="ads.css"
+>
+
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================================
+     PAGE LOADER
+========================================================== -->
+
+<div
+    id="shopPageLoader"
+    class="shop-page-loader"
+>
+
+    <div
+        class="shop-loader-spinner"
+    ></div>
+
+    <p>
+        Loading store...
+    </p>
+
+</div>
+
+
+
+<!-- ==========================================================
+     HEADER
+========================================================== -->
+
+<header
+    class="shop-header"
+>
+
+    <div
+        class="shop-header-inner"
+    >
+
+        <a
+            href="index.html"
+            class="shop-logo"
+        >
+            NEOSTORE
+        </a>
+
+
+        <form
+            id="shopSearchForm"
+            class="shop-search"
+        >
+
+            <input
+                type="search"
+                id="shopSearch"
+                placeholder="Search this store..."
+                autocomplete="off"
+            >
+
+            <button
+                type="submit"
+                aria-label="Search store"
+            >
+                🔍
+            </button>
+
+        </form>
+
+
+        <a
+            href="cart.html"
+            class="shop-cart"
+            aria-label="Shopping cart"
+        >
+
+            <img src="1000219817-removebg-preview.png" alt=""></img>
+            <span
+                id="shopCartCount"
+                class="shop-cart-count"
+            >
+                0
+            </span>
+
+        </a>
+
+
+        <button
+            type="button"
+            id="shopMenuButton"
+            class="shop-menu-button"
+            aria-label="Open menu"
+        >
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- ==========================================================
+     MOBILE MENU
+========================================================== -->
+
+<div
+    id="shopMenuOverlay"
+    class="shop-menu-overlay"
+></div>
+
+
+<aside
+    id="shopMobileMenu"
+    class="shop-mobile-menu"
+>
+
+    <div
+        class="shop-mobile-menu-header"
+    >
+
+        <strong>
+            NEOSTORE
+        </strong>
+
+        <button
+            type="button"
+            id="shopMenuClose"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            🏠
+            <span>
+                Home
+            </span>
+        </a>
+
+
+        <a href="cart.html">
+            🛒
+            <span>
+                My Cart
+            </span>
+        </a>
+
+
+        <a href="orders.html">
+            📦
+            <span>
+                My Orders
+            </span>
+        </a>
+
+
+        <a href="categories.html">
+            🛍️
+            <span>
+                Categories
+            </span>
+        </a>
+
+    </nav>
+
+</aside>
+
+
+
+<!-- ==========================================================
+     MAIN
+========================================================== -->
+
+<main
+    id="shopApp"
+    class="shop-app"
+>
+
+
+    <!-- ======================================================
+         STORE HERO
+    ======================================================= -->
+
+    <section
+        class="store-hero"
+    >
+
+        <div
+            class="store-hero-top"
+        >
+
+            <a
+                href="javascript:history.back()"
+                class="store-back-button"
+            >
+                ← Back
+            </a>
+
+
+            <button
+                type="button"
+                id="shareStoreButton"
+                class="share-store-button"
+            >
+                🔗 Share Store
+            </button>
+
+        </div>
+
+
+        <div
+            class="store-profile"
+        >
+
+            <div
+                class="store-photo-wrapper"
+            >
+
+                <img
+                    id="storePhoto"
+                    class="store-photo"
+                    src="images/default-store.png"
+                    alt="Store"
+                >
+
+            </div>
+
+
+            <div
+                class="store-information"
+            >
+
+                <span
+                    class="store-label"
+                >
+                    STORE
+                </span>
+
+
+                <h1
+                    id="storeName"
+                >
+                    Store
+                </h1>
+
+
+                <p
+                    id="storeDescription"
+                    class="store-description"
+                >
+                    Welcome to our store.
+                </p>
+
+
+                <div
+                    class="store-location"
+                    id="storeLocation"
+                >
+                    📍 Location
+                </div>
+
+
+                <div
+                    class="store-stat-row"
+                >
+
+                    <div
+                        class="store-stat"
+                    >
+
+                        <strong
+                            id="storeProductCount"
+                        >
+                            0
+                        </strong>
+
+                        <span>
+                            Products
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="store-stat"
+                    >
+
+                        <strong
+                            id="storeRating"
+                        >
+                            New
+                        </strong>
+
+                        <span>
+                            Rating
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         STORE CONTENT
+    ======================================================= -->
+
+    <section
+        class="store-products-section"
+    >
+
+        <div
+            class="store-section-header"
+        >
+
+            <div>
+
+                <span
+                    class="store-section-label"
+                >
+                    STORE PRODUCTS
+                </span>
+
+                <h2>
+                    Products from this store
+                </h2>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             STORE SEARCH
+        =================================================== -->
+
+        <div
+            class="store-product-search-wrapper"
+        >
+
+            <input
+                type="search"
+                id="storeProductSearch"
+                placeholder="Search products in this store..."
+                autocomplete="off"
+            >
+
+        </div>
+
+<section
+    class="marketplace-ads-section"
+    id="marketplaceAdsSection"
+>
+
+    <div
+        id="marketplaceAds"
+        class="marketplace-ads"
+    ></div>
+
+</section>
+
+
+        <!-- ==================================================
+             PRODUCTS
+        =================================================== -->
+
+        <div
+            id="storeProductGrid"
+            class="store-product-grid"
+        >
+
+            <div
+                class="store-products-loading"
+            >
+                Loading products...
+            </div>
+
+        </div>
+
+
+        <div
+            id="storeNoProducts"
+            class="store-no-products"
+            style="display:none;"
+        >
+
+            <div>
+                🛍️
+            </div>
+
+            <h3>
+                No products found
+            </h3>
+
+            <p>
+                This store has no products matching your search.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         SHARE STORE MODAL
+    ======================================================= -->
+
+    <div
+        id="shareStoreModal"
+        class="share-store-modal"
+    >
+
+        <div
+            class="share-store-modal-content"
+        >
+
+            <button
+                type="button"
+                id="closeShareStore"
+                class="close-share-store"
+            >
+                ×
+            </button>
+
+
+            <h2>
+                Share this store
+            </h2>
+
+
+            <p>
+                Share this store with friends and customers.
+            </p>
+
+
+            <div
+                class="share-store-url-wrapper"
+            >
+
+                <input
+                    type="text"
+                    id="storeShareUrl"
+                    readonly
+                >
+
+                <button
+                    type="button"
+                    id="copyStoreLink"
+                >
+                    Copy
+                </button>
+
+            </div>
+
+
+            <div
+                class="share-store-actions"
+            >
+
+                <button
+                    type="button"
+                    id="nativeShareButton"
+                >
+                    📤 Share
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- ==========================================================
+     JAVASCRIPT
+========================================================== -->
+
+<script
+    type="module"
+    src="shop.js"
+></script>
+
+
+<!-- ==========================================================
+     MOBILE MENU
+========================================================== -->
+
+<script>
+
+(function(){
+
+    const menu =
+        document.getElementById(
+            "shopMobileMenu"
+        );
+
+    const overlay =
+        document.getElementById(
+            "shopMenuOverlay"
+        );
+
+    const openButton =
+        document.getElementById(
+            "shopMenuButton"
+        );
+
+    const closeButton =
+        document.getElementById(
+            "shopMenuClose"
+        );
+
+
+    function openMenu(){
+
+        if(menu){
+
+            menu.classList.add(
+                "open"
+            );
+
+        }
+
+
+        if(overlay){
+
+            overlay.classList.add(
+                "open"
+            );
+
+        }
+
+    }
+
+
+    function closeMenu(){
+
+        if(menu){
+
+            menu.classList.remove(
+                "open"
+            );
+
+        }
+
+
+        if(overlay){
+
+            overlay.classList.remove(
+                "open"
+            );
+
+        }
+
+    }
+
+
+    if(openButton){
+
+        openButton.addEventListener(
+            "click",
+            openMenu
+        );
+
+    }
+
+
+    if(closeButton){
+
+        closeButton.addEventListener(
+            "click",
+            closeMenu
+        );
+
+    }
+
+
+    if(overlay){
+
+        overlay.addEventListener(
+            "click",
+            closeMenu
+        );
+
+    }
+
+})();
+
+</script>
+
+<script
+    type="module"
+    src="ads.js"
+></script>
+
+</body>
+</html>
+

@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Manage all your NEOSTORES seller orders."
+    >
+
+    <title>
+        Seller Orders | NEOSTORES
+    </title>
+
+
+    <link
+        rel="stylesheet"  href="seller-orders.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================================
+     PAGE LOADER
+========================================================== -->
+
+<div
+    id="sellerOrdersLoader"
+    class="seller-orders-loader"
+>
+
+    <div
+        class="seller-orders-spinner"
+    ></div>
+
+    <p>
+        Loading your orders...
+    </p>
+
+</div>
+
+
+
+<!-- ==========================================================
+     HEADER
+========================================================== -->
+
+<header class="seller-orders-header">
+
+    <div class="seller-orders-header-left">
+
+        <button
+            type="button"
+            id="sellerOrdersMenuButton"
+            class="seller-orders-menu-button"
+            aria-label="Open menu"
+        >
+            ☰
+        </button>
+
+
+        <a
+            href="seller.html"
+            class="seller-orders-logo"
+        >
+
+            <span>
+                NEOSTORES
+            </span>
+
+            <small>
+                SELLER CENTER
+            </small>
+
+        </a>
+
+    </div>
+
+
+
+    <!-- ======================================================
+         SEARCH
+    ======================================================= -->
+
+    <div class="seller-orders-search">
+
+        <input
+            type="search"
+            id="sellerOrderSearch"
+            placeholder="Search orders..."
+            autocomplete="off"
+        >
+
+        <button
+            type="button"
+            id="sellerOrderSearchButton"
+            aria-label="Search orders"
+        >
+            🔍
+        </button>
+
+    </div>
+
+
+
+    <!-- ======================================================
+         HEADER ACTIONS
+    ======================================================= -->
+
+    <div class="seller-orders-header-actions">
+
+        <a
+            href="seller.html"
+            class="seller-orders-dashboard-link"
+        >
+            Dashboard
+        </a>
+
+
+        <a
+            href="seller.html"
+            class="seller-orders-profile"
+        >
+
+            <img
+                id="sellerOrdersPhoto"
+                src="default-avatar.png"
+                alt="Seller"
+            >
+
+            <span
+                id="sellerOrdersName"
+            >
+                Seller
+            </span>
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- ==========================================================
+     MOBILE MENU OVERLAY
+========================================================== -->
+
+<div
+    id="sellerOrdersMenuOverlay"
+    class="seller-orders-menu-overlay"
+></div>
+
+
+
+<!-- ==========================================================
+     MOBILE MENU
+========================================================== -->
+
+<aside
+    id="sellerOrdersMobileMenu"
+    class="seller-orders-mobile-menu"
+>
+
+    <div class="seller-orders-mobile-menu-header">
+
+        <strong>
+            SELLER CENTER
+        </strong>
+
+
+        <button
+            type="button"
+            id="sellerOrdersMenuClose"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <nav>
+
+        <a href="seller.html">
+            🏠
+            <span>
+                Dashboard
+            </span>
+        </a>
+
+
+        <a href="seller-orders.html">
+            📦
+            <span>
+                Orders
+            </span>
+        </a>
+
+
+        <a href="seller-store.html">
+            🛍️
+            <span>
+                Products
+            </span>
+        </a>
+
+
+        <a href="shop.html">
+            🏪
+            <span>
+                View Store
+            </span>
+        </a>
+
+
+        <a href="index.html">
+            🌐
+            <span>
+                NEOSTORES
+            </span>
+        </a>
+
+    </nav>
+
+</aside>
+
+
+
+<!-- ==========================================================
+     MAIN APPLICATION
+========================================================== -->
+
+<main
+    id="sellerOrdersApp"
+    class="seller-orders-app"
+>
+
+
+    <!-- ======================================================
+         PAGE TITLE
+    ======================================================= -->
+
+    <section class="seller-orders-title-section">
+
+        <div>
+
+            <span class="seller-orders-label">
+                SELLER CENTER
+            </span>
+
+            <h1>
+                My Orders
+            </h1>
+
+            <p>
+                View and manage all orders containing your products.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         ORDER SUMMARY
+    ======================================================= -->
+
+    <section class="seller-order-summary">
+
+        <div class="seller-order-summary-card">
+
+            <span>
+                All Orders
+            </span>
+
+            <strong id="allOrdersCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="seller-order-summary-card">
+
+            <span>
+                Pending
+            </span>
+
+            <strong id="pendingOrdersCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="seller-order-summary-card">
+
+            <span>
+                Processing
+            </span>
+
+            <strong id="processingOrdersCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="seller-order-summary-card">
+
+            <span>
+                Shipped
+            </span>
+
+            <strong id="shippedOrdersCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="seller-order-summary-card">
+
+            <span>
+                Delivered
+            </span>
+
+            <strong id="deliveredOrdersCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="seller-order-summary-card">
+
+            <span>
+                Completed
+            </span>
+
+            <strong id="completedOrdersCount">
+                0
+            </strong>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         ORDER CONTROLS
+    ======================================================= -->
+
+    <section class="seller-orders-controls">
+
+        <div class="seller-order-filters">
+
+            <button
+                type="button"
+                class="seller-order-filter active"
+                data-status="all"
+            >
+                All
+            </button>
+
+
+            <button
+                type="button"
+                class="seller-order-filter"
+                data-status="pending"
+            >
+                Pending
+            </button>
+
+
+            <button
+                type="button"
+                class="seller-order-filter"
+                data-status="processing"
+            >
+                Processing
+            </button>
+
+
+            <button
+                type="button"
+                class="seller-order-filter"
+                data-status="shipped"
+            >
+                Shipped
+            </button>
+
+
+            <button
+                type="button"
+                class="seller-order-filter"
+                data-status="delivered"
+            >
+                Delivered
+            </button>
+
+
+            <button
+                type="button"
+                class="seller-order-filter"
+                data-status="completed"
+            >
+                Completed
+            </button>
+
+
+            <button
+                type="button"
+                class="seller-order-filter"
+                data-status="cancelled"
+            >
+                Cancelled
+            </button>
+
+        </div>
+
+
+        <select
+            id="sellerOrderSort"
+            class="seller-order-sort"
+        >
+
+            <option value="newest">
+                Newest first
+            </option>
+
+            <option value="oldest">
+                Oldest first
+            </option>
+
+            <option value="highest">
+                Highest amount
+            </option>
+
+            <option value="lowest">
+                Lowest amount
+            </option>
+
+        </select>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         ORDERS AREA
+    ======================================================= -->
+
+    <section class="seller-orders-section">
+
+        <div class="seller-orders-section-header">
+
+            <div>
+
+                <span>
+                    ORDERS
+                </span>
+
+                <h2>
+                    Customer Orders
+                </h2>
+
+            </div>
+
+
+            <strong
+                id="visibleOrdersCount"
+            >
+                0 orders
+            </strong>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             ORDERS CONTAINER
+        =================================================== -->
+
+        <div
+            id="sellerOrdersList"
+            class="seller-orders-list"
+        >
+
+            <!-- Orders will be inserted by seller-order.js -->
+
+        </div>
+
+
+
+        <!-- ==================================================
+             LOADING
+        =================================================== -->
+
+        <div
+            id="sellerOrdersContentLoader"
+            class="seller-orders-content-loader"
+        >
+
+            <div class="seller-orders-small-spinner"></div>
+
+            <p>
+                Loading orders...
+            </p>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             EMPTY STATE
+        =================================================== -->
+
+        <div
+            id="sellerOrdersEmpty"
+            class="seller-orders-empty"
+            style="display:none;"
+        >
+
+            <div class="seller-orders-empty-icon">
+                📦
+            </div>
+
+⁸⁰q}aaaa1111011            <h3>
+                No orders found
+            </h3>
+
+            <p>
+                Orders containing your products will appear here.
+            </p>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             SEARCH EMPTY STATE
+        =================================================== -->
+
+        <div
+            id="sellerOrdersSearchEmpty"
+            class="seller-orders-empty"
+            style="display:none;"
+        >
+
+            <div class="seller-orders-empty-icon">
+                🔍
+            </div>
+
+            <h3>
+                No matching orders
+            </h3>
+
+            <p>
+                Try another order number, product name or buyer search.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- ==========================================================
+     JAVASCRIPT
+========================================================== -->
+
+<script
+    type="module"
+    src="seller-orders.js"
+></script>
+
+
+
+<!-- ==========================================================
+     MOBILE MENU
+========================================================== -->
+
+<script>
+
+(function(){
+
+    const menu =
+        document.getElementById(
+            "sellerOrdersMobileMenu"
+        );
+
+    const overlay =
+        document.getElementById(
+            "sellerOrdersMenuOverlay"
+        );
+
+    const openButton =
+        document.getElementById(
+            "sellerOrdersMenuButton"
+        );
+
+    const closeButton =
+        document.getElementById(
+            "sellerOrdersMenuClose"
+        );
+
+
+    function openMenu(){
+
+        if(menu){
+
+            menu.classList.add(
+                "open"
+            );
+
+        }
+
+
+        if(overlay){
+
+            overlay.classList.add(
+                "open"
+            );
+
+        }
+
+    }
+
+
+    function closeMenu(){
+
+        if(menu){
+
+            menu.classList.remove(
+                "open"
+            );
+
+        }
+
+
+        if(overlay){
+
+            overlay.classList.remove(
+                "open"
+            );
+
+        }
+
+    }
+
+
+    if(openButton){
+
+        openButton.addEventListener(
+            "click",
+            openMenu
+        );
+
+    }
+
+
+    if(closeButton){
+
+        closeButton.addEventListener(
+            "click",
+            closeMenu
+        );
+
+    }
+
+
+    if(overlay){
+
+        overlay.addEventListener(
+            "click",
+            closeMenu
+        );
+
+    }
+
+})();
+
+</script>
+
+</body>
+</html>
+

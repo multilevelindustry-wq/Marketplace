@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Admin order management"
+    >
+
+    <title>
+        View Order | NEOSTORE Admin
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="view-order.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================================
+     LOADER
+========================================================== -->
+
+<div
+    id="viewOrderLoader"
+    class="view-order-loader"
+>
+
+    <div class="loader-spinner"></div>
+
+    <p>
+        Loading order...
+    </p>
+
+</div>
+
+
+
+<!-- ==========================================================
+     HEADER
+========================================================== -->
+
+<header class="view-order-header">
+
+    <div class="header-left">
+
+        <button
+            id="backButton"
+            type="button"
+            class="back-button"
+        >
+            ←
+        </button>
+
+        <div>
+
+            <strong>
+                NEOSTORE
+            </strong>
+
+            <span>
+                ADMIN CENTER
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <a
+        href="admin.html"
+        class="dashboard-button"
+    >
+        Admin Dashboard
+    </a>
+
+</header>
+
+
+
+<!-- ==========================================================
+     MAIN
+========================================================== -->
+
+<main
+    id="viewOrderApp"
+    class="view-order-app"
+>
+
+
+    <!-- ======================================================
+         PAGE HEADER
+    ======================================================= -->
+
+    <section class="order-page-heading">
+
+        <span>
+            ORDER MANAGEMENT
+        </span>
+
+        <h1>
+            Order Details
+        </h1>
+
+        <p>
+            Manage payment confirmation, courier tracking,
+            delivery status and seller notifications.
+        </p>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         ORDER SUMMARY
+    ======================================================= -->
+
+    <section class="order-summary-card">
+
+        <div class="order-summary-top">
+
+            <div>
+
+                <small>
+                    ORDER ID
+                </small>
+
+                <h2 id="orderIdDisplay">
+                    Loading...
+                </h2>
+
+            </div>
+
+
+            <span
+                id="orderStatusBadge"
+                class="status-badge"
+            >
+                Pending
+            </span>
+
+        </div>
+
+
+        <div class="order-summary-grid">
+
+            <div>
+
+                <small>
+                    BUYER
+                </small>
+
+                <strong id="buyerName">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <small>
+                    SELLER
+                </small>
+
+                <strong id="sellerName">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <small>
+                    ORDER TOTAL
+                </small>
+
+                <strong id="orderAmount">
+                    ₦0.00
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <small>
+                    PAYMENT
+                </small>
+
+                <strong id="paymentStatus">
+                    Unknown
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         ITEMS
+    ======================================================= -->
+
+    <section class="admin-card">
+
+        <div class="card-heading">
+
+            <div>
+
+                <span>
+                    PURCHASE
+                </span>
+
+                <h2>
+                    Ordered Items
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="orderItems"
+            class="order-items"
+        >
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         PAYMENT
+    ======================================================= -->
+
+    <section class="admin-card">
+
+        <div class="card-heading">
+
+            <div>
+
+                <span>
+                    PAYMENT
+                </span>
+
+                <h2>
+                    Payment Confirmation
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-grid">
+
+            <div class="form-group">
+
+                <label>
+                    Payment Provider
+                </label>
+
+                <select id="paymentProvider">
+
+                    <option value="">
+                        Select provider
+                    </option>
+
+                    <option value="paystack">
+                        Paystack
+                    </option>
+
+                    <option value="paypal">
+                        PayPal
+                    </option>
+
+                    <option value="other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Payment ID / Reference
+                </label>
+
+                <input
+                    id="paymentId"
+                    type="text"
+                    placeholder="Enter payment reference"
+                >
+
+            </div>
+
+        </div>
+
+
+        <button
+            id="confirmPaymentButton"
+            class="primary-button"
+            type="button"
+        >
+            ✓ Confirm Payment
+        </button>
+
+
+        <p
+            id="paymentMessage"
+            class="action-message"
+        ></p>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         DELIVERY
+    ======================================================= -->
+
+    <section class="admin-card">
+
+        <div class="card-heading">
+
+            <div>
+
+                <span>
+                    COURIER
+                </span>
+
+                <h2>
+                    Delivery & Tracking
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-grid">
+
+            <div class="form-group">
+
+                <label>
+                    Courier / Delivery Company
+                </label>
+
+                <input
+                    id="courierName"
+                    type="text"
+                    placeholder="e.g. GIG Logistics"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Courier Tracking Number
+                </label>
+
+                <input
+                    id="trackingNumber"
+                    type="text"
+                    placeholder="Enter courier tracking number"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Delivery Code
+                </label>
+
+                <input
+                    id="deliveryCode"
+                    type="text"
+                    placeholder="Enter delivery code"
+                >
+
+                <small>
+                    Buyer and seller will use this code on tracking.html.
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <button
+            id="assignTrackingButton"
+            class="primary-button"
+            type="button"
+        >
+            🚚 Assign Tracking
+        </button>
+
+
+        <p
+            id="trackingMessage"
+            class="action-message"
+        ></p>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         ORDER STATUS
+    ======================================================= -->
+
+    <section class="admin-card">
+
+        <div class="card-heading">
+
+            <div>
+
+                <span>
+                    DELIVERY CONTROL
+                </span>
+
+                <h2>
+                    Update Order Position
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="status-timeline">
+
+            <button
+                type="button"
+                class="status-option"
+                data-status="pending"
+            >
+                <span>1</span>
+                Pending
+            </button>
+
+
+            <button
+                type="button"
+                class="status-option"
+                data-status="paid"
+            >
+                <span>2</span>
+                Paid
+            </button>
+
+
+            <button
+                type="button"
+                class="status-option"
+                data-status="awaiting_pickup"
+            >
+                <span>3</span>
+                Awaiting Pickup
+            </button>
+
+
+            <button
+                type="button"
+                class="status-option"
+                data-status="picked_up"
+            >
+                <span>4</span>
+                Picked Up
+            </button>
+
+
+            <button
+                type="button"
+                class="status-option"
+                data-status="in_transit"
+            >
+                <span>5</span>
+                In Transit
+            </button>
+
+
+            <button
+                type="button"
+                class="status-option"
+                data-status="out_for_delivery"
+            >
+                <span>6</span>
+                Out for Delivery
+            </button>
+
+
+            <button
+                type="button"
+                class="status-option"
+                data-status="delivered"
+            >
+                <span>7</span>
+                Delivered
+            </button>
+
+
+            <button
+                type="button"
+                class="status-option"
+                data-status="completed"
+            >
+                <span>8</span>
+                Completed
+            </button>
+
+        </div>
+
+
+        <button
+            id="updateStatusButton"
+            class="primary-button"
+            type="button"
+        >
+            Update Order Status
+        </button>
+
+
+        <p
+            id="statusMessage"
+            class="action-message"
+        ></p>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         CURRENT TRACKING
+    ======================================================= -->
+
+    <section class="admin-card">
+
+        <div class="card-heading">
+
+            <div>
+
+                <span>
+                    CURRENT DELIVERY
+                </span>
+
+                <h2>
+                    Tracking Information
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="tracking-information">
+
+            <div>
+
+                <small>
+                    Courier
+                </small>
+
+                <strong id="currentCourier">
+                    Not assigned
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <small>
+                    Tracking Number
+                </small>
+
+                <strong id="currentTracking">
+                    Not assigned
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <small>
+                    Delivery Code
+                </small>
+
+                <strong id="currentDeliveryCode">
+                    Not assigned
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <small>
+                    Current Position
+                </small>
+
+                <strong id="currentPosition">
+                    Pending
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         NOTIFICATIONS
+    ======================================================= -->
+
+    <section class="admin-card">
+
+        <div class="card-heading">
+
+            <div>
+
+                <span>
+                    COMMUNICATION
+                </span>
+
+                <h2>
+                    Notifications
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="notification-recipient">
+
+            <div>
+                <strong>
+                    Buyer
+                </strong>
+
+                <span id="buyerNotificationStatus">
+                    Ready
+                </span>
+            </div>
+
+
+            <div>
+                <strong>
+                    Seller
+                </strong>
+
+                <span id="sellerNotificationStatus">
+                    Ready
+                </span>
+            </div>
+
+        </div>
+
+
+        <p class="notification-note">
+
+            Status and tracking changes are stored in Firestore.
+            Your notification service can use these records to
+            send email and SMS/WhatsApp messages to the buyer
+            and seller.
+
+        </p>
+
+    </section>
+
+
+</main>
+
+
+
+<script
+    type="module"
+    src="view-order.js"
+></script>
+
+
+</body>
+</html>

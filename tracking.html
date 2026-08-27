@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Track your NEOSTORE delivery"
+    >
+
+    <title>
+        Track Order | NEOSTORE
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="tracking.css"
+    >
+
+<link
+    rel="stylesheet"
+    href="ads.css"
+>
+
+
+</head>
+
+
+<body>
+
+
+<header class="tracking-header">
+
+    <a
+        href="index.html"
+        class="tracking-logo"
+    >
+        NEOSTORE
+    </a>
+
+</header>
+
+
+
+<main class="tracking-page">
+
+
+    <section class="tracking-intro">
+
+        <span>
+            DELIVERY TRACKING
+        </span>
+
+        <h1>
+            Track Your Order
+        </h1>
+
+        <p>
+            Enter the delivery code provided for your order
+            to see its current delivery position.
+        </p>
+
+    </section>
+
+<section
+    class="marketplace-ads-section"
+    id="marketplaceAdsSection"
+>
+
+    <div
+        id="marketplaceAds"
+        class="marketplace-ads"
+    ></div>
+
+</section>
+
+    <!-- ======================================================
+         SEARCH
+    ======================================================= -->
+
+    <section class="tracking-search-card">
+
+        <label for="deliveryCodeInput">
+            Delivery Code
+        </label>
+
+        <input
+            id="deliveryCodeInput"
+            type="text"
+            placeholder="Enter your delivery code"
+            autocomplete="off"
+        >
+
+        <button
+            id="trackButton"
+            type="button"
+        >
+            Track Order
+        </button>
+
+        <p
+            id="trackingSearchMessage"
+        ></p>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         RESULT
+    ======================================================= -->
+
+    <section
+        id="trackingResult"
+        class="tracking-result"
+        style="display:none;"
+    >
+
+
+        <div class="tracking-result-header">
+
+            <div>
+
+                <small>
+                    ORDER
+                </small>
+
+                <h2 id="trackingOrderId">
+                    —
+                </h2>
+
+            </div>
+
+
+            <span
+                id="trackingStatus"
+                class="tracking-status"
+            >
+                Pending
+            </span>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             COURIER
+        =================================================== -->
+
+        <div class="tracking-info-grid">
+
+            <div>
+
+                <small>
+                    COURIER
+                </small>
+
+                <strong id="trackingCourier">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <small>
+                    TRACKING NUMBER
+                </small>
+
+                <strong id="trackingNumber">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             PROGRESS
+        =================================================== -->
+
+        <div class="tracking-progress">
+
+            <div
+                class="tracking-step"
+                data-status="pending"
+            >
+
+                <span>
+                    1
+                </span>
+
+                <strong>
+                    Order Received
+                </strong>
+
+            </div>
+
+
+            <div
+                class="tracking-step"
+                data-status="paid"
+            >
+
+                <span>
+                    2
+                </span>
+
+                <strong>
+                    Payment Confirmed
+                </strong>
+
+            </div>
+
+
+            <div
+                class="tracking-step"
+                data-status="awaiting_pickup"
+            >
+
+                <span>
+                    3
+                </span>
+
+                <strong>
+                    Awaiting Pickup
+                </strong>
+
+            </div>
+
+
+            <div
+                class="tracking-step"
+                data-status="picked_up"
+            >
+
+                <span>
+                    4
+                </span>
+
+                <strong>
+                    Picked Up
+                </strong>
+
+            </div>
+
+
+            <div
+                class="tracking-step"
+                data-status="in_transit"
+            >
+
+                <span>
+                    5
+                </span>
+
+                <strong>
+                    In Transit
+                </strong>
+
+            </div>
+
+
+            <div
+                class="tracking-step"
+                data-status="out_for_delivery"
+            >
+
+                <span>
+                    6
+                </span>
+
+                <strong>
+                    Out for Delivery
+                </strong>
+
+            </div>
+
+
+            <div
+                class="tracking-step"
+                data-status="delivered"
+            >
+
+                <span>
+                    7
+                </span>
+
+                <strong>
+                    Delivered
+                </strong>
+
+            </div>
+
+
+            <div
+                class="tracking-step"
+                data-status="completed"
+            >
+
+                <span>
+                    8
+                </span>
+
+                <strong>
+                    Completed
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             PAYMENT
+        =================================================== -->
+
+        <div
+            id="paymentInformation"
+            class="tracking-payment"
+        >
+
+            <small>
+                PAYMENT REFERENCE
+            </small>
+
+            <strong id="trackingPaymentId">
+                Not confirmed
+            </strong>
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<script
+    type="module"
+    src="tracking.js"
+></script>
+
+<script
+    type="module"
+    src="ads.js"
+></script>
+
+</body>
+</html>
+

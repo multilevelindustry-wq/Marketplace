@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="description"
+    content="Manage your products and seller store."
+>
+
+<meta
+    name="theme-color"
+    content="#f4511e"
+>
+
+<title>
+    My Store | Seller Dashboard
+</title>
+
+<link
+    rel="stylesheet"
+    href="seller-store.css"
+>
+
+<link
+    rel="stylesheet"
+    href="ads.css"
+>
+
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================================
+     SELLER STORE HEADER
+========================================================== -->
+
+<header class="seller-store-header">
+
+    <div class="seller-store-header-left">
+
+        <button
+            id="sellerStoreMenuButton"
+            class="seller-store-menu-button"
+            type="button"
+            aria-label="Open menu"
+        >
+            ☰
+        </button>
+
+
+        <a
+            href="index.html"
+            class="seller-store-logo"
+        >
+            NEOSTORE
+        </a>
+
+    </div>
+
+
+    <div class="seller-store-header-actions">
+
+        <a
+            href="index.html"
+            class="seller-view-store-button"
+        >
+            View Store
+        </a>
+
+
+        <a
+            href="seller-upload.html"
+            class="seller-add-product-button"
+        >
+            + Add Product
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- ==========================================================
+     SELLER STORE MAIN
+========================================================== -->
+
+<main class="seller-store-main">
+
+
+<!-- ==========================================================
+     SELLER WELCOME
+========================================================== -->
+
+<section
+    class="seller-store-welcome"
+>
+
+    <div>
+
+        <span>
+            SELLER DASHBOARD
+        </span>
+
+        <h1>
+            My Store
+        </h1>
+
+        <p id="sellerStoreWelcomeText">
+            Manage your products and inventory.
+        </p>
+
+    </div>
+
+
+    <a
+        href="seller-upload.html"
+        class="seller-welcome-add-button"
+    >
+        + Add New Product
+    </a>
+
+</section>
+
+<section
+    class="marketplace-ads-section"
+    id="marketplaceAdsSection"
+>
+
+    <div
+        id="marketplaceAds"
+        class="marketplace-ads"
+    ></div>
+
+</section>
+
+<!-- ==========================================================
+     STORE STATISTICS
+========================================================== -->
+
+<section
+    class="seller-store-stats"
+>
+
+    <div class="seller-stat-card">
+
+        <span>
+            Total Products
+        </span>
+
+        <strong id="sellerTotalProducts">
+            0
+        </strong>
+
+    </div>
+
+
+    <div class="seller-stat-card">
+
+        <span>
+            Active Products
+        </span>
+
+        <strong id="sellerActiveProducts">
+            0
+        </strong>
+
+    </div>
+
+
+    <div class="seller-stat-card">
+
+        <span>
+            Out of Stock
+        </span>
+
+        <strong id="sellerOutOfStock">
+            0
+        </strong>
+
+    </div>
+
+
+    <div class="seller-stat-card">
+
+        <span>
+            Pending Approval
+        </span>
+
+        <strong id="sellerPendingProducts">
+            0
+        </strong>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     PRODUCT TOOLBAR
+========================================================== -->
+
+<section
+    class="seller-product-toolbar"
+>
+
+    <div class="seller-product-toolbar-left">
+
+        <h2>
+            My Products
+        </h2>
+
+        <span id="sellerProductCount">
+            0 products
+        </span>
+
+    </div>
+
+
+    <div class="seller-product-toolbar-right">
+
+        <label
+            for="sellerProductSearch"
+            class="seller-search-wrapper"
+        >
+
+            <span>
+                🔍
+            </span>
+
+            <input
+                id="sellerProductSearch"
+                type="search"
+                placeholder="Search my products..."
+                autocomplete="off"
+            >
+
+        </label>
+
+
+        <select
+            id="sellerProductFilter"
+            class="seller-product-filter"
+        >
+
+            <option value="all">
+                All Products
+            </option>
+
+            <option value="active">
+                Active
+            </option>
+
+            <option value="pending">
+                Pending
+            </option>
+
+            <option value="out-of-stock">
+                Out of Stock
+            </option>
+
+        </select>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     PRODUCT LIST
+========================================================== -->
+
+<section
+    id="sellerProductsSection"
+    class="seller-products-section"
+>
+
+
+    <!-- ======================================================
+         LOADING STATE
+    ====================================================== -->
+
+    <div
+        id="sellerProductsLoading"
+        class="seller-products-loading"
+    >
+
+        <div class="seller-store-spinner"></div>
+
+        <p>
+            Loading your products...
+        </p>
+
+    </div>
+
+
+
+    <!-- ======================================================
+         PRODUCT GRID
+    ====================================================== -->
+
+    <div
+        id="sellerProductsGrid"
+        class="seller-products-grid"
+    >
+    </div>
+
+
+
+    <!-- ======================================================
+         EMPTY STATE
+    ====================================================== -->
+
+    <div
+        id="sellerProductsEmpty"
+        class="seller-products-empty"
+        hidden
+    >
+
+        <div class="empty-product-icon">
+            🛍️
+        </div>
+
+        <h2>
+            No products yet
+        </h2>
+
+        <p>
+            You haven't uploaded any products to your store.
+        </p>
+
+        <a
+            href="seller-upload.html"
+            class="empty-add-product-button"
+        >
+            + Add Your First Product
+        </a>
+
+    </div>
+
+
+
+    <!-- ======================================================
+         NO SEARCH RESULTS
+    ====================================================== -->
+
+    <div
+        id="sellerProductsNoResults"
+        class="seller-products-no-results"
+        hidden
+    >
+
+        <div>
+            🔍
+        </div>
+
+        <h2>
+            No products found
+        </h2>
+
+        <p>
+            Try another product name or change the filter.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     SELLER STORE PAGINATION
+========================================================== -->
+
+<nav
+    id="sellerProductPagination"
+    class="seller-product-pagination"
+    aria-label="Product pagination"
+>
+</nav>
+
+
+</main>
+
+
+
+<!-- ==========================================================
+     STORE MENU
+========================================================== -->
+
+<aside
+    id="sellerStoreSidebar"
+    class="seller-store-sidebar"
+    hidden
+>
+
+    <div class="seller-sidebar-header">
+
+        <strong>
+            Seller Menu
+        </strong>
+
+        <button
+            id="sellerStoreCloseMenu"
+            type="button"
+            aria-label="Close menu"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <nav class="seller-sidebar-navigation">
+
+        <a
+            href="seller-store.html"
+            class="active"
+        >
+            🏪 My Store
+        </a>
+
+
+        <a
+            href="seller-upload.html"
+        >
+            ➕ Add Product
+        </a>
+
+
+        <a
+            href="seller.html"
+        >
+            🛒 View Store
+        </a>
+
+
+        <a
+            href="seller-profile.html"
+        >
+            👤 Seller Profile
+        </a>
+
+    </nav>
+
+</aside>
+
+
+
+<!-- ==========================================================
+     SIDEBAR OVERLAY
+========================================================== -->
+
+<div
+    id="sellerStoreOverlay"
+    class="seller-store-overlay"
+    hidden
+></div>
+
+
+
+<!-- ==========================================================
+     PAGE MESSAGE
+========================================================== -->
+
+<div
+    id="sellerStoreMessage"
+    class="seller-store-message"
+    role="status"
+    aria-live="polite"
+>
+</div>
+
+
+
+<!-- ==========================================================
+     SCRIPT
+========================================================== -->
+
+<script
+    type="module"
+    src="seller-store.js"
+></script>
+
+<script
+    type="module"
+    src="ads.js"
+></script>
+
+</body>
+</html>
