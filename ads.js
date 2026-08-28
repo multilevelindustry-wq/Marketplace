@@ -889,7 +889,7 @@ function getSellerStoreURL(
 ){
 
     return (
-        "seller-store.html?sellerId=" +
+        "Shop.html?sellerId=" +
         encodeURIComponent(
             sellerId
         )
