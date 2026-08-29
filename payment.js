@@ -1040,7 +1040,7 @@ function calculateDistance(
          * inside the state.
          */
 
-        return 20;
+        return 60;
 
     }
 
