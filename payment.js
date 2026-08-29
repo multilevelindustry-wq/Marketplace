@@ -138,13 +138,13 @@ const STATE_DISTANCES = {
 
 const SIZE_VALUES = {
 
-    small: 1,
+    small: 5,
 
-    medium: 2,
+    medium: 6,
 
-    large: 4,
+    large: 9,
 
-    extra_large: 7
+    extra_large: 11
 
 };
 
@@ -641,17 +641,17 @@ function getItemSize(item) {
 
     const SIZE_VALUES = {
 
-        small: 1,
+        small: 5,
 
-        medium: 2,
+        medium: 6,
 
-        large: 4,
+        large: 9,
 
-        extra_large: 7,
+        extra_large: 11,
 
-        "extra large": 7,
+        "extra large": 11,
 
-        xl: 7
+        xl: 11
 
     };
 
@@ -1959,17 +1959,17 @@ function getFirestoreItemSize(
 
     const sizeValues = {
 
-        small: 1,
+        small: 5,
 
-        medium: 2,
+        medium: 6,
 
-        large: 4,
+        large: 9,
 
-        extra_large: 7,
+        extra_large: 11,
 
-        "extra-large": 7,
+        "extra-large": 11,
 
-        xlarge: 7,
+        xlarge: 11,
 
         xl: 7
 
