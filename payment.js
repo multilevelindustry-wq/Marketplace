@@ -138,13 +138,13 @@ const STATE_DISTANCES = {
 
 const SIZE_VALUES = {
 
-    small: 5,
+    small: 4,
 
-    medium: 6,
+    medium: 7,
 
-    large: 9,
+    large: 10,
 
-    extra_large: 11
+    extra_large: 13
 
 };
 
@@ -641,17 +641,17 @@ function getItemSize(item) {
 
     const SIZE_VALUES = {
 
-        small: 5,
+        small: 4,
 
-        medium: 6,
+        medium: 7,
 
-        large: 9,
+        large: 10,
 
-        extra_large: 11,
+        extra_large: 13,
 
-        "extra large": 11,
+        "extra large": 13,
 
-        xl: 11
+        xl: 13
 
     };
 
@@ -824,7 +824,7 @@ const DELIVERY_SERVICES = [
             650,
 
         multiplier:
-            2.2
+            2.6
     },
 
 
@@ -847,7 +847,7 @@ const DELIVERY_SERVICES = [
             9,
 
         sizeRate:
-            750,
+            550,
 
         multiplier:
             2.3
@@ -873,10 +873,10 @@ const DELIVERY_SERVICES = [
             10,
 
         sizeRate:
-            950,
+            850,
 
         multiplier:
-            2.2
+            2.4
     },
 
 
@@ -898,13 +898,13 @@ const DELIVERY_SERVICES = [
             700,
 
         pricePerKm:
-            12,
+            11,
 
         sizeRate:
             2100,
 
         multiplier:
-            2.33
+            2.45
     },
 
 
@@ -924,13 +924,13 @@ const DELIVERY_SERVICES = [
             800,
 
         pricePerKm:
-            11,
+            10,
 
         sizeRate:
             2200,
 
         multiplier:
-            2.35
+            2.55
     }
 
 ];
