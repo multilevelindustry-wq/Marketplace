@@ -824,7 +824,7 @@ const DELIVERY_SERVICES = [
             650,
 
         multiplier:
-            2.6
+            2.45
     },
 
 
@@ -841,13 +841,13 @@ const DELIVERY_SERVICES = [
             3000,
 
         pricePerKg:
-            550,
+            600,
 
         pricePerKm:
             9,
 
         sizeRate:
-            550,
+            600,
 
         multiplier:
             2.3
@@ -876,7 +876,7 @@ const DELIVERY_SERVICES = [
             850,
 
         multiplier:
-            2.4
+            2.55
     },
 
 
@@ -904,7 +904,7 @@ const DELIVERY_SERVICES = [
             2100,
 
         multiplier:
-            2.45
+            2.65
     },
 
 
@@ -930,7 +930,7 @@ const DELIVERY_SERVICES = [
             2200,
 
         multiplier:
-            2.55
+            2.65
     }
 
 ];
