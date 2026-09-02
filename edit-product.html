@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Product | Zongo.shop</title>
+
+    <meta name="description" content="Edit your Zongo.shop product listing.">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fb;
+            color: #172033;
+            min-height: 100vh;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .page {
+            width: min(100%, 900px);
+            margin: 0 auto;
+            padding: 18px 14px 50px;
+        }
+
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .brand {
+            font-size: 22px;
+            font-weight: 800;
+            color: #111827;
+        }
+
+        .back-button {
+            border: 0;
+            background: #fff;
+            color: #374151;
+            padding: 10px 14px;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,.06);
+        }
+
+        .heading {
+            margin-bottom: 18px;
+        }
+
+        .heading h1 {
+            font-size: clamp(25px, 5vw, 34px);
+            margin-bottom: 6px;
+        }
+
+        .heading p {
+            color: #687386;
+            line-height: 1.5;
+        }
+
+        .notice {
+            display: none;
+            margin-bottom: 16px;
+            padding: 13px 15px;
+            border-radius: 11px;
+            line-height: 1.45;
+            font-size: 14px;
+        }
+
+        .notice.success {
+            display: block;
+            background: #e9f9ef;
+            color: #176b38;
+            border: 1px solid #bce8ca;
+        }
+
+        .notice.error {
+            display: block;
+            background: #fff0f0;
+            color: #a52222;
+            border: 1px solid #f0c1c1;
+        }
+
+        .loader {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 280px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 3px 18px rgba(0,0,0,.06);
+            color: #667085;
+        }
+
+        .spinner {
+            width: 24px;
+            height: 24px;
+            border: 3px solid #dbe2ea;
+            border-top-color: #111827;
+            border-radius: 50%;
+            animation: spin .8s linear infinite;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .form {
+            display: none;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 18px;
+            margin-bottom: 16px;
+            box-shadow: 0 3px 18px rgba(0,0,0,.06);
+        }
+
+        .card h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .field.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 700;
+            color: #344054;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            border: 1px solid #d7dde7;
+            border-radius: 10px;
+            padding: 12px 13px;
+            background: #fff;
+            color: #172033;
+            outline: none;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #111827;
+            box-shadow: 0 0 0 3px rgba(17,24,39,.08);
+        }
+
+        textarea {
+            min-height: 125px;
+            resize: vertical;
+            line-height: 1.5;
+        }
+
+        .hint {
+            font-size: 12px;
+            color: #7a8494;
+        }
+
+        .image-preview {
+            width: 100%;
+            min-height: 190px;
+            border: 1px dashed #c9d1dc;
+            border-radius: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #f8fafc;
+            color: #7a8494;
+            margin-bottom: 12px;
+        }
+
+        .image-preview img {
+            width: 100%;
+            height: 260px;
+            object-fit: contain;
+            display: none;
+        }
+
+        .image-preview.has-image img {
+            display: block;
+        }
+
+        .image-preview.has-image span {
+            display: none;
+        }
+
+        .actions {
+            position: sticky;
+            bottom: 0;
+            z-index: 5;
+            background: rgba(245,247,251,.94);
+            backdrop-filter: blur(8px);
+            padding: 12px 0 2px;
+        }
+
+        .save-button {
+            width: 100%;
+            border: 0;
+            border-radius: 12px;
+            padding: 14px 18px;
+            background: #111827;
+            color: #fff;
+            font-weight: 800;
+            transition: .2s ease;
+        }
+
+        .save-button:hover {
+            transform: translateY(-1px);
+        }
+
+        .save-button:disabled {
+            opacity: .6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .danger {
+            margin-top: 12px;
+            color: #8a1c1c;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        @media (min-width: 680px) {
+            .page {
+                padding: 30px 20px 60px;
+            }
+
+            .grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .card {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<main class="page">
+
+    <header class="topbar">
+        <div class="brand">Zongo.shop</div>
+
+        <button
+            type="button"
+            class="back-button"
+            id="backButton"
+        >
+            ← Back
+        </button>
+    </header>
+
+    <section class="heading">
+        <h1>Edit Product</h1>
+        <p>
+            Update your product information and save the changes.
+        </p>
+    </section>
+
+    <div
+        id="notice"
+        class="notice"
+        role="alert"
+        aria-live="polite"
+    ></div>
+
+    <div
+        id="pageLoader"
+        class="loader"
+    >
+        <span class="spinner"></span>
+        <span>Loading product...</span>
+    </div>
+
+    <form
+        id="productForm"
+        class="form"
+        novalidate
+    >
+
+        <section class="card">
+
+            <h2>Product Information</h2>
+
+            <div class="grid">
+
+                <div class="field full">
+                    <label for="productName">Product name *</label>
+
+                    <input
+                        id="productName"
+                        name="productName"
+                        type="text"
+                        maxlength="180"
+                        required
+                        autocomplete="off"
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="category">Category *</label>
+
+                    <input
+                        id="category"
+                        name="category"
+                        type="text"
+                        maxlength="100"
+                        required
+                        autocomplete="off"
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="subcategory">Subcategory</label>
+
+                    <input
+                        id="subcategory"
+                        name="subcategory"
+                        type="text"
+                        maxlength="100"
+                        autocomplete="off"
+                    >
+                </div>
+
+                <div class="field full">
+                    <label for="description">Description *</label>
+
+                    <textarea
+                        id="description"
+                        name="description"
+                        maxlength="10000"
+                        required
+                    ></textarea>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="card">
+
+            <h2>Price & Inventory</h2>
+
+            <div class="grid">
+
+                <div class="field">
+                    <label for="price">Price (₦) *</label>
+
+                    <input
+                        id="price"
+                        name="price"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        required
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="oldPrice">Old price (₦)</label>
+
+                    <input
+                        id="oldPrice"
+                        name="oldPrice"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="stock">Stock quantity</label>
+
+                    <input
+                        id="stock"
+                        name="stock"
+                        type="number"
+                        min="0"
+                        step="1"
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="status">Product status</label>
+
+                    <select id="status" name="status">
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                        <option value="out_of_stock">Out of stock</option>
+                    </select>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="card">
+
+            <h2>Product Image</h2>
+
+            <div
+                class="image-preview"
+                id="imagePreview"
+            >
+                <img
+                    id="imagePreviewImg"
+                    alt="Product preview"
+                >
+
+                <span>No image available</span>
+            </div>
+
+            <div class="field">
+
+                <label for="image">Image URL</label>
+
+                <input
+                    id="image"
+                    name="image"
+                    type="url"
+                    maxlength="2000"
+                    placeholder="https://..."
+                    autocomplete="off"
+                >
+
+                <span class="hint">
+                    Enter the new image URL. Your existing image will remain
+                    unchanged if you leave this field empty.
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <section class="card">
+
+            <h2>Additional Details</h2>
+
+            <div class="grid">
+
+                <div class="field">
+                    <label for="brand">Brand</label>
+
+                    <input
+                        id="brand"
+                        name="brand"
+                        type="text"
+                        maxlength="120"
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="condition">Condition</label>
+
+                    <select
+                        id="condition"
+                        name="condition"
+                    >
+                        <option value="">Select condition</option>
+                        <option value="new">New</option>
+                        <option value="used">Used</option>
+                        <option value="refurbished">Refurbished</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="location">Seller location</label>
+
+                    <input
+                        id="location"
+                        name="location"
+                        type="text"
+                        maxlength="250"
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="tags">Tags</label>
+
+                    <input
+                        id="tags"
+                        name="tags"
+                        type="text"
+                        maxlength="1000"
+                        placeholder="phone, android, smartphone"
+                    >
+                </div>
+
+                <div class="field full">
+                    <label for="shortDescription">
+                        Short description
+                    </label>
+
+                    <textarea
+                        id="shortDescription"
+                        name="shortDescription"
+                        maxlength="1000"
+                    ></textarea>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <div class="actions">
+
+            <button
+                type="submit"
+                class="save-button"
+                id="saveButton"
+            >
+                Save Product Changes
+            </button>
+
+            <p class="danger">
+                Only the seller who owns this product can edit it.
+            </p>
+
+        </div>
+
+    </form>
+
+</main>
+
+
+<script type="module">
+
+    /* =========================================================
+       FIREBASE IMPORTS
+       ========================================================= */
+
+    import {
+        initializeApp,
+        getApps,
+        getApp
+    } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+
+    import {
+        getAuth,
+        onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+
+    import {
+        getFirestore,
+        doc,
+        getDoc,
+        updateDoc,
+        serverTimestamp
+    } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+
+
+    /* =========================================================
+       FIREBASE CONFIG
+       Replace these values with the SAME Firebase project
+       used by your Zongo.shop website.
+       ========================================================= */
+
+    const firebaseConfig = {
+        apiKey: "YOUR_API_KEY",
+        authDomain: "YOUR_PROJECT.firebaseapp.com",
+        projectId: "YOUR_PROJECT_ID",
+        storageBucket: "YOUR_PROJECT.appspot.com",
+        messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+        appId: "YOUR_APP_ID"
+    };
+
+
+    /* =========================================================
+       FIREBASE INITIALIZATION
+       ========================================================= */
+
+    const app = getApps().length
+        ? getApp()
+        : initializeApp(firebaseConfig);
+
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+
+    /* =========================================================
+       DOM REFERENCES
+       ========================================================= */
+
+    const productForm =
+        document.getElementById("productForm");
+
+    const pageLoader =
+        document.getElementById("pageLoader");
+
+    const notice =
+        document.getElementById("notice");
+
+    const saveButton =
+        document.getElementById("saveButton");
+
+    const backButton =
+        document.getElementById("backButton");
+
+    const imageInput =
+        document.getElementById("image");
+
+    const imagePreview =
+        document.getElementById("imagePreview");
+
+    const imagePreviewImg =
+        document.getElementById("imagePreviewImg");
+
+
+    /* =========================================================
+       FORM FIELD REFERENCES
+       ========================================================= */
+
+    const fields = {
+        productName: document.getElementById("productName"),
+        category: document.getElementById("category"),
+        subcategory: document.getElementById("subcategory"),
+        description: document.getElementById("description"),
+        price: document.getElementById("price"),
+        oldPrice: document.getElementById("oldPrice"),
+        stock: document.getElementById("stock"),
+        status: document.getElementById("status"),
+        image: imageInput,
+        brand: document.getElementById("brand"),
+        condition: document.getElementById("condition"),
+        location: document.getElementById("location"),
+        tags: document.getElementById("tags"),
+        shortDescription: document.getElementById("shortDescription")
+    };
+
+
+    /* =========================================================
+       STATE
+       ========================================================= */
+
+    let currentProductId = null;
+    let currentProductData = null;
+    let currentUser = null;
+
+
+    /* =========================================================
+       SHOW NOTICE
+       ========================================================= */
+
+    function showNotice(message, type) {
+
+        notice.textContent = message;
+
+        notice.className =
+            "notice " +
+            (type === "success"
+                ? "success"
+                : "error");
+
+        notice.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+    }
+
+
+    /* =========================================================
+       HIDE NOTICE
+       ========================================================= */
+
+    function hideNotice() {
+
+        notice.textContent = "";
+
+        notice.className = "notice";
+
+    }
+
+
+    /* =========================================================
+       GET PRODUCT ID FROM URL
+       ========================================================= */
+
+    function getProductId() {
+
+        const params =
+            new URLSearchParams(
+                window.location.search
+            );
+
+        return params.get("id");
+
+    }
+
+
+    /* =========================================================
+       NORMALIZE OWNER ID
+       Supports common seller ownership field names.
+       ========================================================= */
+
+    function getOwnerId(product) {
+
+        return (
+            product.sellerId ||
+            product.userId ||
+            product.ownerId ||
+            product.sellerUID ||
+            product.uid ||
+            null
+        );
+
+    }
+
+
+    /* =========================================================
+       CONVERT VALUE TO NUMBER
+       ========================================================= */
+
+    function numberValue(value) {
+
+        if (
+            value === null ||
+            value === undefined ||
+            value === ""
+        ) {
+            return null;
+        }
+
+        const result =
+            Number(value);
+
+        return Number.isFinite(result)
+            ? result
+            : null;
+
+    }
+
+
+    /* =========================================================
+       SET FIELD VALUES
+       ========================================================= */
+
+    function setFormValues(product) {
+
+        fields.productName.value =
+            product.productName ??
+            product.name ??
+            product.title ??
+            "";
+
+        fields.category.value =
+            product.category ??
+            "";
+
+        fields.subcategory.value =
+            product.subcategory ??
+            "";
+
+        fields.description.value =
+            product.description ??
+            "";
+
+        fields.price.value =
+            numberValue(
+                product.price ??
+                product.sellerPrice
+            ) ?? "";
+
+        fields.oldPrice.value =
+            numberValue(
+                product.oldPrice ??
+                product.originalPrice
+            ) ?? "";
+
+        fields.stock.value =
+            numberValue(
+                product.stock ??
+                product.quantity
+            ) ?? "";
+
+        fields.status.value =
+            product.status ??
+            "active";
+
+        fields.image.value =
+            product.image ??
+            product.imageUrl ??
+            product.mainImage ??
+            "";
+
+        fields.brand.value =
+            product.brand ??
+            "";
+
+        fields.condition.value =
+            product.condition ??
+            "";
+
+        fields.location.value =
+            product.location ??
+            product.sellerLocation ??
+            "";
+
+        const tags =
+            product.tags;
+
+        fields.tags.value =
+            Array.isArray(tags)
+                ? tags.join(", ")
+                : (tags ?? "");
+
+        fields.shortDescription.value =
+            product.shortDescription ??
+            "";
+
+        updateImagePreview(
+            fields.image.value
+        );
+
+    }
+
+
+    /* =========================================================
+       UPDATE IMAGE PREVIEW
+       ========================================================= */
+
+    function updateImagePreview(url) {
+
+        const cleanURL =
+            String(url || "").trim();
+
+        if (!cleanURL) {
+
+            imagePreview.classList.remove(
+                "has-image"
+            );
+
+            imagePreviewImg.removeAttribute(
+                "src"
+            );
+
+            return;
+        }
+
+        imagePreviewImg.src =
+            cleanURL;
+
+        imagePreview.classList.add(
+            "has-image"
+        );
+
+    }
+
+
+    /* =========================================================
+       LOAD PRODUCT
+       ========================================================= */
+
+    async function loadProduct() {
+
+        currentProductId =
+            getProductId();
+
+        if (!currentProductId) {
+
+            throw new Error(
+                "No product ID was found in the URL."
+            );
+
+        }
+
+        const productReference =
+            doc(
+                db,
+                "products",
+                currentProductId
+            );
+
+        const productSnapshot =
+            await getDoc(
+                productReference
+            );
+
+        if (!productSnapshot.exists()) {
+
+            throw new Error(
+                "This product could not be found."
+            );
+
+        }
+
+        currentProductData =
+            productSnapshot.data();
+
+        const ownerId =
+            getOwnerId(
+                currentProductData
+            );
+
+        if (
+            !ownerId ||
+            ownerId !== currentUser.uid
+        ) {
+
+            throw new Error(
+                "You are not authorized to edit this product."
+            );
+
+        }
+
+        setFormValues(
+            currentProductData
+        );
+
+        pageLoader.style.display =
+            "none";
+
+        productForm.style.display =
+            "block";
+
+    }
+
+
+    /* =========================================================
+       BUILD PRODUCT UPDATE
+       Only fields used by this page are changed.
+       Existing unrelated Firestore fields are preserved.
+       ========================================================= */
+
+    function buildProductUpdate() {
+
+        const productName =
+            fields.productName.value.trim();
+
+        const category =
+            fields.category.value.trim();
+
+        const description =
+            fields.description.value.trim();
+
+        const price =
+            numberValue(
+                fields.price.value
+            );
+
+        if (!productName) {
+            throw new Error(
+                "Please enter the product name."
+            );
+        }
+
+        if (!category) {
+            throw new Error(
+                "Please enter the product category."
+            );
+        }
+
+        if (!description) {
+            throw new Error(
+                "Please enter the product description."
+            );
+        }
+
+        if (
+            price === null ||
+            price < 0
+        ) {
+            throw new Error(
+                "Please enter a valid product price."
+            );
+        }
+
+        const oldPrice =
+            numberValue(
+                fields.oldPrice.value
+            );
+
+        const stock =
+            numberValue(
+                fields.stock.value
+            );
+
+        const imageURL =
+            fields.image.value.trim();
+
+        const tags =
+            fields.tags.value
+                .split(",")
+                .map(
+                    tag => tag.trim()
+                )
+                .filter(
+                    Boolean
+                );
+
+        return {
+            productName: productName,
+            name: productName,
+            category: category,
+            subcategory:
+                fields.subcategory.value.trim(),
+            description: description,
+            price: price,
+            oldPrice: oldPrice,
+            stock: stock,
+            quantity: stock,
+            status: fields.status.value,
+            image: imageURL,
+            imageUrl: imageURL,
+            brand:
+                fields.brand.value.trim(),
+            condition:
+                fields.condition.value,
+            location:
+                fields.location.value.trim(),
+            tags: tags,
+            shortDescription:
+                fields.shortDescription.value.trim(),
+            updatedAt: serverTimestamp()
+        };
+
+    }
+
+
+    /* =========================================================
+       SAVE PRODUCT
+       ========================================================= */
+
+    async function saveProduct(event) {
+
+        event.preventDefault();
+
+        hideNotice();
+
+        saveButton.disabled = true;
+
+        saveButton.textContent =
+            "Saving changes...";
+
+        try {
+
+            if (
+                !currentUser ||
+                !currentProductId
+            ) {
+
+                throw new Error(
+                    "Your session is not ready. Please sign in again."
+                );
+
+            }
+
+            const ownerId =
+                getOwnerId(
+                    currentProductData
+                );
+
+            if (
+                ownerId !==
+                currentUser.uid
+            ) {
+
+                throw new Error(
+                    "You are not authorized to edit this product."
+                );
+
+            }
+
+            const changes =
+                buildProductUpdate();
+
+            await updateDoc(
+                doc(
+                    db,
+                    "products",
+                    currentProductId
+                ),
+                changes
+            );
+
+            showNotice(
+                "Product updated successfully.",
+                "success"
+            );
+
+            saveButton.textContent =
+                "Saved Successfully";
+
+            setTimeout(
+                function () {
+
+                    window.location.href =
+                        "product.html?id=" +
+                        encodeURIComponent(
+                            currentProductId
+                        );
+
+                },
+                1200
+            );
+
+        }
+        catch (error) {
+
+            console.error(
+                "EDIT PRODUCT ERROR:",
+                error
+            );
+
+            showNotice(
+                error.message ||
+                "Unable to update the product.",
+                "error"
+            );
+
+            saveButton.disabled =
+                false;
+
+            saveButton.textContent =
+                "Save Product Changes";
+
+        }
+
+    }
+
+
+    /* =========================================================
+       AUTHENTICATION STATE
+       ========================================================= */
+
+    onAuthStateChanged(
+        auth,
+        async function (user) {
+
+            currentUser =
+                user;
+
+            try {
+
+                if (!user) {
+
+                    throw new Error(
+                        "Please log in as the seller who owns this product."
+                    );
+
+                }
+
+                await loadProduct();
+
+            }
+            catch (error) {
+
+                console.error(
+                    "EDIT PRODUCT LOAD ERROR:",
+                    error
+                );
+
+                pageLoader.innerHTML =
+                    "<strong>" +
+                    error.message +
+                    "</strong>";
+
+                showNotice(
+                    error.message,
+                    "error"
+                );
+
+            }
+
+        }
+    );
+
+
+    /* =========================================================
+       IMAGE PREVIEW EVENT
+       ========================================================= */
+
+    imageInput.addEventListener(
+        "input",
+        function () {
+
+            updateImagePreview(
+                imageInput.value
+            );
+
+        }
+    );
+
+
+    /* =========================================================
+       IMAGE ERROR HANDLING
+       ========================================================= */
+
+    imagePreviewImg.addEventListener(
+        "error",
+        function () {
+
+            imagePreview.classList.remove(
+                "has-image"
+            );
+
+            imagePreviewImg.removeAttribute(
+                "src"
+            );
+
+            showNotice(
+                "The image URL could not be loaded. Check the URL.",
+                "error"
+            );
+
+        }
+    );
+
+
+    /* =========================================================
+       FORM SUBMISSION
+       ========================================================= */
+
+    productForm.addEventListener(
+        "submit",
+        saveProduct
+    );
+
+
+    /* =========================================================
+       BACK BUTTON
+       ========================================================= */
+
+    backButton.addEventListener(
+        "click",
+        function () {
+
+            if (
+                currentProductId
+            ) {
+
+                window.location.href =
+                    "product.html?id=" +
+                    encodeURIComponent(
+                        currentProductId
+                    );
+
+                return;
+            }
+
+            window.history.back();
+
+        }
+    );
+
+</script>
+
+</body>
+</html>
