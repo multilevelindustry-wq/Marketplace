@@ -153,7 +153,7 @@ function getAdvertisingPlan(
                 5000,
 
             impressions:
-                15000,
+                13000,
 
             clicks:
                 0
@@ -170,10 +170,10 @@ function getAdvertisingPlan(
                 "PREMIUM",
 
             price:
-                10000,
+                16500,
 
             impressions:
-                40000,
+                37000,
 
             clicks:
                 0
