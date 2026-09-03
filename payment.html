@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f59e0b">
+<title>Checkout & Payment</title>
+<link rel="stylesheet" href="payments.css">
+<link rel="stylesheet" href="ads.css">
+</head>
+<body>
+
+<main class="payment-page">
+    <section class="checkout-container">
+        <button id="back" type="button">← Back to Cart</button>
+        <h1>Checkout</h1>
+
+        <section class="delivery-form">
+            <h2>Delivery Information</h2>
+            <input id="buyerName" type="text" placeholder="Full name" required>
+            <input id="buyerPhone" type="tel" placeholder="Phone number" required>
+            <input id="buyerEmail" type="email" placeholder="Email address" required>
+
+            <label for="deliveryCountry">Country</label>
+            <select id="deliveryCountry" required>
+                <option value="">Loading countries...</option>
+            </select>
+
+            <div id="buyerCurrencyInfo" style="display:none">
+                Currency: <strong id="buyerCurrencyName"></strong>
+                <span id="buyerCurrencyEquivalent"></span>
+            </div>
+
+            <label for="deliveryState">State / Region / Province</label>
+            <select id="deliveryState" required>
+                <option value="">Select state / region</option>
+            </select>
+            <small id="deliveryStateHint" style="display:none"></small>
+
+            <input id="deliveryCity" type="text" placeholder="City" required>
+            <input id="deliveryArea" type="text" placeholder="Area / District" required>
+            <input id="deliveryPostalCode" type="text" placeholder="Postal / ZIP code">
+            <textarea id="deliveryAddress" placeholder="Full delivery address" required></textarea>
+            <textarea id="deliveryInstructions" placeholder="Delivery instructions (optional)"></textarea>
+
+            <button id="getDeliveryRates" type="button">Calculate Delivery Rates</button>
+            <div id="deliveryStatus"></div>
+        </section>
+
+        <section id="deliveryServicesCard" style="display:none">
+            <h2>Delivery Services</h2>
+            <p id="deliveryDistanceInfo"></p>
+            <div id="deliveryServices"></div>
+        </section>
+
+        <section class="payment-methods">
+            <h2>Payment Method</h2>
+            <label class="option" data-method="paystack">
+                <input type="radio" name="paymentMethod" value="paystack">
+                Paystack
+            </label>
+            <label class="option" data-method="paypal">
+                <input type="radio" name="paymentMethod" value="paypal">
+                PayPal
+            </label>
+            <label class="option disabled"><input type="radio" disabled> Flutterwave</label>
+            <label class="option disabled"><input type="radio" disabled> Bank Transfer</label>
+        </section>
+
+        <section class="summary-box">
+            <h2>Order Summary</h2>
+            <div><span>Items</span><strong id="items">₦0</strong></div>
+            <div><span>Delivery</span><strong id="delivery">—</strong></div>
+            <div id="localCurrencyRow" style="display:none"><span>Local currency</span><strong id="localCurrencyTotal"></strong></div>
+            <hr>
+            <div><span>Total</span><strong id="total">₦0</strong></div>
+            <p id="currencyNotice">Prices and checkout total are shown in NGN.</p>
+        </section>
+
+        <div id="status" role="status"></div>
+        <button id="pay" type="button" disabled>Pay Now</button>
+        <div id="paypal-button-container" style="display:none"></div>
+    </section>
+</main>
+
+<script src="https://js.paystack.co/v2/inline.js"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=AQlOKE6idiCDIoGFP9xVxLHVO_dgeqaA5WDsqnmVoMYUD4poj43MGDXeBYTfcRgMWsBMd9ylaCN447qR&currency=USD&intent=capture"></script>
+<script type="module" src="./payment.js"></script>
+<script type="module" src="./ads.js"></script>
+</body>
+</html>
