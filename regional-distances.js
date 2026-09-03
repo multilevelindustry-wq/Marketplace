@@ -195,6 +195,1238 @@ export const REGIONS = {
             "lng": 7.3986
         }
     ],
+
+   "AF": [
+    {
+        "name": "Badakhshan",
+        "lat": 36.7348,
+        "lng": 70.8110
+    },
+    {
+        "name": "Badghis",
+        "lat": 35.0830,
+        "lng": 63.5490
+    },
+    {
+        "name": "Baghlan",
+        "lat": 35.7500,
+        "lng": 68.8330
+    },
+    {
+        "name": "Balkh",
+        "lat": 36.7500,
+        "lng": 67.0000
+    },
+    {
+        "name": "Bamyan",
+        "lat": 34.8100,
+        "lng": 67.8210
+    },
+    {
+        "name": "Daykundi",
+        "lat": 33.9500,
+        "lng": 66.2500
+    },
+    {
+        "name": "Farah",
+        "lat": 32.4950,
+        "lng": 62.2620
+    },
+    {
+        "name": "Faryab",
+        "lat": 36.0790,
+        "lng": 64.9050
+    },
+    {
+        "name": "Ghazni",
+        "lat": 33.5530,
+        "lng": 68.4260
+    },
+    {
+        "name": "Ghor",
+        "lat": 34.0000,
+        "lng": 64.0000
+    },
+    {
+        "name": "Helmand",
+        "lat": 31.5830,
+        "lng": 64.3670
+    },
+    {
+        "name": "Herat",
+        "lat": 34.3419,
+        "lng": 62.2030
+    },
+    {
+        "name": "Jowzjan",
+        "lat": 36.8960,
+        "lng": 65.6650
+    },
+    {
+        "name": "Kabul",
+        "lat": 34.5553,
+        "lng": 69.2075
+    },
+    {
+        "name": "Kandahar",
+        "lat": 31.6289,
+        "lng": 65.7372
+    },
+    {
+        "name": "Kapisa",
+        "lat": 35.0000,
+        "lng": 69.7500
+    },
+    {
+        "name": "Khost",
+        "lat": 33.3330,
+        "lng": 69.9170
+    },
+    {
+        "name": "Kunar",
+        "lat": 35.0000,
+        "lng": 71.5000
+    },
+    {
+        "name": "Kunduz",
+        "lat": 36.7280,
+        "lng": 68.8680
+    },
+    {
+        "name": "Laghman",
+        "lat": 34.7000,
+        "lng": 70.1500
+    },
+    {
+        "name": "Logar",
+        "lat": 34.0000,
+        "lng": 69.2000
+    },
+    {
+        "name": "Nangarhar",
+        "lat": 34.4300,
+        "lng": 70.4500
+    },
+    {
+        "name": "Nimruz",
+        "lat": 31.0000,
+        "lng": 62.5000
+    },
+    {
+        "name": "Nuristan",
+        "lat": 35.3000,
+        "lng": 70.9000
+    },
+    {
+        "name": "Paktia",
+        "lat": 33.6000,
+        "lng": 69.3000
+    },
+    {
+        "name": "Paktika",
+        "lat": 32.5000,
+        "lng": 68.0000
+    },
+    {
+        "name": "Panjshir",
+        "lat": 35.3500,
+        "lng": 69.8000
+    },
+    {
+        "name": "Parwan",
+        "lat": 35.0000,
+        "lng": 69.2000
+    },
+    {
+        "name": "Samangan",
+        "lat": 35.8500,
+        "lng": 67.7500
+    },
+    {
+        "name": "Sar-e Pol",
+        "lat": 35.5000,
+        "lng": 65.5000
+    },
+    {
+        "name": "Takhar",
+        "lat": 36.7500,
+        "lng": 69.5000
+    },
+    {
+        "name": "Urozgan",
+        "lat": 32.9000,
+        "lng": 66.6000
+    },
+    {
+        "name": "Wardak",
+        "lat": 34.4000,
+        "lng": 68.3000
+    },
+    {
+        "name": "Zabul",
+        "lat": 32.2500,
+        "lng": 67.2500
+    }
+],
+
+"AL": [
+    {
+        "name": "Berat",
+        "lat": 40.7058,
+        "lng": 19.9522
+    },
+    {
+        "name": "Dibër",
+        "lat": 41.5886,
+        "lng": 20.2356
+    },
+    {
+        "name": "Durrës",
+        "lat": 41.3246,
+        "lng": 19.4565
+    },
+    {
+        "name": "Elbasan",
+        "lat": 41.1102,
+        "lng": 20.0867
+    },
+    {
+        "name": "Fier",
+        "lat": 40.7275,
+        "lng": 19.5561
+    },
+    {
+        "name": "Gjirokastër",
+        "lat": 40.0673,
+        "lng": 20.1047
+    },
+    {
+        "name": "Korçë",
+        "lat": 40.6167,
+        "lng": 20.7667
+    },
+    {
+        "name": "Kukës",
+        "lat": 42.0769,
+        "lng": 20.4219
+    },
+    {
+        "name": "Lezhë",
+        "lat": 41.7814,
+        "lng": 19.6436
+    },
+    {
+        "name": "Shkodër",
+        "lat": 42.0693,
+        "lng": 19.5033
+    },
+    {
+        "name": "Tirana",
+        "lat": 41.3275,
+        "lng": 19.8187
+    },
+    {
+        "name": "Vlorë",
+        "lat": 40.4667,
+        "lng": 19.4833
+    }
+],
+
+"DZ": [
+    {
+        "name": "Adrar",
+        "lat": 27.8743,
+        "lng": -0.2939
+    },
+    {
+        "name": "Aïn Defla",
+        "lat": 36.2641,
+        "lng": 1.9679
+    },
+    {
+        "name": "Aïn Témouchent",
+        "lat": 35.2975,
+        "lng": -1.1404
+    },
+    {
+        "name": "Algiers",
+        "lat": 36.7538,
+        "lng": 3.0588
+    },
+    {
+        "name": "Annaba",
+        "lat": 36.9000,
+        "lng": 7.7667
+    },
+    {
+        "name": "Batna",
+        "lat": 35.5559,
+        "lng": 6.1741
+    },
+    {
+        "name": "Béchar",
+        "lat": 31.6167,
+        "lng": -2.2167
+    },
+    {
+        "name": "Béjaïa",
+        "lat": 36.7509,
+        "lng": 5.0567
+    },
+    {
+        "name": "Biskra",
+        "lat": 34.8504,
+        "lng": 5.7281
+    },
+    {
+        "name": "Blida",
+        "lat": 36.4700,
+        "lng": 2.8300
+    },
+    {
+        "name": "Bordj Badji Mokhtar",
+        "lat": 21.3270,
+        "lng": 0.9500
+    },
+    {
+        "name": "Bordj Bou Arréridj",
+        "lat": 36.0730,
+        "lng": 4.7611
+    },
+    {
+        "name": "Bouïra",
+        "lat": 36.3749,
+        "lng": 3.9020
+    },
+    {
+        "name": "Boumerdès",
+        "lat": 36.7667,
+        "lng": 3.4667
+    },
+    {
+        "name": "Chlef",
+        "lat": 36.1653,
+        "lng": 1.3345
+    },
+    {
+        "name": "Constantine",
+        "lat": 36.3650,
+        "lng": 6.6147
+    },
+    {
+        "name": "Djelfa",
+        "lat": 34.6667,
+        "lng": 3.2500
+    },
+    {
+        "name": "El Bayadh",
+        "lat": 33.6833,
+        "lng": 1.0167
+    },
+    {
+        "name": "El Oued",
+        "lat": 33.3683,
+        "lng": 6.8675
+    },
+    {
+        "name": "El Tarf",
+        "lat": 36.7672,
+        "lng": 8.3138
+    },
+    {
+        "name": "Ghardaïa",
+        "lat": 32.4909,
+        "lng": 3.6735
+    },
+    {
+        "name": "Guelma",
+        "lat": 36.4621,
+        "lng": 7.4261
+    },
+    {
+        "name": "Illizi",
+        "lat": 26.4833,
+        "lng": 8.4667
+    },
+    {
+        "name": "Jijel",
+        "lat": 36.8206,
+        "lng": 5.7667
+    },
+    {
+        "name": "Khenchela",
+        "lat": 35.4358,
+        "lng": 7.1433
+    },
+    {
+        "name": "Laghouat",
+        "lat": 33.8000,
+        "lng": 2.8667
+    },
+    {
+        "name": "M'Sila",
+        "lat": 35.7058,
+        "lng": 4.5419
+    },
+    {
+        "name": "Mascara",
+        "lat": 35.3966,
+        "lng": 0.1403
+    },
+    {
+        "name": "Médéa",
+        "lat": 36.2642,
+        "lng": 2.7539
+    },
+    {
+        "name": "Mila",
+        "lat": 36.4503,
+        "lng": 6.2644
+    },
+    {
+        "name": "Mostaganem",
+        "lat": 35.9333,
+        "lng": 0.0833
+    },
+    {
+        "name": "Naâma",
+        "lat": 33.2667,
+        "lng": -0.3167
+    },
+    {
+        "name": "Oran",
+        "lat": 35.6969,
+        "lng": -0.6331
+    },
+    {
+        "name": "Ouargla",
+        "lat": 31.9500,
+        "lng": 5.3333
+    },
+    {
+        "name": "Oum El Bouaghi",
+        "lat": 35.8750,
+        "lng": 7.1139
+    },
+    {
+        "name": "Relizane",
+        "lat": 35.7373,
+        "lng": 0.5558
+    },
+    {
+        "name": "Saïda",
+        "lat": 34.8303,
+        "lng": 0.1517
+    },
+    {
+        "name": "Sétif",
+        "lat": 36.1900,
+        "lng": 5.4100
+    },
+    {
+        "name": "Sidi Bel Abbès",
+        "lat": 35.1899,
+        "lng": -0.6309
+    },
+    {
+        "name": "Skikda",
+        "lat": 36.8667,
+        "lng": 6.9000
+    },
+    {
+        "name": "Souk Ahras",
+        "lat": 36.2864,
+        "lng": 7.9511
+    },
+    {
+        "name": "Tamanrasset",
+        "lat": 22.7850,
+        "lng": 5.5228
+    },
+    {
+        "name": "Tébessa",
+        "lat": 35.4042,
+        "lng": 8.1242
+    },
+    {
+        "name": "Tiaret",
+        "lat": 35.3710,
+        "lng": 1.3160
+    },
+    {
+        "name": "Timimoun",
+        "lat": 29.2639,
+        "lng": 0.2306
+    },
+    {
+        "name": "Tindouf",
+        "lat": 27.6711,
+        "lng": -8.1474
+    },
+    {
+        "name": "Tipaza",
+        "lat": 36.5897,
+        "lng": 2.4481
+    },
+    {
+        "name": "Tissemsilt",
+        "lat": 35.6072,
+        "lng": 1.8108
+    },
+    {
+        "name": "Tizi Ouzou",
+        "lat": 36.7118,
+        "lng": 4.0459
+    },
+    {
+        "name": "Tlemcen",
+        "lat": 34.8828,
+        "lng": -1.3167
+    },
+    {
+        "name": "Touggourt",
+        "lat": 33.1000,
+        "lng": 6.0667
+    },
+    {
+        "name": "Djanet",
+        "lat": 24.5540,
+        "lng": 9.4840
+    }
+],
+
+"AD": [
+    {
+        "name": "Canillo",
+        "lat": 42.5667,
+        "lng": 1.6000
+    },
+    {
+        "name": "Encamp",
+        "lat": 42.5333,
+        "lng": 1.5833
+    },
+    {
+        "name": "La Massana",
+        "lat": 42.5440,
+        "lng": 1.5148
+    },
+    {
+        "name": "Ordino",
+        "lat": 42.5562,
+        "lng": 1.5332
+    },
+    {
+        "name": "Sant Julià de Lòria",
+        "lat": 42.4637,
+        "lng": 1.4913
+    },
+    {
+        "name": "Andorra la Vella",
+        "lat": 42.5063,
+        "lng": 1.5218
+    },
+    {
+        "name": "Escaldes-Engordany",
+        "lat": 42.5095,
+        "lng": 1.5386
+    }
+],
+
+"AO": [
+    {
+        "name": "Bengo",
+        "lat": -9.0000,
+        "lng": 13.5000
+    },
+    {
+        "name": "Benguela",
+        "lat": -12.5763,
+        "lng": 13.4055
+    },
+    {
+        "name": "Bié",
+        "lat": -12.0000,
+        "lng": 17.0000
+    },
+    {
+        "name": "Cabinda",
+        "lat": -5.5500,
+        "lng": 12.1900
+    },
+    {
+        "name": "Cuando Cubango",
+        "lat": -16.0000,
+        "lng": 19.0000
+    },
+    {
+        "name": "Cuanza Norte",
+        "lat": -9.0000,
+        "lng": 14.8000
+    },
+    {
+        "name": "Cuanza Sul",
+        "lat": -10.9000,
+        "lng": 14.9000
+    },
+    {
+        "name": "Cunene",
+        "lat": -17.3000,
+        "lng": 15.7000
+    },
+    {
+        "name": "Huambo",
+        "lat": -12.7761,
+        "lng": 15.7392
+    },
+    {
+        "name": "Huíla",
+        "lat": -14.9000,
+        "lng": 14.9000
+    },
+    {
+        "name": "Icolo e Bengo",
+        "lat": -9.2500,
+        "lng": 13.8000
+    },
+    {
+        "name": "Luanda",
+        "lat": -8.8390,
+        "lng": 13.2894
+    },
+    {
+        "name": "Lunda Norte",
+        "lat": -8.5000,
+        "lng": 20.5000
+    },
+    {
+        "name": "Lunda Sul",
+        "lat": -10.5000,
+        "lng": 21.0000
+    },
+    {
+        "name": "Malanje",
+        "lat": -9.5402,
+        "lng": 16.3410
+    },
+    {
+        "name": "Moxico",
+        "lat": -13.5000,
+        "lng": 21.0000
+    },
+    {
+        "name": "Moxico Leste",
+        "lat": -14.0000,
+        "lng": 22.5000
+    },
+    {
+        "name": "Namibe",
+        "lat": -15.1961,
+        "lng": 12.1522
+    },
+    {
+        "name": "Uíge",
+        "lat": -7.6087,
+        "lng": 15.0613
+    },
+    {
+        "name": "Zaire",
+        "lat": -6.2700,
+        "lng": 13.2300
+    }
+],
+
+"AG": [
+    {
+        "name": "Saint John",
+        "lat": 17.1172,
+        "lng": -61.8457
+    },
+    {
+        "name": "Saint Mary",
+        "lat": 17.0167,
+        "lng": -61.8500
+    },
+    {
+        "name": "Saint Paul",
+        "lat": 17.0500,
+        "lng": -61.8000
+    },
+    {
+        "name": "Saint Peter",
+        "lat": 17.0833,
+        "lng": -61.8000
+    },
+    {
+        "name": "Saint Philip",
+        "lat": 17.0667,
+        "lng": -61.7167
+    },
+    {
+        "name": "Barbuda",
+        "lat": 17.6268,
+        "lng": -61.7710
+    },
+    {
+        "name": "Redonda",
+        "lat": 16.9380,
+        "lng": -62.3450
+    }
+],
+
+"AM": [
+    {
+        "name": "Aragatsotn",
+        "lat": 40.4030,
+        "lng": 44.0470
+    },
+    {
+        "name": "Ararat",
+        "lat": 39.9139,
+        "lng": 44.7281
+    },
+    {
+        "name": "Armavir",
+        "lat": 40.1500,
+        "lng": 44.0400
+    },
+    {
+        "name": "Gegharkunik",
+        "lat": 40.2500,
+        "lng": 45.2500
+    },
+    {
+        "name": "Kotayk",
+        "lat": 40.3333,
+        "lng": 44.7500
+    },
+    {
+        "name": "Lori",
+        "lat": 40.9500,
+        "lng": 44.5000
+    },
+    {
+        "name": "Shirak",
+        "lat": 40.7667,
+        "lng": 43.8333
+    },
+    {
+        "name": "Syunik",
+        "lat": 39.2500,
+        "lng": 46.2500
+    },
+    {
+        "name": "Tavush",
+        "lat": 40.8833,
+        "lng": 45.3333
+    },
+    {
+        "name": "Vayots Dzor",
+        "lat": 39.7500,
+        "lng": 45.3333
+    },
+    {
+        "name": "Yerevan",
+        "lat": 40.1872,
+        "lng": 44.5152
+    }
+],
+
+"AR": [
+    {
+        "name": "Buenos Aires",
+        "lat": -34.9215,
+        "lng": -57.9545
+    },
+    {
+        "name": "Catamarca",
+        "lat": -28.4696,
+        "lng": -65.7852
+    },
+    {
+        "name": "Chaco",
+        "lat": -27.4514,
+        "lng": -58.9867
+    },
+    {
+        "name": "Chubut",
+        "lat": -43.3000,
+        "lng": -65.1000
+    },
+    {
+        "name": "Córdoba",
+        "lat": -31.4201,
+        "lng": -64.1888
+    },
+    {
+        "name": "Corrientes",
+        "lat": -27.4692,
+        "lng": -58.8306
+    },
+    {
+        "name": "Entre Ríos",
+        "lat": -31.7333,
+        "lng": -60.5297
+    },
+    {
+        "name": "Formosa",
+        "lat": -26.1849,
+        "lng": -58.1731
+    },
+    {
+        "name": "Jujuy",
+        "lat": -24.1858,
+        "lng": -65.2995
+    },
+    {
+        "name": "La Pampa",
+        "lat": -36.6167,
+        "lng": -64.2833
+    },
+    {
+        "name": "La Rioja",
+        "lat": -29.4135,
+        "lng": -66.8562
+    },
+    {
+        "name": "Mendoza",
+        "lat": -32.8895,
+        "lng": -68.8458
+    },
+    {
+        "name": "Misiones",
+        "lat": -27.3621,
+        "lng": -55.9009
+    },
+    {
+        "name": "Neuquén",
+        "lat": -38.9516,
+        "lng": -68.0591
+    },
+    {
+        "name": "Río Negro",
+        "lat": -40.8000,
+        "lng": -63.0000
+    },
+    {
+        "name": "Salta",
+        "lat": -24.7821,
+        "lng": -65.4232
+    },
+    {
+        "name": "San Juan",
+        "lat": -31.5375,
+        "lng": -68.5364
+    },
+    {
+        "name": "San Luis",
+        "lat": -33.3017,
+        "lng": -66.3378
+    },
+    {
+        "name": "Santa Cruz",
+        "lat": -50.3333,
+        "lng": -69.2500
+    },
+    {
+        "name": "Santa Fe",
+        "lat": -31.6333,
+        "lng": -60.7000
+    },
+    {
+        "name": "Santiago del Estero",
+        "lat": -27.7951,
+        "lng": -64.2615
+    },
+    {
+        "name": "Tierra del Fuego",
+        "lat": -54.8019,
+        "lng": -68.3029
+    },
+    {
+        "name": "Tucumán",
+        "lat": -26.8083,
+        "lng": -65.2176
+    }
+],
+
+"AU": [
+    {
+        "name": "Australian Capital Territory",
+        "lat": -35.2809,
+        "lng": 149.1300
+    },
+    {
+        "name": "New South Wales",
+        "lat": -33.8688,
+        "lng": 151.2093
+    },
+    {
+        "name": "Northern Territory",
+        "lat": -12.4634,
+        "lng": 130.8456
+    },
+    {
+        "name": "Queensland",
+        "lat": -27.4698,
+        "lng": 153.0251
+    },
+    {
+        "name": "South Australia",
+        "lat": -34.9285,
+        "lng": 138.6007
+    },
+    {
+        "name": "Tasmania",
+        "lat": -42.8821,
+        "lng": 147.3272
+    },
+    {
+        "name": "Victoria",
+        "lat": -37.8136,
+        "lng": 144.9631
+    },
+    {
+        "name": "Western Australia",
+        "lat": -31.9505,
+        "lng": 115.8605
+    }
+],
+
+"AT": [
+    {
+        "name": "Burgenland",
+        "lat": 47.5000,
+        "lng": 16.5000
+    },
+    {
+        "name": "Carinthia",
+        "lat": 46.7000,
+        "lng": 14.2000
+    },
+    {
+        "name": "Lower Austria",
+        "lat": 48.2000,
+        "lng": 15.6000
+    },
+    {
+        "name": "Upper Austria",
+        "lat": 48.2000,
+        "lng": 14.0000
+    },
+    {
+        "name": "Salzburg",
+        "lat": 47.8000,
+        "lng": 13.0500
+    },
+    {
+        "name": "Styria",
+        "lat": 47.2500,
+        "lng": 15.0000
+    },
+    {
+        "name": "Tyrol",
+        "lat": 47.2500,
+        "lng": 11.4000
+    },
+    {
+        "name": "Vorarlberg",
+        "lat": 47.2500,
+        "lng": 9.9000
+    },
+    {
+        "name": "Vienna",
+        "lat": 48.2082,
+        "lng": 16.3738
+    }
+],
+
+"AZ": [
+    {
+        "name": "Absheron",
+        "lat": 40.4500,
+        "lng": 49.7500
+    },
+    {
+        "name": "Agdam",
+        "lat": 39.9900,
+        "lng": 46.9300
+    },
+    {
+        "name": "Agdash",
+        "lat": 40.6500,
+        "lng": 47.4800
+    },
+    {
+        "name": "Agjabadi",
+        "lat": 40.0500,
+        "lng": 47.4600
+    },
+    {
+        "name": "Astara",
+        "lat": 38.4560,
+        "lng": 48.8760
+    },
+    {
+        "name": "Baku",
+        "lat": 40.4093,
+        "lng": 49.8671
+    },
+    {
+        "name": "Balakan",
+        "lat": 41.7250,
+        "lng": 46.4080
+    },
+    {
+        "name": "Barda",
+        "lat": 40.3750,
+        "lng": 47.1260
+    },
+    {
+        "name": "Beylagan",
+        "lat": 39.7750,
+        "lng": 47.6180
+    },
+    {
+        "name": "Bilasuvar",
+        "lat": 39.4590,
+        "lng": 48.5530
+    },
+    {
+        "name": "Dashkasan",
+        "lat": 40.5200,
+        "lng": 46.0750
+    },
+    {
+        "name": "Fizuli",
+        "lat": 39.6000,
+        "lng": 47.1450
+    },
+    {
+        "name": "Ganja",
+        "lat": 40.6828,
+        "lng": 46.3606
+    },
+    {
+        "name": "Gadabay",
+        "lat": 40.5650,
+        "lng": 45.8160
+    },
+    {
+        "name": "Goranboy",
+        "lat": 40.6100,
+        "lng": 46.7900
+    },
+    {
+        "name": "Goychay",
+        "lat": 40.6200,
+        "lng": 47.7400
+    },
+    {
+        "name": "Hajigabul",
+        "lat": 40.0400,
+        "lng": 48.9400
+    },
+    {
+        "name": "Imishli",
+        "lat": 39.8700,
+        "lng": 48.0600
+    },
+    {
+        "name": "Ismayilli",
+        "lat": 40.7900,
+        "lng": 48.1500
+    },
+    {
+        "name": "Jalilabad",
+        "lat": 39.2100,
+        "lng": 48.5100
+    },
+    {
+        "name": "Jabrayil",
+        "lat": 39.4000,
+        "lng": 47.0300
+    },
+    {
+        "name": "Julfa",
+        "lat": 38.9600,
+        "lng": 45.6300
+    },
+    {
+        "name": "Kalbajar",
+        "lat": 40.1000,
+        "lng": 46.0400
+    },
+    {
+        "name": "Khachmaz",
+        "lat": 41.4700,
+        "lng": 48.8000
+    },{
+        "name": "Khizi",
+        "lat": 40.9100,
+        "lng": 49.0800
+    },
+    {
+        "name": "Kurdamir",
+        "lat": 40.3400,
+        "lng": 48.1600
+    },
+    {
+        "name": "Lachin",
+        "lat": 39.6400,
+        "lng": 46.5500
+    },
+    {
+        "name": "Lankaran",
+        "lat": 38.7536,
+        "lng": 48.8511
+    },
+    {
+        "name": "Lerik",
+        "lat": 38.7730,
+        "lng": 48.4150
+    },
+    {
+        "name": "Masally",
+        "lat": 39.0300,
+        "lng": 48.6700
+    },
+    {
+        "name": "Mingachevir",
+        "lat": 40.7700,
+        "lng": 47.0500
+    },
+    {
+        "name": "Nakhchivan",
+        "lat": 39.2089,
+        "lng": 45.4122
+    },
+    {
+        "name": "Neftchala",
+        "lat": 39.3600,
+        "lng": 49.2500
+    },
+    {
+        "name": "Oghuz",
+        "lat": 41.0700,
+        "lng": 47.4600
+    },
+    {
+        "name": "Qabala",
+        "lat": 40.9814,
+        "lng": 47.8458
+    },
+    {
+        "name": "Qakh",
+        "lat": 41.4200,
+        "lng": 46.9200
+    },
+    {
+        "name": "Qazakh",
+        "lat": 41.0900,
+        "lng": 45.3700
+    },
+    {
+        "name": "Quba",
+        "lat": 41.3600,
+        "lng": 48.5100
+    },
+    {
+        "name": "Qusar",
+        "lat": 41.4264,
+        "lng": 48.4356
+    },
+    {
+        "name": "Saatly",
+        "lat": 39.9300,
+        "lng": 48.3700
+    },
+    {
+        "name": "Sabirabad",
+        "lat": 40.0100,
+        "lng": 48.4800
+    },
+    {
+        "name": "Salyan",
+        "lat": 39.5962,
+        "lng": 48.9848
+    },
+    {
+        "name": "Samukh",
+        "lat": 40.7800,
+        "lng": 46.4100
+    },
+    {
+        "name": "Shabran",
+        "lat": 41.2000,
+        "lng": 48.9800
+    },
+    {
+        "name": "Shaki",
+        "lat": 41.1919,
+        "lng": 47.1706
+    },
+    {
+        "name": "Shamakhi",
+        "lat": 40.6300,
+        "lng": 48.6400
+    },
+    {
+        "name": "Shamkir",
+        "lat": 40.8290,
+        "lng": 46.0170
+    },
+    {
+        "name": "Shusha",
+        "lat": 39.7600,
+        "lng": 46.7500
+    },
+    {
+        "name": "Siazan",
+        "lat": 41.0780,
+        "lng": 49.1100
+    },
+    {
+        "name": "Tartar",
+        "lat": 40.3450,
+        "lng": 46.9300
+    },
+    {
+        "name": "Tovuz",
+        "lat": 40.9920,
+        "lng": 45.6280
+    },
+    {
+        "name": "Ujar",
+        "lat": 40.5200,
+        "lng": 47.6500
+    },
+    {
+        "name": "Yardimli",
+        "lat": 38.9100,
+        "lng": 48.2400
+    },
+    {
+        "name": "Yevlakh",
+        "lat": 40.6170,
+        "lng": 47.1500
+    },
+    {
+        "name": "Zaqatala",
+        "lat": 41.6300,
+        "lng": 46.6400
+    },
+    {
+        "name": "Zangilan",
+        "lat": 39.0850,
+        "lng": 46.6500
+    },
+    {
+        "name": "Zardab",
+        "lat": 40.2180,
+        "lng": 47.7120
+    }
+],
     "US": [
         {
             "name": "Alabama",
