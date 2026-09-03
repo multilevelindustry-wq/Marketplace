@@ -3933,7 +3933,7 @@ function startOrderChat(){
          */
 
         window.location.href =
-            "payments.html";
+            "payment.html";
 
 
     }
