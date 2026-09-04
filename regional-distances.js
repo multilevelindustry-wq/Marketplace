@@ -196,6 +196,115 @@ export const REGIONS = {
         }
     ],
 
+  "BS": [
+    { "name": "New Providence", "lat": 25.0343, "lng": -77.3963 },
+    { "name": "Grand Bahama", "lat": 26.5250, "lng": -78.6102 },
+    { "name": "Abaco", "lat": 26.6131, "lng": -77.1040 },
+    { "name": "Andros", "lat": 24.7000, "lng": -77.8000 },
+    { "name": "Eleuthera", "lat": 25.2000, "lng": -76.2000 },
+    { "name": "Exuma", "lat": 23.5000, "lng": -75.5000 },
+    { "name": "Long Island", "lat": 23.4000, "lng": -75.2000 },
+    { "name": "Cat Island", "lat": 24.2000, "lng": -75.5000 },
+    { "name": "Bimini", "lat": 25.7333, "lng": -79.2833 }
+  ],
+  "BH": [
+    { "name": "Capital Governorate", "lat": 26.0275, "lng": 50.5350 },
+    { "name": "Muharraq Governorate", "lat": 26.2575, "lng": 50.6100 },
+    { "name": "Northern Governorate", "lat": 26.2000, "lng": 50.6000 },
+    { "name": "Southern Governorate", "lat": 25.9000, "lng": 50.5000 },
+    { "name": "Central Governorate", "lat": 26.1000, "lng": 50.5000 }
+  ],
+  "BD": [
+    { "name": "Dhaka", "lat": 23.8103, "lng": 90.4125 },
+    { "name": "Chittagong", "lat": 22.3569, "lng": 91.7832 },
+    { "name": "Khulna", "lat": 22.8150, "lng": 89.5403 },
+    { "name": "Rajshahi", "lat": 24.3735, "lng": 88.6040 },
+    { "name": "Barisal", "lat": 22.7010, "lng": 90.3670 },
+    { "name": "Sylhet", "lat": 24.8940, "lng": 91.8687 },
+    { "name": "Rangpur", "lat": 25.7450, "lng": 89.2500 },
+    { "name": "Mymensingh", "lat": 24.7470, "lng": 90.4150 }
+  ],
+  "BY": [
+    { "name": "Minsk", "lat": 53.9045, "lng": 27.5590 },
+    { "name": "Brest", "lat": 52.0970, "lng": 23.6880 },
+    { "name": "Gomel", "lat": 52.4410, "lng": 30.9754 },
+    { "name": "Mogilev", "lat": 53.9000, "lng": 30.1667 },
+    { "name": "Vitebsk", "lat": 55.1910, "lng": 30.2030 },
+    { "name": "Grodno", "lat": 53.6667, "lng": 23.8333 },
+    { "name": "Brest Region", "lat": 52.5000, "lng": 23.5000 },
+    { "name": "Gomel Region", "lat": 52.5000, "lng": 30.5000 },
+    { "name": "Mogilev Region", "lat": 53.5000, "lng": 30.5000 },
+    { "name": "Vitebsk Region", "lat": 55.5000, "lng": 30.5000 },
+    { "name": "Grodno Region", "lat": 53.5000, "lng": 23.5000 }
+  ],
+  "BB": [
+    { "name": "Christ Church", "lat": 13.0667, "lng": -59.5333 },
+    { "name": "Saint Michael", "lat": 13.1000, "lng": -59.6167 },
+    { "name": "Saint James", "lat": 13.1833, "lng": -59.6167 },
+    { "name": "Saint Peter", "lat": 13.2500, "lng": -59.6167 },
+    { "name": "Saint Lucy", "lat": 13.2667, "lng": -59.6167 },
+    { "name": "Saint George", "lat": 13.1167, "lng": -59.6167 },
+    { "name": "Saint Thomas", "lat": 13.1333, "lng": -59.6167 },
+    { "name": "Saint Joseph", "lat": 13.1333, "lng": -59.6167 },
+    { "name": "Saint Andrew", "lat": 13.1667, "lng": -59.6167 }
+  ],
+  "BE": [
+    { "name": "Brussels-Capital Region", "lat": 50.8503, "lng": 4.3517 },
+    { "name": "Antwerp", "lat": 51.2211, "lng": 4.4213 },
+    { "name": "Flemish Brabant", "lat": 50.9500, "lng": 4.5000 },
+    { "name": "Walloon Brabant", "lat": 50.6000, "lng": 4.5000 },
+    { "name": "Namur", "lat": 50.4667, "lng": 4.8667 },
+    { "name": "Liège", "lat": 50.6000, "lng": 5.5667 },
+    { "name": "Luxembourg", "lat": 49.7500, "lng": 5.5000 },
+    { "name": "Hainaut", "lat": 50.5000, "lng": 3.5000 },
+    { "name": "East Flanders", "lat": 51.0500, "lng": 3.5000 },
+    { "name": "West Flanders", "lat": 51.0500, "lng": 3.2000 }
+  ],
+  "BZ": [
+    { "name": "Belize District", "lat": 17.5000, "lng": -88.2000 },
+    { "name": "Cayo District", "lat": 17.2500, "lng": -89.0833 },
+    { "name": "Corozal District", "lat": 18.5000, "lng": -88.4000 },
+    { "name": "Orange Walk District", "lat": 18.0833, "lng": -88.5833 },
+    { "name": "Stann Creek District", "lat": 16.7500, "lng": -88.2500 },
+    { "name": "Toledo District", "lat": 16.2500, "lng": -88.7500 }
+  ],
+  "BJ": [
+    { "name": "Alibori", "lat": 10.0000, "lng": 8.0000 },
+    { "name": "Atakora", "lat": 10.0000, "lng": 1.0000 },
+    { "name": "Atlantique", "lat": 6.5000, "lng": 2.5000 },
+    { "name": "Borgou", "lat": 9.0000, "lng": 2.0000 },
+    { "name": "Collines", "lat": 7.0000, "lng": 2.0000 },
+    { "name": "Donga", "lat": 9.0000, "lng": 1.0000 },
+    { "name": "Littoral", "lat": 6.5000, "lng": 2.5000 },
+    { "name": "Mono", "lat": 6.0000, "lng": 1.5000 },
+    { "name": "Ouémé", "lat": 7.0000, "lng": 2.5000 },
+    { "name": "Plateau", "lat": 7.0000, "lng": 2.0000 },
+    { "name": "Zou", "lat": 7.0000, "lng": 2.5000 }
+  ],
+  "BT": [
+    { "name": "Thimphu", "lat": 27.5149, "lng": 89.6395 },
+    { "name": "Paro", "lat": 27.4280, "lng": 89.4260 },
+    { "name": "Punakha", "lat": 27.5000, "lng": 89.5000 },
+    { "name": "Wangdue Phodrang", "lat": 27.5000, "lng": 89.5000 },
+    { "name": "Trashigang", "lat": 27.3333, "lng": 91.5833 },
+    { "name": "Samdrup Jongkhar", "lat": 26.8000, "lng": 91.5833 },
+    { "name": "Bumthang", "lat": 27.5000, "lng": 90.5000 },
+    { "name": "Trongsa", "lat": 27.5000, "lng": 90.5000 },
+    { "name": "Zhemgang", "lat": 27.5000, "lng": 90.5000 }
+  ],
+  "BO": [
+    { "name": "La Paz", "lat": -16.5000, "lng": -68.1193 },
+    { "name": "Santa Cruz", "lat": -17.7833, "lng": -63.1825 },
+    { "name": "Cochabamba", "lat": -17.3667, "lng": -66.1667 },
+    { "name": "Potosí", "lat": -19.5833, "lng": -65.7500 },
+    { "name": "Oruro", "lat": -17.9667, "lng": -67.1167 },
+    { "name": "Beni", "lat": -14.0000, "lng": -66.0000 },
+    { "name": "Pando", "lat": -11.0000, "lng": -68.0000 },
+    { "name": "Tarija", "lat": -21.0000, "lng": -64.0000 },
+    { "name": "Chuquisaca", "lat": -19.0000, "lng": -65.0000 },
+    { "name": "La Paz Department", "lat": -16.5000, "lng": -68.1193 }
+  ],
+
    "AF": [
     {
         "name": "Badakhshan",
