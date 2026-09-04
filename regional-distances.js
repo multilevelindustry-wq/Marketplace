@@ -8,6 +8,848 @@
 import { haversineKm } from "./country-distances.js";
 
 export const REGIONS = {
+   "BA": [
+        {
+            "name": "Federation of Bosnia and Herzegovina",
+            "lat": 44.0000,
+            "lng": 17.5833
+        },
+        {
+            "name": "Republika Srpska",
+            "lat": 44.7333,
+            "lng": 17.4000
+        },
+        {
+            "name": "Brčko District",
+            "lat": 44.8333,
+            "lng": 18.8333
+        }
+    ],
+   "BF": [
+        {
+            "name": "Boucle du Mouhoun",
+            "lat": 12.3833,
+            "lng": -3.4667
+        },
+        {
+            "name": "Cascades",
+            "lat": 10.6333,
+            "lng": -5.1667
+        },
+        {
+            "name": "Centre",
+            "lat": 12.3714,
+            "lng": -1.5197
+        },
+        {
+            "name": "Centre-Est",
+            "lat": 11.7833,
+            "lng": -0.3667
+        },
+        {
+            "name": "Centre-Nord",
+            "lat": 13.2500,
+            "lng": -1.5500
+        },
+        {
+            "name": "Centre-Ouest",
+            "lat": 11.6667,
+            "lng": -2.9333
+        },
+        {
+            "name": "Centre-Sud",
+            "lat": 11.3000,
+            "lng": -1.1333
+        },
+        {
+            "name": "Est",
+            "lat": 12.0500,
+            "lng": 1.7833
+        },
+        {
+            "name": "Hauts-Bassins",
+            "lat": 11.1833,
+            "lng": -4.2833
+        },
+        {
+            "name": "Nord",
+            "lat": 13.5833,
+            "lng": -2.4167
+        },
+        {
+            "name": "Plateau-Central",
+            "lat": 12.2500,
+            "lng": -1.4167
+        },
+        {
+            "name": "Sahel",
+            "lat": 14.0333,
+            "lng": -0.0333
+        },
+        {
+            "name": "Sud-Ouest",
+            "lat": 10.3000,
+            "lng": -3.1667
+        }
+    ],
+   "BW": [
+        {
+            "name": "Gaborone",
+            "lat": -24.6282,
+            "lng": 25.9231
+        },
+        {
+            "name": "Francistown",
+            "lat": -21.1592,
+            "lng": 27.5036
+        },
+        {
+            "name": "Molepolole",
+            "lat": -24.4066,
+            "lng": 25.4951
+        },
+        {
+            "name": "Maun",
+            "lat": -19.9833,
+            "lng": 23.4167
+        },
+        {
+            "name": "Kasane",
+            "lat": -17.8167,
+            "lng": 25.1500
+        },
+        {
+            "name": "Selebi-Phikwe",
+            "lat": -21.9780,
+            "lng": 27.8420
+        },
+        {
+            "name": "Palapye",
+            "lat": -22.5460,
+            "lng": 27.1250
+        },
+        {
+            "name": "Jwaneng",
+            "lat": -24.6000,
+            "lng": 24.7333
+        },
+        {
+            "name": "Lobatse",
+            "lat": -25.2167,
+            "lng": 25.6667
+        },
+        {
+            "name": "Sowa Town",
+            "lat": -20.5667,
+            "lng": 25.9000
+        }
+    ],
+   "BN": [
+        {
+            "name": "Brunei-Muara",
+            "lat": 4.9031,
+            "lng": 114.9398
+        },
+        {
+            "name": "Belait",
+            "lat": 4.5833,
+            "lng": 114.1833
+        },
+        {
+            "name": "Tutong",
+            "lat": 4.8000,
+            "lng": 114.6500
+        },
+        {
+            "name": "Temburong",
+            "lat": 4.6500,
+            "lng": 115.1500
+        }
+    ],
+ "BG": [
+        {
+            "name": "Blagoevgrad",
+            "lat": 42.0209,
+            "lng": 23.0943
+        },
+        {
+            "name": "Burgas",
+            "lat": 42.5048,
+            "lng": 27.4626
+        },
+        {
+            "name": "Dobrich",
+            "lat": 43.5726,
+            "lng": 27.8273
+        },
+        {
+            "name": "Gabrovo",
+            "lat": 42.8742,
+            "lng": 25.3342
+        },
+        {
+            "name": "Haskovo",
+            "lat": 41.9342,
+            "lng": 25.5556
+        },
+        {
+            "name": "Kardzhali",
+            "lat": 41.6500,
+            "lng": 25.3667
+        },
+        {
+            "name": "Kyustendil",
+            "lat": 42.2839,
+            "lng": 22.6911
+        },
+        {
+            "name": "Lovech",
+            "lat": 43.1367,
+            "lng": 24.7144
+        },
+        {
+            "name": "Montana",
+            "lat": 43.4125,
+            "lng": 23.2250
+        },
+        {
+            "name": "Pazardzhik",
+            "lat": 42.1928,
+            "lng": 24.3336
+        },
+        {
+            "name": "Pernik",
+            "lat": 42.6052,
+            "lng": 23.0378
+        },
+        {
+            "name": "Pleven",
+            "lat": 43.4095,
+            "lng": 24.6170
+        },
+        {
+            "name": "Plovdiv",
+            "lat": 42.1354,
+            "lng": 24.7453
+        },
+        {
+            "name": "Razgrad",
+            "lat": 43.5333,
+            "lng": 26.5167
+        },
+        {
+            "name": "Ruse",
+            "lat": 43.8356,
+            "lng": 25.9657
+        },
+        {
+            "name": "Shumen",
+            "lat": 43.2712,
+            "lng": 26.9361
+        },
+        {
+            "name": "Silistra",
+            "lat": 44.1171,
+            "lng": 27.2606
+        },
+        {
+            "name": "Sliven",
+            "lat": 42.6858,
+            "lng": 26.3292
+        },
+        {
+            "name": "Smolyan",
+            "lat": 41.5774,
+            "lng": 24.7010
+        },
+        {
+            "name": "Sofia City",
+            "lat": 42.6977,
+            "lng": 23.3219
+        },
+        {
+            "name": "Sofia Province",
+            "lat": 42.6500,
+            "lng": 23.0000
+        },
+        {
+            "name": "Stara Zagora",
+            "lat": 42.4258,
+            "lng": 25.6345
+        },
+        {
+            "name": "Targovishte",
+            "lat": 43.2512,
+            "lng": 26.5721
+        },
+        {
+            "name": "Varna",
+            "lat": 43.2141,
+            "lng": 27.9147
+        },
+        {
+            "name": "Veliko Tarnovo",
+            "lat": 43.0757,
+            "lng": 25.6172
+        },
+        {
+            "name": "Vidin",
+            "lat": 43.9962,
+            "lng": 22.8679
+        },
+        {
+            "name": "Vratsa",
+            "lat": 43.2102,
+            "lng": 23.5529
+        },
+        {
+            "name": "Yambol",
+            "lat": 42.4846,
+            "lng": 26.5035
+        }
+    ],
+           "BI": [
+        {
+            "name": "Bubanza",
+            "lat": -3.0833,
+            "lng": 29.4000
+        },
+        {
+            "name": "Bujumbura Mairie",
+            "lat": -3.3822,
+            "lng": 29.3644
+        },
+        {
+            "name": "Bujumbura Rural",
+            "lat": -3.5000,
+            "lng": 29.4500
+        },
+        {
+            "name": "Bururi",
+            "lat": -3.9500,
+            "lng": 29.6167
+        },
+        {
+            "name": "Cankuzo",
+            "lat": -3.2167,
+            "lng": 30.5500
+        },
+        {
+            "name": "Cibitoke",
+            "lat": -2.8833,
+            "lng": 29.1167
+        },
+        {
+            "name": "Gitega",
+            "lat": -3.4260,
+            "lng": 29.9300
+        },
+        {
+            "name": "Karuzi",
+            "lat": -3.1000,
+            "lng": 30.1667
+        },
+        {
+            "name": "Kayanza",
+            "lat": -2.9221,
+            "lng": 29.6293
+        },
+        {
+            "name": "Kirundo",
+            "lat": -2.5833,
+            "lng": 30.1000
+        },
+        {
+            "name": "Makamba",
+            "lat": -4.1333,
+            "lng": 29.8000
+        },
+        {
+            "name": "Muramvya",
+            "lat": -3.2667,
+            "lng": 29.6167
+        },
+        {
+            "name": "Muyinga",
+            "lat": -2.8500,
+            "lng": 30.3333
+        },
+        {
+            "name": "Mwaro",
+            "lat": -3.5000,
+            "lng": 29.7000
+        },
+        {
+            "name": "Ngozi",
+            "lat": -2.9075,
+            "lng": 29.8306
+        },
+        {
+            "name": "Rumonge",
+            "lat": -3.9736,
+            "lng": 29.4386
+        },
+        {
+            "name": "Rutana",
+            "lat": -3.9250,
+            "lng": 29.9933
+        },
+        {
+            "name": "Ruyigi",
+            "lat": -3.4764,
+            "lng": 30.2486
+        }
+    ],
+   "CO": [
+        {
+            "name": "Amazonas",
+            "lat": -4.2153,
+            "lng": -69.9406
+        },
+        {
+            "name": "Antioquia",
+            "lat": 6.2442,
+            "lng": -75.5812
+        },
+        {
+            "name": "Arauca",
+            "lat": 7.0903,
+            "lng": -70.7617
+        },
+        {
+            "name": "Atlántico",
+            "lat": 10.9685,
+            "lng": -74.7813
+        },
+        {
+            "name": "Bolívar",
+            "lat": 10.3910,
+            "lng": -75.4794
+        },
+        {
+            "name": "Boyacá",
+            "lat": 5.5353,
+            "lng": -73.3678
+        },
+        {
+            "name": "Caldas",
+            "lat": 5.0689,
+            "lng": -75.5174
+        },
+        {
+            "name": "Caquetá",
+            "lat": 1.6144,
+            "lng": -75.6062
+        },
+        {
+            "name": "Casanare",
+            "lat": 5.3378,
+            "lng": -72.3959
+        },
+        {
+            "name": "Cauca",
+            "lat": 2.4448,
+            "lng": -76.6147
+        },
+        {
+            "name": "Cesar",
+            "lat": 10.4631,
+            "lng": -73.2532
+        },
+        {
+            "name": "Chocó",
+            "lat": 5.6947,
+            "lng": -76.6611
+        },
+        {
+            "name": "Córdoba",
+            "lat": 8.7479,
+            "lng": -75.8814
+        },
+        {
+            "name": "Cundinamarca",
+            "lat": 4.7110,
+            "lng": -74.0721
+        },
+        {
+            "name": "Bogotá D.C.",
+            "lat": 4.7110,
+            "lng": -74.0721
+        },
+        {
+            "name": "Guainía",
+            "lat": 3.8653,
+            "lng": -67.9239
+        },
+        {
+            "name": "Guaviare",
+            "lat": 2.5729,
+            "lng": -72.6459
+        },
+        {
+            "name": "Huila",
+            "lat": 2.5359,
+            "lng": -75.5277
+        },
+        {
+            "name": "La Guajira",
+            "lat": 11.5444,
+            "lng": -72.9072
+        },
+        {
+            "name": "Magdalena",
+            "lat": 11.2408,
+            "lng": -74.1990
+        },
+        {
+            "name": "Meta",
+            "lat": 4.1420,
+            "lng": -73.6266
+        },
+        {
+            "name": "Nariño",
+            "lat": 1.2136,
+            "lng": -77.2811
+        },
+        {
+            "name": "Norte de Santander",
+            "lat": 7.8939,
+            "lng": -72.5078
+        },
+        {
+            "name": "Putumayo",
+            "lat": 1.1525,
+            "lng": -76.6469
+        },
+        {
+            "name": "Quindío",
+            "lat": 4.5339,
+            "lng": -75.6811
+        },
+        {
+            "name": "Risaralda",
+            "lat": 4.8143,
+            "lng": -75.6946
+        },
+        {
+            "name": "Santander",
+            "lat": 7.1254,
+            "lng": -73.1198
+        },
+        {
+            "name": "Sucre",
+            "lat": 9.3047,
+            "lng": -75.3978
+        },
+        {
+            "name": "Tolima",
+            "lat": 4.4389,
+            "lng": -75.2322
+        },
+        {
+            "name": "Valle del Cauca",
+            "lat": 3.4516,
+            "lng": -76.5320
+        },
+        {
+            "name": "Vaupés",
+            "lat": 0.8554,
+            "lng": -70.8110
+        },
+        {
+            "name": "Vichada",
+            "lat": 6.1851,
+            "lng": -67.4859
+        }
+    ],
+    "HR": [
+        {
+            "name": "Bjelovar-Bilogora",
+            "lat": 45.8986,
+            "lng": 16.8422
+        },
+        {
+            "name": "Brod-Posavina",
+            "lat": 45.1603,
+            "lng": 18.0156
+        },
+        {
+            "name": "Dubrovnik-Neretva",
+            "lat": 42.6507,
+            "lng": 18.0944
+        },
+        {
+            "name": "Istria",
+            "lat": 44.8666,
+            "lng": 13.8496
+        },
+        {
+            "name": "Karlovac",
+            "lat": 45.4929,
+            "lng": 15.5553
+        },
+        {
+            "name": "Koprivnica-Križevci",
+            "lat": 46.1628,
+            "lng": 16.8278
+        },
+        {
+            "name": "Krapina-Zagorje",
+            "lat": 46.1608,
+            "lng": 15.8789
+        },
+        {
+            "name": "Lika-Senj",
+            "lat": 44.5469,
+            "lng": 15.3747
+        },
+        {
+            "name": "Međimurje",
+            "lat": 46.3844,
+            "lng": 16.4336
+        },
+        {
+            "name": "Osijek-Baranja",
+            "lat": 45.5540,
+            "lng": 18.6955
+        },
+        {
+            "name": "Požega-Slavonia",
+            "lat": 45.3400,
+            "lng": 17.6853
+        },
+        {
+            "name": "Primorje-Gorski Kotar",
+            "lat": 45.3271,
+            "lng": 14.4422
+        },
+        {
+            "name": "Šibenik-Knin",
+            "lat": 43.7350,
+            "lng": 15.8952
+        },
+        {
+            "name": "Sisak-Moslavina",
+            "lat": 45.4875,
+            "lng": 16.3750
+        },
+        {
+            "name": "Split-Dalmatia",
+            "lat": 43.5081,
+            "lng": 16.4402
+        },
+        {
+            "name": "Varaždin",
+            "lat": 46.3050,
+            "lng": 16.3366
+        },
+        {
+            "name": "Virovitica-Podravina",
+            "lat": 45.8319,
+            "lng": 17.3839
+        },
+        {
+            "name": "Vukovar-Srijem",
+            "lat": 45.3522,
+            "lng": 19.0000
+        },
+        {
+            "name": "Zadar",
+            "lat": 44.1194,
+            "lng": 15.2314
+        },
+        {
+            "name": "Zagreb County",
+            "lat": 45.8564,
+            "lng": 15.8078
+        },
+        {
+            "name": "City of Zagreb",
+            "lat": 45.8150,
+            "lng": 15.9819
+        }
+    ],
+   "KH": [
+        {
+            "name": "Banteay Meanchey",
+            "lat": 13.5859,
+            "lng": 102.9737
+        },
+        {
+            "name": "Battambang",
+            "lat": 13.0957,
+            "lng": 103.2022
+        },
+        {
+            "name": "Kampong Cham",
+            "lat": 11.9934,
+            "lng": 105.4635
+        },
+        {
+            "name": "Kampong Chhnang",
+            "lat": 12.2500,
+            "lng": 104.6667
+        },
+        {
+            "name": "Kampong Speu",
+            "lat": 11.4533,
+            "lng": 104.5209
+        },
+        {
+            "name": "Kampong Thom",
+            "lat": 12.7111,
+            "lng": 104.8887
+        },
+        {
+            "name": "Kampot",
+            "lat": 10.6104,
+            "lng": 104.1815
+        },
+        {
+            "name": "Kandal",
+            "lat": 11.2237,
+            "lng": 105.1259
+        },
+        {
+            "name": "Kep",
+            "lat": 10.4829,
+            "lng": 104.3167
+        },
+        {
+            "name": "Koh Kong",
+            "lat": 11.6153,
+            "lng": 102.9838
+        },
+        {
+            "name": "Kratié",
+            "lat": 12.4881,
+            "lng": 106.0188
+        },
+        {
+            "name": "Mondulkiri",
+            "lat": 12.4558,
+            "lng": 107.1881
+        },
+        {
+            "name": "Oddar Meanchey",
+            "lat": 14.1818,
+            "lng": 103.5175
+        },
+        {
+            "name": "Pailin",
+            "lat": 12.8480,
+            "lng": 102.6093
+        },
+        {
+            "name": "Phnom Penh",
+            "lat": 11.5564,
+            "lng": 104.9282
+        },
+        {
+            "name": "Preah Sihanouk",
+            "lat": 10.6250,
+            "lng": 103.5230
+        },
+        {
+            "name": "Preah Vihear",
+            "lat": 13.7998,
+            "lng": 104.9800
+        },
+        {
+            "name": "Prey Veng",
+            "lat": 11.4868,
+            "lng": 105.3253
+        },
+        {
+            "name": "Pursat",
+            "lat": 12.5388,
+            "lng": 103.9192
+        },
+        {
+            "name": "Ratanakiri",
+            "lat": 13.7394,
+            "lng": 106.9873
+        },
+        {
+            "name": "Siem Reap",
+            "lat": 13.3618,
+            "lng": 103.8606
+        },
+        {
+            "name": "Stung Treng",
+            "lat": 13.5259,
+            "lng": 105.9690
+        },
+        {
+            "name": "Svay Rieng",
+            "lat": 11.0879,
+            "lng": 105.7993
+        },
+        {
+            "name": "Takeo",
+            "lat": 10.9908,
+            "lng": 104.7847
+        },
+        {
+            "name": "Tboung Khmum",
+            "lat": 11.8050,
+            "lng": 105.8200
+        }
+    ],
+   "CM": [
+        {
+            "name": "Adamawa",
+            "lat": 7.3277,
+            "lng": 13.5847
+        },
+        {
+            "name": "Centre",
+            "lat": 3.8667,
+            "lng": 11.5167
+        },
+        {
+            "name": "East",
+            "lat": 4.5833,
+            "lng": 13.6833
+        },
+        {
+            "name": "Far North",
+            "lat": 10.5909,
+            "lng": 14.3159
+        },
+        {
+            "name": "Littoral",
+            "lat": 4.0483,
+            "lng": 9.7043
+        },
+        {
+            "name": "North",
+            "lat": 9.3000,
+            "lng": 13.4000
+        },
+        {
+            "name": "North-West",
+            "lat": 5.9631,
+            "lng": 10.1591
+        },
+        {
+            "name": "South",
+            "lat": 2.9333,
+            "lng": 11.1500
+        },
+        {
+            "name": "South-West",
+            "lat": 4.1550,
+            "lng": 9.2317
+        },
+        {
+            "name": "West",
+            "lat": 5.4769,
+            "lng": 10.4176
+        }
+    ],
+   
+   
     "NG": [
         {
             "name": "Abia",
