@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="description"
+    id="productMetaDescription"
+    content="View product details and shop securely."
+>
+
+<meta
+    name="theme-color"
+    content="#f4511e"
+>
+
+<title id="productPageTitle">
+    Product Details
+</title>
+
+<link
+    rel="stylesheet"
+    href="product.css"
+>
+<link
+    rel="stylesheet"
+    href="ads.css"
+>
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================================
+     PAGE LOADER
+========================================================== -->
+
+<div
+    id="productPageLoader"
+    class="product-page-loader"
+>
+
+    <div class="product-loader-spinner"></div>
+
+    <p>
+        Loading product...
+    </p>
+
+</div>
+
+
+<!-- ==========================================================
+     HEADER
+========================================================== -->
+
+<header class="product-header">
+
+    <div class="product-header-left">
+
+        <button
+            id="productMenuButton"
+            class="product-menu-button"
+            type="button"
+            aria-label="Open menu"
+        >
+            ☰
+        </button>
+
+        <a
+            href="index.html"
+            class="product-logo"
+        >
+            NEOSTORE
+        </a>
+
+    </div>
+
+
+    <div class="product-search">
+
+        <input
+            id="productSearchInput"
+            type="search"
+            placeholder="Search products..."
+            autocomplete="off"
+        >
+
+        <button
+            id="productSearchButton"
+            type="button"
+            aria-label="Search"
+        >
+            🔍
+        </button>
+
+    </div>
+
+
+    <div class="product-header-actions">
+
+        <a
+            href="login.html"
+            id="productAccountLink"
+            class="product-account-link"
+        >
+        
+          <span id="productAccountName">
+                Sign In
+            </span>
+            
+            <span class="account-icon">
+                👤
+            </span>
+
+          
+        </a>
+
+
+        <a
+            href="cart.html"
+            class="product-cart-link"
+            aria-label="Shopping cart"
+        >
+
+            <img src="1000219817-removebg-preview.png" alt=""></img>
+         
+            <span
+                id="productCartCount"
+                class="product-cart-count"
+            >
+                0
+            </span>
+
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- ==========================================================
+     BREADCRUMB
+========================================================== -->
+
+<nav
+    class="product-breadcrumb"
+    aria-label="Breadcrumb"
+>
+
+    <a href="index.html">
+        Home
+    </a>
+
+    <span>
+        /
+    </span>
+
+    <a
+        id="productCategoryLink"
+        href="#"
+    >
+        Category
+    </a>
+
+    <span>
+        /
+    </span>
+
+    <strong id="productBreadcrumbName">
+        Product
+    </strong>
+
+</nav>
+
+
+<!-- ==========================================================
+     MAIN PRODUCT AREA
+========================================================== -->
+
+<main class="product-page-main">
+
+
+<section
+    id="productDetails"
+    class="product-details-section"
+>
+
+
+<!-- ==========================================================
+     IMAGE GALLERY
+========================================================== -->
+
+<div class="product-gallery">
+
+    <div
+        id="productThumbnailList"
+        class="product-thumbnail-list"
+    >
+    </div>
+
+
+    <div class="product-main-image">
+
+        <span
+            id="productBadge"
+            class="product-detail-badge"
+        >
+        </span>
+
+        <img
+            id="productMainImage"
+            src=""
+            alt="Product"
+        >
+
+    </div>
+
+</div>
+
+
+<!-- ==========================================================
+     PRODUCT INFORMATION
+========================================================== -->
+
+<div class="product-information">
+
+    <span
+        id="productCategory"
+        class="product-category-label"
+    >
+        Category
+    </span>
+
+
+    <h1 id="productName">
+        Product Name
+    </h1>
+
+
+    <div class="product-rating-row">
+
+        <span
+            id="productRating"
+            class="product-rating"
+        >
+            ★ 0.0
+        </span>
+
+        <span
+            id="productReviews"
+            class="product-review-count"
+        >
+            (0 reviews)
+        </span>
+
+        <span class="rating-divider">
+            |
+        </span>
+
+        <span
+            id="productViews"
+            class="product-view-count"
+        >
+            0 views
+        </span>
+
+    </div>
+
+
+    <div class="product-price-area">
+
+        <strong id="productPrice">
+            ₦0
+        </strong>
+
+        <span
+            id="productOldPrice"
+            class="product-old-price"
+        >
+            ₦0
+        </span>
+
+        <span
+            id="productDiscount"
+            class="product-discount"
+        >
+        </span>
+
+    </div>
+
+
+    <div
+        id="productShortDescription"
+        class="product-short-description"
+    >
+        Product description
+    </div>
+
+
+    <div
+        id="productVariations"
+        class="product-variations"
+    >
+    </div>
+
+
+    <div class="product-quantity-area">
+
+        <span>
+            Quantity
+        </span>
+
+        <div class="quantity-control">
+
+            <button
+                id="decreaseQuantity"
+                type="button"
+            >
+                −
+            </button>
+
+            <span id="productQuantity">
+                1
+            </span>
+
+            <button
+                id="increaseQuantity"
+                type="button"
+            >
+                +
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="product-purchase-actions">
+        
+        <button
+            id="addToCartButton"
+            class="add-to-cart-button"
+            type="button"
+        >
+             Add to Cart
+        </button>
+        
+    </div>
+
+
+    <div class="product-security-info">
+
+        <div>
+            🔒
+            <span>
+                Secure checkout
+            </span>
+        </div>
+
+        <div>
+            🚚
+            <span>
+                Delivery available
+            </span>
+        </div>
+
+        <div>
+            🛡️
+            <span>
+                Buyer protection
+            </span>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ==========================================================
+     FULL DESCRIPTION
+========================================================== -->
+
+<section
+    class="product-description-section"
+>
+
+    <div class="product-section-heading">
+
+        <h2>
+            Product Description
+        </h2>
+
+    </div>
+
+    <div
+        id="productDescription"
+        class="product-description"
+    >
+        Product description will appear here.
+    </div>
+
+</section>
+
+<!-- ==========================================================
+     MARKETPLACE SELLER ADS
+========================================================== -->
+
+<section
+    class="marketplace-ads-section"
+    id="marketplaceAdsSection"
+>
+
+    <div
+        id="marketplaceAds"
+        class="marketplace-ads"
+    ></div>
+
+</section>
+
+
+<!-- ==========================================================
+     SELLER INFORMATION
+========================================================== -->
+
+<section
+    class="product-seller-section"
+>
+  
+ 
+
+    <div class="product-section-heading">
+
+        <h2>
+            Seller Information
+        </h2>
+
+    </div>
+
+    <div class="product-seller-card">
+
+        
+
+        <div class="product-seller-info">
+
+            <h3 id="productSellerName">
+                Seller
+            </h3>
+
+            <span
+                id="productSellerStatus"
+                class="seller-status"
+            >
+                Verified Seller
+            </span>
+
+        </div>
+
+        <a
+            id="productSellerLink"
+            href="seller-store.html"
+            class="seller-store-button"
+        >
+            Visit Store
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     NEW SELLER INFORMATION
+========================================================== -->
+
+<section class="new-seller-section">
+     <style>
+      .new-seller-section{
+          display: none;
+      }
+</style>
+
+    <div class="new-seller-heading">
+
+        <span class="new-seller-label">
+            SELLER
+        </span>
+
+        <h2>
+            Seller Information
+        </h2>
+
+    </div>
+
+
+    <div
+        id="newSellerCard"
+        class="new-seller-card"
+    >
+
+        <!-- SELLER PHOTO -->
+
+        <div class="new-seller-photo-area">
+
+            <img
+                id="newSellerPhoto"
+                class="new-seller-photo"
+                src="images/default-avatar.png"
+                alt="Seller store"
+            >
+
+        </div>
+
+
+        <!-- SELLER INFORMATION -->
+
+        <div class="new-seller-details">
+
+            <h3
+                id="newSellerName"
+                class="new-seller-name"
+            >
+                Seller
+            </h3>
+
+
+            <div
+                id="newSellerLocation"
+                class="new-seller-location"
+            >
+                📍 Location unavailable
+            </div>
+
+
+            <span
+                id="newSellerBadge"
+                class="new-seller-badge"
+            >
+                Seller
+            </span>
+
+        </div>
+
+
+        <!-- STORE BUTTON -->
+
+        <a
+            id="newSellerStoreButton"
+            class="new-seller-store-button"
+            href="#"
+        >
+            Visit Store
+        </a>
+
+    </div>
+
+
+    <!-- LOADING -->
+
+    <div
+        id="newSellerLoading"
+        class="new-seller-loading"
+    >
+        Loading seller information...
+    </div>
+
+
+    <!-- ERROR -->
+
+    <div
+        id="newSellerError"
+        class="new-seller-error"
+        style="display:none;"
+    >
+        Seller information unavailable.
+    </div>
+
+</section>
+<!-- ==========================================================
+     PRODUCT REVIEWS
+========================================================== -->
+
+<section
+    id="productReviewsSection"
+    class="product-reviews-section"
+>
+
+    <div class="product-section-heading review-heading">
+
+        <div>
+
+            <h2>
+                Customer Reviews
+            </h2>
+
+            <p
+                id="productReviewSummary"
+                class="review-summary-text"
+            >
+                0 reviews
+            </p>
+
+        </div>
+
+        <button
+            id="writeReviewButton"
+            class="write-review-button"
+            type="button"
+            hidden
+        >
+            Write a Review
+        </button>
+
+    </div>
+
+
+    <div
+        id="reviewPurchaseNotice"
+        class="review-purchase-notice"
+        hidden
+    >
+        You can review this product after purchasing it.
+    </div>
+
+
+    <div
+        id="productReviewsList"
+        class="product-reviews-list"
+    >
+    </div>
+
+
+    <div
+        id="reviewsEmptyState"
+        class="reviews-empty-state"
+        hidden
+    >
+        <p>
+            No reviews yet.
+        </p>
+    </div>
+
+
+    <div
+        id="readMoreReviewsContainer"
+        class="read-more-reviews"
+        hidden
+    >
+
+        <a
+            id="readMoreReviewsLink"
+            href="product-review.html"
+        >
+            Read More Reviews
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     RELATED PRODUCTS AREA STARTS
+========================================================== -->
+
+<section
+    id="sponsoredSection"
+    class="related-products-section"
+>
+
+    <div class="related-section-heading">
+
+        <div>
+
+            <span>
+                RECOMMENDED
+            </span>
+
+            <h2>
+                Sponsored Products
+            </h2>
+
+        </div>
+
+        <div
+            id="sponsoredControls"
+            class="horizontal-controls"
+        >
+        </div>
+
+    </div>
+
+
+    <div
+        id="sponsoredProducts"
+        class="horizontal-product-list"
+    >
+    </div>
+
+</section>
+
+
+<section
+    id="sellerProductsSection"
+    class="related-products-section"
+>
+
+    <div class="related-section-heading">
+
+        <div>
+
+            <span>
+                FROM THIS SELLER
+            </span>
+
+            <h2>
+                More From This Seller
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="sellerProducts"
+        class="horizontal-product-list"
+    >
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     FASHION
+======================================================= -->
+
+<section class="product-subcategory-section">
+
+    <div class="product-subcategory-heading">
+
+        <h2>
+            Trending Category 
+        </h2>
+
+        <a href="category.html?category=Fashion">
+            See All →
+        </a>
+
+    </div>
+
+
+    <div
+        id="fashionSubcategories"
+        class="product-subcategory-roller"
+    ></div>
+
+</section>
+
+
+<!-- ======================================================
+     ELECTRONICS
+======================================================= -->
+
+<section class="product-subcategory-section">
+
+    <div class="product-subcategory-heading">
+
+        <h2>
+           Top Electronics Deals 
+        </h2>
+
+        <a href="category.html?category=Electronics">
+            See All →
+        </a>
+
+    </div>
+
+
+    <div
+        id="electronicsSubcategories"
+        class="product-subcategory-roller"
+    ></div>
+
+</section>
+
+
+
+<!-- ======================================================
+     SHOES
+======================================================= -->
+
+<section class="product-subcategory-section">
+
+    <div class="product-subcategory-heading">
+
+        <h2>
+         Best Footwear Sellers  
+        </h2>
+
+        <a href="category.html?category=Shoes">
+            See All →
+        </a>
+
+    </div>
+
+
+    <div
+        id="shoesSubcategories"
+        class="product-subcategory-roller"
+    ></div>
+
+</section>
+
+
+<section
+    id="buyerViewedSection"
+    class="related-products-section"
+>
+
+    <div class="related-section-heading">
+
+        <div>
+
+            <span>
+              Top Picks For You
+            </span>
+
+            <h2>
+                Products You Viewed
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="buyerViewedProducts"
+        class="horizontal-product-list"
+    >
+    </div>
+
+</section>
+
+
+<section
+    id="mostViewedSection"
+    class="related-products-section"
+>
+
+    <div class="related-section-heading">
+
+        <div>
+
+            <span>
+                TRENDING 
+            </span>
+
+            <h2>
+                Most Viewed Products
+            </h2>
+
+            <small id="mostViewedRefresh">
+                Updated every 24 hours
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="mostViewedProducts"
+        class="horizontal-product-list"
+    >
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ==========================================================
+     CART MESSAGE
+========================================================== -->
+
+<div
+    id="cartMessage"
+    class="cart-message"
+    role="status"
+    aria-live="polite"
+>
+</div>
+
+
+<script
+    type="module"
+    src="product.js"
+></script>
+<script
+    type="module"
+    src="ads.js"
+></script>
+
+</body>
+</html>
+
